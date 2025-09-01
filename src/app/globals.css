@@ -1,0 +1,118 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000;
+  --green: rgba(11, 82, 66, 1);
+  --green1: #009D78;
+  --green2: #0A4235;
+
+
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@font-face {
+  font-family: 'ScriptMTBold';
+  src:  url('/public/fonts/ScriptMTBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background: #EEF6F4;
+  color: var(--foreground);
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 300;
+}
+@keyframes menuSlideDown {
+  from { transform: scaleY(0.7); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+@keyframes menuSlideUp {
+  from { transform: scaleY(1); opacity: 1; }
+  to { transform: scaleY(0.7); opacity: 0; }
+}
+.animate-menuSlideDown {
+  animation: menuSlideDown 0.3s ease forwards;
+}
+.animate-menuSlideUp {
+  animation: menuSlideUp 0.3s ease forwards;
+}
+
+.font-script-mt-bold {
+  font-family: "ScriptMTBold";
+}
+.features-section{
+  position: relative;
+}
+
+.bg-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--green);
+  background-size: cover;
+  transition: .4s;
+
+}
+.bg-nav-cover::before {
+
+  height: 100%;
+
+}
+.text-stroke {
+  -webkit-text-stroke: 1px #14532d;
+  text-stroke: 1px #14532d; /* Fallback, but not supported everywhere */
+}
+.border-vector{
+  position: relative;
+  padding: 20px 30px;
+}
+.border-vector:before {
+    content: "";
+    background: url(/public/border-vector.png) 0 0 / contain no-repeat;
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    top: 60px;
+    left: calc(100% - 60px);
+}
+.border-vector:nth-child(even):before {
+  content: "";
+   transform: rotate(180deg);
+   top: 30px;
+}
+.border-vector:last-child:before {
+  display: none;
+}  
+@media (min-width: 1024px) {
+
+  .features-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: var(--green);
+    background-size: cover;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .border-vector:before {
+  display: none;
+} 
+}
