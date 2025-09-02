@@ -20,7 +20,7 @@ const Hero = () => {
                         <Image src="/hero-shape.png" alt="Logo" className="mx-auto md:w-[380px] w-[300px]" width={380} height={150} />
 
                         <h2  className="text-6xl md:text-8xl font-bold mb-4 font-script-mt-bold">
-                            مرحبا بكم في ريع منتظم
+                            مرحبا بكم في<br></br> ريع منتظم
                         </h2>
                         <div  className="my-6 lg:my-8">
                             <p className="text-md md:text-lg my-1 font-light">
@@ -28,7 +28,7 @@ const Hero = () => {
 
                             </p>
                             <p className="text-xl md:text-3xl my-1 font-light">
-                                عوائد سنوية تتراوح بين 10% و15% تُوزّع بشكل دوري
+                                عوائد سنوية تتراوح بين 10% و 15% تُوزّع بشكل دوري
                             </p>
                             <p className="text-md md:text-lg my-1 font-light">
                                 ضمن هيكل منظم وشفاف

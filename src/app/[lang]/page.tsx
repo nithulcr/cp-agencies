@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useLang } from "../hooks/useLang";
 import Preloader from "../components/Preloader";
 import Header from "../components/Header";
 import Hero from "../components/Hero";

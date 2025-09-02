@@ -10,15 +10,17 @@ import { motion } from "framer-motion";
 const navItems_en = [
   { href: "/", label: "Home" },
   { href: "/AboutUs", label: "About us" },
-  { href: "/ContactUs", label: "Contact us" },
   { href: "/FAQ", label: "FAQ's" },
+
+  { href: "/ContactUs", label: "Contact us" },
 ];
 
 const navItems_ar = [
   { href: "/", label: "الرئيسية" },
   { href: "/AboutUs", label: "من نحن" },
-  { href: "/ContactUs", label: "الأسئلة الشائعة" },
   { href: "/FAQ", label: "تواصل معنا" },
+
+  { href: "/ContactUs", label: "الأسئلة الشائعة" },
 ];
 
 export default function Header() {

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useLang } from "../hooks/useLang";
+import Image from 'next/image';
 
 const QuoteSection = () => {
   const { isArabic } = useLang();
@@ -14,7 +15,7 @@ const QuoteSection = () => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center justify-between gap-8">
         {/* Quote Icon */}
         <div className="flex-shrink-0 text-[#4CAF1B] md:w-auto w-full">
-          <svg
+          {/* <svg
             width="340"
             height="340"
             viewBox="0 0 440 331"
@@ -30,10 +31,11 @@ const QuoteSection = () => {
               d="M274.685 0.96875V165.61H384.446C384.446 226.116 335.245 275.371 274.685 275.371V330.251C365.471 330.251 439.326 256.396 439.326 165.61V0.96875H274.685Z"
               fill="#51AC0A"
             />
-          </svg>
+          </svg> */}
+          <Image src="/quate.png" alt="Logo" className="mx-auto md:w-[380px] w-[300px]" width={380} height={150} />
         </div>
         {/* Quote Text */}
-        <div className="text-white text-lg lg:text-xl leading-snug max-w-lg">
+        <div className="text-white text-lg lg:text-xl text-center md:text-left leading-snug max-w-lg">
           {isArabic ? (
             <p>
              في سول نت ، نعتقد أن مستقبل نمو الأعمال ذكي. بصفتنا شركة تسويق ذكي ، فإننا نستفيد من الذكاء الاصطناعي وتحليلات البيانات لإعادة تعريف نجاحك. نحن هنا لنكون شريكك الاستراتيجي ، وتحويل الرؤى إلى نتائج قابلة للقياس الكمي ونمو مستدام.

@@ -4,14 +4,50 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "../hooks/useLang";
 
 const faqs = [
-  // ... your FAQ entries as before
   {
-    question_en: "What Is The Legal Status Of The Company? Is It Licensed?",
-    question_ar: "ما هو الوضع القانوني للشركة؟ هل هي مرخصة؟",
+    question_en: "What is the legal status of the company? Is it licensed?",
+    question_ar: "ما هو الوضع القانوني للشركة؟ وهل هي مرخّصة؟",
+
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          The company is a Simplified Joint-Stock Company, licensed by the Saudi Ministry of Commerce. Investors gain ownership rights through officially documented shares, and all company activities comply with the applicable laws and regulations.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          الشركة هي شركة مساهمة مبسطة (S.J.S.C) مرخّصة من وزارة التجارة السعودية. يحصل المستثمرون على حقوق ملكية من خلال حصص موثقة رسميًا، وجميع أنشطة الشركة تتم بما يتوافق مع الأنظمة واللوائح المعمول بها.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "Is the company officially registered as a Simplified Joint-Stock Company?",
+    question_ar: "هل الشركة مسجّلة رسميًا كشركة مساهمة مبسطة (S.J.S.C)؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Yes, the company is officially registered under Saudi Companies Law. Investment shares are issued legally with clear ownership percentages and guaranteed returns documented in the Articles of Association.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          نعم، الشركة مسجّلة رسميًا وفق نظام الشركات السعودي. تُصدر الحصص الاستثمارية بشكل قانوني مع نسب ملكية واضحة، وتوثّق العوائد المضمونة في عقد التأسيس.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "Are There Internal Regulations Or A Founding Agreement For Shareholders?",
+    question_ar: "هل توجد لوائح داخلية أو اتفاقية تأسيس تنظّم حقوق المساهمين؟",
     answer_en: (
       <div className="pt-7">
         <p className="mb-4 text-gray-700 text-sm">
-          The company is a Simplified Joint-Stock Company, licensed by the Saudi Ministry of Commerce. Investors gain ownership rights through officially documented shares, and all company activities comply with the applicable laws and regulations.
+          Yes, a legally documented agreement clearly defines:
         </p>
         <div className="mt-2">
           <span className="my-4 block">Yes, A Legally Documented Agreement Clearly Defines:</span>
@@ -29,59 +65,628 @@ const faqs = [
     answer_ar: (
       <div className="pt-7">
         <p className="mb-4 text-gray-700 text-sm">
-          هل توجد لوائح داخلية أو اتفاقية تأسيس تنظّم حقوق المساهمين؟
+          نعم، يوجد اتفاق موثق قانونيًا يحدد بوضوح ما يلي
         </p>
         <div className="mt-2">
           <span className="my-4 block">نعم، يوجد اتفاق موثق قانونيًا يحدد بوضوح ما يلي</span>
           <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-            <li>نسب حصص المستثمرين</li>
-            <li>حقوق الأرباح والخروج</li>
-            <li>آليات توزيع العوائد</li>
+            <li>نسب ملكية المستثمرين</li>
+            <li> حقوق الأرباح والتخارج</li>
+            <li>آلية توزيع العوائد</li>
             <li>حدود المسؤولية</li>
-            <li>حقوق التصويت (إن وجدت)</li>
-            <li>قواعد نقل أو بيع الأسهم</li>
+            <li>حقوق التصويت (إن وُجدت)</li>
+            <li>قواعد نقل أو بيع الحصص</li>
+
           </ul>
         </div>
       </div>
     ),
   },
-  // ... other FAQ entries follow the same structure
   {
-    question_en: "Is The Company Officially Registered As A Simplified Joint-Stock Company?",
-    question_ar: "هل الشركة مسجلة رسمياً كشركة هل الشركة مسجّلة رسميًا كشركة مساهمة مبسطة (S.J.S.C)؟ مبسطة؟",
+    question_en: "Who audits the company legally and financially?",
+    question_ar: "من يراجع الشركة من الناحية القانونية والمالية؟",
+    answer_en: (
+      <div className="pt-7">
+        <div className="flex gap-2">
+          <p className="text-[var(--foreground)] font-medium">Legal: </p>
+          <p>
+            A licensed legal advisor reviews all contracts and ensures compliance with the Ministry of Commerce.
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <p className="text-[var(--foreground)] font-medium"> Financial: </p>
+          <p>
+            A certified accountant registered with the Saudi Organization for Certified Public Accountants reviews all financial statements, ensuring transparency and accurate reporting.
+          </p>
+        </div>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <div className="flex gap-2">
+          <p className="text-[var(--foreground)] font-medium">قانونيًا :</p>
+          <p>
+            يشرف مستشار قانوني مرخّص على مراجعة جميع العقود والتأكد من التزامها بمتطلبات وزارة التجارة.
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <p className="text-[var(--foreground)] font-medium">ماليًا  :</p>
+          <p>
+            يراجع محاسب قانوني معتمد ومسجّل في الهيئة السعودية للمراجعين والمحاسبين جميع القوائم المالية، بما يضمن الشفافية ودقة التقارير.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    question_en: "How is the annual return calculated, and is it guaranteed?",
+    question_ar: "هل تخضع الشركة لرقابة أي جهة مثل هيئة السوق المالية (CMA)؟",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes, the company is officially registered and compliant with Saudi legal requirements for simplified joint-stock corporations.
+          Annual returns are calculated as a percentage of the invested amount and distributed quarterly. Returns are guaranteed and pre-funded through binding agreements with tenants benefiting from the property, ensuring consistent payouts.
         </p>
       </div>
     ),
     answer_ar: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-         نعم، الشركة مسجّلة رسميًا وفق نظام الشركات السعودي. تُصدر الحصص الاستثمارية بشكل قانوني مع نسب ملكية واضحة، وتوثّق العوائد المضمونة في عقد التأسيس.
+          الشركة مسجّلة لدى وزارة التجارة وتعمل وفق نظام الشركات السعودي. جميع العقود واللوائح موثقة وفق الإجراءات القانونية المعتمدة.
         </p>
       </div>
     ),
   },
   {
-    question_en: "Are There Internal Regulations Or A Founding Agreement For Shareholders?",
-    question_ar: "ما هو الوضع القانوني للشركة؟ وهل هي مرخّصة؟",
+    question_en: "What are the sources of returns?",
+    question_ar: "ما هي مصادر العوائد؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-4 text-gray-700 text-md font-medium">
+          Returns come from:
+        </p>
+        <div className="mt-2">
+          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+            <li>Rental income  </li>
+            <li>Lease-to-own agreements</li>
+            <li>Property usufruct rights</li>
+          </ul>
+          <p className="mt-4 text-gray-700 text-sm ">
+            Other income-generating real estate opportunities, all vetted financially, legally, and technically by the investment committee.
+          </p>
+        </div>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-4 text-gray-700 text-md font-medium">
+          تأتي العوائد من:
+        </p>
+        <div className="mt-2">
+          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+            <li> دخل الإيجارات </li>
+            <li>عقود الإيجار المنتهي بالتمليك</li>
+            <li>حقوق الانتفاع بالعقار</li>
+            <li>فرص عقارية أخرى مدرّة للدخل، بعد مراجعة مالية وقانونية وفنية دقيقة من لجنة الاستثمار</li>
+          </ul>
+        </div>
+      </div>
+    ),
+  },
+  {
+    question_en: "Have similar projects been implemented before?",
+    question_ar: "هل تم تنفيذ مشاريع مماثلة من قبل؟",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-         الشركة هي شركة مساهمة مبسطة (S.J.S.C) مرخّصة من وزارة التجارة السعودية. يحصل المستثمرون على حقوق ملكية من خلال حصص موثقة رسميًا، وجميع أنشطة الشركة تتم بما يتوافق مع الأنظمة واللوائح المعمول بها.
+          Yes. Previous projects followed the same investment model, delivering consistent returns and structured exits. The model is proven, transparent, and aligns with best practices in governance, risk management, and investor protection.
         </p>
       </div>
     ),
     answer_ar: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          نعم، توجد لوائح حوكمة داخلية واتفاقية تأسيس تحدد حقوق ومسؤوليات المساهمين.
+          نعم، تم تنفيذ مشاريع سابقة وفق النموذج الاستثماري نفسه، وحققت عوائد منتظمة وتخارجات منظمة. هذا النموذج مُثبت وشفاف، ويتماشى مع أفضل الممارسات في الحوكمة، وإدارة المخاطر، وحماية المستثمرين.
         </p>
       </div>
     ),
   },
+  {
+    question_en: "When are returns paid?",
+    question_ar: "متى يتم صرف العوائد؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Returns start three months after investment activation (contract signing and fund transfer) and are distributed quarterly directly to investors’ bank accounts.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          تبدأ العوائد بعد ثلاثة أشهر من تفعيل الاستثمار (توقيع العقد وتحويل المبلغ)، وتُوزَّع ربع سنويًا مباشرةً إلى الحساب البنكي للمستثمرين
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "Can investors exit early? What are the conditions and costs?",
+    question_ar: "هل يمكن للمستثمرين التخارج مبكرًا؟ وما هي الشروط والتكاليف؟",
+    answer_en: (
+      <div className="pt-7 flex flex-col gap-4">
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            Yes, early exit is allowed with these conditions:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>Investor must provide an approved replacement buyer </li>
+              <li>Sign a transfer/sale agreement with management approval </li>
+            </ul>
+
+          </div>
+        </div>
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            Costs:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>No penalty fees  Returns are calculated only up to the sale date</li>
+              <li>Administrative fees for documentation</li>
+              <li>Returns are calculated only up to the sale date</li>
+
+            </ul>
+
+          </div>
+        </div>
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            Full exit at the end of the term:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>A pre-signed agreement ensures structured exit and capital return.</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7 flex flex-col gap-4">
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            نعم، يتيح النموذج خيار التخارج المبكر وفق الشروط التالية:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>أن يقدّم المستثمر مشتريًا بديلاً لحصته تتم مراجعته واعتماده من قبل إدارة الشركة.</li>
+              <li>توقيع اتفاقية تحويل/بيع حصة بموافقة الإدارة.</li>
+
+            </ul>
+
+          </div>
+        </div>
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            التكاليف:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>  لا توجد رسوم جزائية.</li>
+              <li>طبق رسوم إدارية خاصة بالتوثيق.</li>
+              <li>يتم احتساب العوائد فقط حتى تاريخ البيع الفعلي.</li>
+
+
+
+            </ul>
+
+          </div>
+        </div>
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            التخارج الكامل عند نهاية المدة:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>يوفر عقد بيع مُسبق التوقيع آلية منظمة للتخارج واسترداد رأس المال.</li>
+
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    question_en: "What types of projects will be implemented? Where are they located?",
+    question_ar: "ما نوع المشاريع التي سيتم تنفيذها؟ وأين تقع؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          The company targets income-generating real estate or projects with third-party usufruct agreements in strategic locations within major Saudi cities. Project selection is based on expected ROI studies.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          تستهدف الشركة عقارات مدرّة للدخل أو مشاريع قائمة على عقود انتفاع مع أطراف ثالثة، وذلك في مواقع استراتيجية داخل المدن الكبرى في المملكة العربية السعودية. ويتم اختيار المشاريع بناءً على دراسات العائد المتوقع (ROI).
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "What is the risk level of these investments?",
+    question_ar: "ما هو مستوى المخاطر في هذه الاستثمارات؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Investments are low-risk, designed to balance security with attractive returns in a controlled investment framework.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          تُصنَّف هذه الاستثمارات منخفضة المخاطر، وقد صُمّمت لتحقيق توازن بين الأمان والعوائد المجزية ضمن إطار استثماري منظم.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "How are projects financed?",
+    question_ar: "كيف يتم تمويل المشاريع؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Projects are funded through investor contributions and may include participation from affiliated real estate development companies (up to 25% of capital).
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          تُموَّل المشاريع بشكل أساسي من خلال مساهمات المستثمرين، مع إمكانية مشاركة شركات تطوير عقاري مرتبطة بنسبة تصل إلى 25% من رأس المال.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "What is the contingency plan in case of project failure?",
+    question_ar: "ما هي خطة الطوارئ في حال تعثر المشروع؟",
+    answer_en: (
+      <div className="pt-7 flex flex-col gap-4">
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            A comprehensive risk management plan is in place, including:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>Pre-arranged contractual risk transfer to tenants</li>
+              <li>Asset guarantees to secure financing</li>
+              <li>Measures to protect capital and ensure consistent returns</li>
+
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7 flex flex-col gap-4">
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            هناك خطة شاملة لإدارة المخاطر تتضمن ما يلي:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>نقل المخاطر تعاقديًا إلى المستأجرين بموجب اتفاقيات مسبقة</li>
+              <li>ضمانات على الأصول لتأمين التمويل</li>
+              <li> إجراءات لحماية رأس المال وضمان استمرارية العوائد</li>
+
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    ),
+  },
+  {
+    question_en: "Who manages the company, and what is their experience?",
+    question_ar: "من يدير الشركة، وما خبراتهم؟",
+    answer_en: (
+      <div className="pt-7 flex flex-col gap-4">
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            Managed by a team of experts with deep experience in real estate, asset management, finance, and legal compliance, including
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>Board of Directors & Executive Team </li>
+              <li>Real estate development professionals with successful projects</li>
+              <li>Financial and legal advisors ensuring compliance</li>
+              <li>Operations and marketing specialists</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7 flex flex-col gap-4">
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            تُدار الشركة من قبل فريق من الخبراء ذوي خبرة واسعة في مجالات العقار، وإدارة الأصول، والتمويل، والامتثال القانوني، ويشمل ذلك:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>مجلس الإدارة والفريق التنفيذي</li>
+              <li>متخصصون في التطوير العقاري بمشاريع ناجحة</li>
+              <li>مستشارون ماليون وقانونيون لضمان الامتثال</li>
+              <li>مختصون في العمليات والتسويق</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    ),
+  },
+  {
+    question_en: "Is there an independent board, and how are major decisions made?",
+    question_ar: "هل يوجد مجلس إدارة مستقل، وكيف تُتخذ القرارات الكبرى؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Yes, the board includes founding members, investors’ representatives, and independent experts. Major decisions are made by majority vote within the board, in accordance with the regulations outlined in the founding documents.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          نعم، يضم مجلس الإدارة المؤسسين وممثلي المستثمرين وخبراء مستقلين. وتُتخذ القرارات الرئيسية بأغلبية التصويت داخل المجلس، وفقًا للأنظمة المنصوص عليها في وثائق التأسيس.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "Can shareholders participate in voting or monitor performance?",
+    question_ar: "هل يمكن للمساهمين المشاركة في التصويت أو متابعة الأداء؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Yes. Shareholders on the board can vote based on ownership percentage and receive quarterly financial and operational reports for transparency and governance.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          نعم، يمكن للمساهمين في المجلس التصويت بحسب نسبة ملكيتهم، كما يتلقّون تقارير مالية وتشغيلية ربع سنوية لضمان الشفافية والحوكمة.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "How are investors communicated with?",
+    question_ar: "كيف يتم التواصل مع المستثمرين؟",
+    answer_en: (
+      <div className="pt-7 flex flex-col gap-4">
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            Official channels include:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>Dedicated investor email  </li>
+              <li>Online investor portal/dashboard</li>
+              <li>Direct support line</li>
+            </ul>
+          </div>
+        </div>
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            Reports:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>Quarterly financial & operational reports</li>
+              <li>Annual summary report.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7 flex flex-col gap-4">
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            تشمل قنوات التواصل الرسمية ما يلي:
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>بريد إلكتروني مخصص للمستثمرين</li>
+              <li>وابة أو لوحة معلومات إلكترونية خاصة بالمستثمرين</li>
+              <li> خط دعم مباشر</li>
+            </ul>
+          </div>
+        </div>
+        <div className="">
+          <p className="mb-2 text-gray-700 text-md font-medium">
+            التقارير
+          </p>
+          <div className="mt-2">
+            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+              <li>تقارير مالية وتشغيلية ربع سنوية</li>
+              <li>تقرير سنوي مُلخّص</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    ),
+  },
+  {
+    question_en: "What guarantees protect investors’ rights?",
+    question_ar: "ما هي الضمانات التي تحمي حقوق المستثمرين؟",
+    answer_en: (
+      <div className="pt-7">
+
+        <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+          <li>Legally binding contracts (Articles of Association, Shareholders’ Agreement, and Escrow Agreement) </li>
+          <li>Pre-funded returns</li>
+          <li>Real estate assets as tangible collateral</li>
+          <li>Structured exit options and early exit</li>
+          <li>conditions Governance & legal oversight</li>
+        </ul>
+
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+
+        <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+          <li>عقود ملزمة قانونيًا (عقد التأسيس، اتفاقية المساهمين، اتفاقية الحساب المشترك)</li>
+          <li> عوائد ممولة مسبقًا</li>
+          <li>أصول عقارية تشكّل ضمانًا ملموسًا</li>
+          <li>خيارات تخارج منظمة وشروط واضحة للتخارج المبكر</li>
+          <li>حوكمة وإشراف قانوني</li>
+        </ul>
+
+      </div>
+    ),
+  },
+  {
+    question_en: "What happens after the investment term ends?",
+    question_ar: "ماذا يحدث بعد انتهاء مدة الاستثمار؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          The contractual relationship ends, investors receive their capital, and they may participate in new investment opportunities with priority access.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          تنتهي العلاقة التعاقدية، ويسترد المستثمرون رأس مالهم، مع منحهم أولوية للمشاركة في الفرص الاستثمارية الجديدة.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "Can investors increase their shares or sell to others?",
+    question_ar: "هل يمكن للمستثمرين زيادة حصصهم أو بيعها للغير؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Yes, during the offering period, shares can be increased. Sale to another investor follows early exit rules, allowing flexible transfer under clear terms.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          نعم، يمكن زيادة الحصص خلال فترة الطرح. أما البيع لمستثمر آخر فيخضع لضوابط التخارج المبكر، مما يتيح نقل الملكية بمرونة ووفق شروط واضحة.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "Are returns deposited directly to investors?",
+    question_ar: "هل تُودع العوائد مباشرة في حساب المستثمر؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Yes, quarterly returns are transferred directly to the investor’s registered bank account.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          نعم، تُحوَّل العوائد ربع السنوية مباشرةً إلى الحساب البنكي المسجَّل باسم المستثمر.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "What if rental income isn’t realized?",
+    question_ar: "ماذا لو لم يتحقق دخل الإيجار؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          This is precluded by agreements with tenants. Returns remain consistent and guaranteed throughout the investment period, backed by real estate assets.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          هذا الاحتمال مستبعد لوجود اتفاقيات مسبقة مع المستأجرين. وتبقى العوائد منتظمة ومضمونة طوال فترة الاستثمار، مدعومة بالأصول العقارية.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "Can investors review contracts before investing?",
+    question_ar: "هل يمكن للمستثمرين مراجعة العقود قبل الاستثمار؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Yes, all contracts and documents are available for review before participation.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          نعم، جميع العقود والوثائق متاحة للمراجعة قبل المشاركة في الاستثمار.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "Is the investment open to all nationalities?",
+    question_ar: "هل الاستثمار متاح لجميع الجنسيات؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Yes, subject to Saudi regulations.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          نعم، متاح لجميع الجنسيات وفق ما تسمح به الأنظمة السعودية.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question_en: "Will I be a shareholder or just a funder?",
+    question_ar: "هل سأكون مساهمًا أم مجرد ممول؟",
+    answer_en: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          Investors are shareholding partners with documented shares, rights to dividends, voting (if on the board), exit rights, and access to reports.
+        </p>
+      </div>
+    ),
+    answer_ar: (
+      <div className="pt-7">
+        <p className="mb-2 text-gray-700">
+          المستثمرون شركاء مساهمون بحصص موثقة، ولهم حقوق في الأرباح، وحقوق تصويت (في حال عضوية المجلس)، وحقوق في التخارج، إضافةً إلى الاطّلاع على التقارير.
+        </p>
+      </div>
+    ),
+  },
+
 ];
 
 export default function FaqAccordion() {
@@ -152,7 +757,7 @@ export default function FaqAccordion() {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ type: "tween", duration: 0.4 }}
-                  className="px-7"
+                  className="px-7 lg:px-8 max-w-[95%]"
                 >
                   {isArabic ? faq.answer_ar : faq.answer_en}
                 </motion.div>
