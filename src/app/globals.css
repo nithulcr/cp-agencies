@@ -20,12 +20,15 @@
 
 @font-face {
   font-family: 'ScriptMTBold';
-  src:  url('/public/fonts/ScriptMTBold.ttf') format('truetype');
+  src: url('/fonts/ScriptMTBold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
+html{
+  scroll-behavior: smooth;
 
+}
 body {
   background: #EEF6F4;
   color: var(--foreground);
@@ -81,7 +84,7 @@ body {
 }
 .border-vector:before {
     content: "";
-    background: url(/public/border-vector.png) 0 0 / contain no-repeat;
+    background: url(/border-vector.png) 0 0 / contain no-repeat;
     width: 120px;
     height: 50px;
     position: absolute;
@@ -96,6 +99,12 @@ body {
 .border-vector:last-child:before {
   display: none;
 }  
+html[lang="ar"] .border-vector:first-child:before {
+  display: none;
+} 
+html[lang="ar"]  .border-vector:last-child:before {
+  display: block;
+} 
 @media (min-width: 1024px) {
 
   .features-section::before {
@@ -112,7 +121,7 @@ body {
 
 
 @media (max-width: 1024px) {
-  .border-vector:before {
+  .border-vector:before, html[lang="ar"]  .border-vector:last-child:before {
   display: none;
 } 
 }

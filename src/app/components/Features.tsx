@@ -138,7 +138,7 @@ export default function Features() {
     const features = isArabic ? featuresAr : featuresEn;
 
     return (
-        <section className="py-12 lg:py-20 features-section text-[var(--foreground)]">
+        <section id="features" className="py-12 lg:py-20 features-section text-[var(--foreground)]">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
                 {features.map((feature) => (
                     <motion.div
@@ -146,16 +146,17 @@ export default function Features() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="bg-white rounded-3xl text-right rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]"
+                        className="bg-white rounded-3xl  rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]"
                     >
                         <div className="flex items-center justify-between gap-3 mb-4">
                             
-                            <span className="text-5xl font-bold text-transparent text-stroke">
-                                {feature.id}
-                            </span>
+                            
                             <div className="w-16 h-16 flex items-center justify-center rounded-full p-4 bg-[var(--green)] text-green-900">
                                 {feature.icon}
                             </div>
+                            <span className="text-5xl font-bold text-transparent text-stroke">
+                                {feature.id}
+                            </span>
                         </div>
 
                         <h3 className="text-2xl font-light mb-2">{feature.title}</h3>

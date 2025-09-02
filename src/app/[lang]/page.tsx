@@ -11,7 +11,9 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import Partners from "../components/Partners";
 import Footer from "../components/Footer";
 
-export default function LangPage() {
+export default function HomePage({ params }: { params: { lang: string } }) {
+  // The lang from params can be used here if needed, but useLang is still used by child components
+  // const { lang } = params;
 
   return (
     <div>

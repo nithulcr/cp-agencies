@@ -11,7 +11,7 @@ export default function InvestmentSections() {
         <section className="py-12 lg:py-20 px-5 flex flex-col items-center justify-center w-full max-w-7xl mx-auto">
           <h2 className="font-medium lg:text-5xl text-3xl mb-10 lg:mb-14 text-center"> كيف يعمل الاستثمار</h2>
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full mx-auto relative">
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:flex-row w-full justify-items-center text-center">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:flex-row w-full justify-items-center text-center vector-row">
               <div className="flex flex-col items-center border-vector">
                 <div className="bg-white rounded-full p-3 mb-3 shadow-[0px_0px_17.9px_0px_rgba(0,0,0,0.05)]">
                   <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center border border-dashed border-1">

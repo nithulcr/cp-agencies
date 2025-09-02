@@ -1,3 +1,5 @@
+'use client';
+
 import { Mail, Phone, ArrowRight } from "lucide-react";
 import { useLang } from "../hooks/useLang";
 
@@ -9,7 +11,7 @@ export default function ContactSection() {
         {/* Left: Info */}
         <div>
           <div className="mb-8">
-            <h2 className="text-3xl lg:text-5xl font-medium  mb-3">
+            <h2 className="text-3xl lg:text-5xl font-medium  mb-4">
               {isArabic ? "هل لديك أسئلة؟ فريقنا جاهز في أي وقت" : "Have Questions?Our Team is Ready Anytime"}
             </h2>
             <p className="leading-relaxed max-w-[600px] text-gray-700">
@@ -59,11 +61,16 @@ export default function ContactSection() {
           </div>
           <div className="mt-3 justify-self-end">
 
-            <button className="inline-flex items-center gap-2 pl-3 pr-8 py-[12px] bg-[var(--green2)] text-white border rounded-full  transition-transform duration-300 hover:scale-105 cursor-pointer">
+            <button
+              className={`inline-flex items-center gap-2 ${isArabic ? "pr-3 pl-8" : "pl-3 pr-8"
+                } py-[12px] bg-[var(--green2)] text-white border rounded-full transition-transform duration-300 hover:scale-105 cursor-pointer`}
+            >
               <svg width="26" height="26" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.9254 0.167114C9.75308 0.167114 0.663086 9.25711 0.663086 20.4294C0.663086 31.6018 9.75308 40.6918 20.9254 40.6918C32.0978 40.6918 41.1877 31.6018 41.1877 20.4294C41.1877 9.25711 32.0978 0.167114 20.9254 0.167114ZM20.9254 3.2844C30.4129 3.2844 38.0705 10.942 38.0705 20.4294C38.0705 29.9169 30.4129 37.5745 20.9254 37.5745C11.438 37.5745 3.78037 29.9169 3.78037 20.4294C3.78037 10.942 11.438 3.2844 20.9254 3.2844ZM22.0476 10.4448L19.8032 12.6362L26.0378 18.8708H10.0149V21.9881H26.0378L19.8032 28.2226L22.0476 30.4141L30.9101 21.5501L32.0323 20.4279L30.9101 19.3057L22.0461 10.4432L22.0476 10.4448Z" fill="white" />
-              </svg> {isArabic ? "اتصل بنا" : "Contact Us"}
+              </svg>{" "}
+              {isArabic ? "اتصل بنا" : "Contact Us"}
             </button>
+
           </div>
         </form>
       </div>
