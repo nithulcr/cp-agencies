@@ -29,6 +29,6 @@ export async function POST(request: Request) {
     await transporter.sendMail(mailOptions);
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
-    return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+    return new Response(JSON.stringify({ success: false, error: error instanceof Error ? error.message : 'An unknown error occurred' }), { status: 500 });
   }
 }

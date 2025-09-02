@@ -9,17 +9,17 @@ export default function ContactSection() {
   const [loading, setLoading] = useState(false);
 
   // Handle form submit (send POST to API route)
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
     // Get data from form fields
-    const form = e.target;
+    const form = e.target as HTMLFormElement;
     const formData = {
-      name: form.name.value,
-      phone: form.phone.value,
-      email: form.email.value,
-      message: form.message.value,
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
     };
 
     // Send POST request to backend API
@@ -125,7 +125,7 @@ export default function ContactSection() {
               <ArrowRight size={26} />
               {loading
                 ? isArabic ? "جارٍ الإرسال..." : "Sending..."
-                : isArabic ? "اتصل بنا" : "Contact Us"}
+                : isArabic ? " احصل على حل" : "Get a Solution"}
             </button>
           </div>
         </form>
