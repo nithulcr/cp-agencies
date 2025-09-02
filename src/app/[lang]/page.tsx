@@ -1,6 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useLang } from "../hooks/useLang";
+import Preloader from "../components/Preloader";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
@@ -12,20 +14,38 @@ import Partners from "../components/Partners";
 import Footer from "../components/Footer";
 
 export default function HomePage({ params }: { params: { lang: string } }) {
-  // The lang from params can be used here if needed, but useLang is still used by child components
-  // const { lang } = params;
+  const [showContent, setShowContent] = useState(false);
+  const [shouldShowPreloader, setShouldShowPreloader] = useState(true);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && sessionStorage.getItem("hasSeenPreloader")) {
+      setShouldShowPreloader(false);
+      setShowContent(true); // Immediately show content if preloader not needed
+    }
+  }, []);
+
+  const handlePreloaderComplete = () => {
+    sessionStorage.setItem("hasSeenPreloader", "true");
+    setShouldShowPreloader(false);
+    setShowContent(true);
+  };
 
   return (
     <div>
-      <Header />
-      <Hero />
-      <Features />
-      <WhyInvest />
-      <InvestmentSections />
-      <WhyChooseUs />
-      <QuoteSection />
-      <Partners />
-      <Footer />
+      {shouldShowPreloader && <Preloader onComplete={handlePreloaderComplete} />}
+      {showContent && (
+        <>
+          <Header />
+          <Hero />
+          <Features />
+          <WhyInvest />
+          <InvestmentSections />
+          <WhyChooseUs />
+          <QuoteSection />
+          <Partners />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

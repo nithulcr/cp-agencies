@@ -15,9 +15,9 @@ export default function Home() {
             <Header />
             <Hero2
                 heading_en="Contact Us"
-                heading_ar="اتصل بنا"
+                heading_ar=" تواصل معنا"
                 breadcrumbText_en="Contact Us"
-                breadcrumbText_ar="اتصل بنا"
+                breadcrumbText_ar=" تواصل معنا"
                 breadcrumbPosition="left"
             />
 

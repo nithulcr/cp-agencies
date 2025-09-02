@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useLang } from "../hooks/useLang";
+import { motion } from "framer-motion";
+
 
 interface Hero2Props {
     heading_en: string;
@@ -37,7 +39,9 @@ const Hero2 = ({
     className={`bg-fixed absolute inset-0 bg-[url('/about.png')] bg-cover bg-[40%_center] lg:bg-[30%_center] ${isArabic ? "scale-x-[-1]" : ""}`}
   ></div>
 
-            <div
+            <motion.div initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
                 className={`relative z-10 py-8 lg:py-14 flex flex-col w-full max-w-7xl px-6 items-${breadcrumbPosition} text-${breadcrumbPosition}`}
             >
                 <h2 className={`text-3xl lg:text-4xl font-medium ${isArabic ? "text-right" : "text-left"}`}>
@@ -48,7 +52,7 @@ const Hero2 = ({
                 {(breadcrumbText ?? heading) && (
                     <div className={`flex items-center gap-2 breadcrumb mt-3 mb-2 ${breadcrumbAlignClass}`}>
                         <Link href="/" className="text-md md:text-lg my-1 text-white hover:text-[var(--green1)]">
-                            {isArabic ? "الرئيسية" : "Home"}
+                            {isArabic ? "الرئيسية " : "Home"}
                         </Link>
 
                         <div style={{ transform: isArabic ? "scaleX(-1)" : "none" }}>
@@ -83,7 +87,7 @@ const Hero2 = ({
                         <span className="text-md md:text-lg my-1 font-medium text-[var(--green1)]">{breadcrumbText}</span>
                     </div>
                 )}
-            </div>
+            </motion.div>
         </section>
     );
 };

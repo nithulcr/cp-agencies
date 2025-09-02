@@ -180,7 +180,7 @@ const whyChooseDataAr = [
 ];
 
 const WhyChooseUs = () => {
-  const { isArabic } = useLang();
+  const { isArabic, lang } = useLang();
   const data = isArabic ? whyChooseDataAr : whyChooseDataEn;
 
   return (
@@ -194,7 +194,7 @@ const WhyChooseUs = () => {
               : "is a simplified joint‑stock company registered in Saudi Arabia. Our goal is to bridge the gap between investors and robust real estate opportunities that deliver consistent, predictable returns."}
           </p>
         </div>
-        <Link href="ContactUs">
+        <Link href={isArabic ? "/ContactUs" : "/en/ContactUs"}>
           <button className="inline-flex items-center gap-2 px-10 py-[12px] bg-[var(--green2)] text-white border rounded-full transition-transform duration-300 hover:scale-105 cursor-pointer">
             {isArabic ? "اتصل بنا" : "Contact Us"}
           </button>

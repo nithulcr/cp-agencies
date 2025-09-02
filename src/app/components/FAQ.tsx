@@ -29,10 +29,10 @@ const faqs = [
     answer_ar: (
       <div className="pt-7">
         <p className="mb-4 text-gray-700 text-sm">
-          الشركة هي شركة مساهمة مبسطة، مرخصة من وزارة التجارة السعودية. يكتسب المستثمرون حقوق الملكية من خلال أسهم موثقة رسميًا، وتتوافق جميع أنشطة الشركة مع القوانين واللوائح المعمول بها.
+          هل توجد لوائح داخلية أو اتفاقية تأسيس تنظّم حقوق المساهمين؟
         </p>
         <div className="mt-2">
-          <span className="my-4 block">نعم، اتفاقية موثقة قانونًا تحدد بوضوح:</span>
+          <span className="my-4 block">نعم، يوجد اتفاق موثق قانونيًا يحدد بوضوح ما يلي</span>
           <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
             <li>نسب حصص المستثمرين</li>
             <li>حقوق الأرباح والخروج</li>
@@ -48,7 +48,7 @@ const faqs = [
   // ... other FAQ entries follow the same structure
   {
     question_en: "Is The Company Officially Registered As A Simplified Joint-Stock Company?",
-    question_ar: "هل الشركة مسجلة رسمياً كشركة مساهمة مبسطة؟",
+    question_ar: "هل الشركة مسجلة رسمياً كشركة هل الشركة مسجّلة رسميًا كشركة مساهمة مبسطة (S.J.S.C)؟ مبسطة؟",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
@@ -59,18 +59,18 @@ const faqs = [
     answer_ar: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          نعم، الشركة مسجلة رسميًا ومتوافقة مع المتطلبات القانونية السعودية للشركات المساهمة المبسطة.
+         نعم، الشركة مسجّلة رسميًا وفق نظام الشركات السعودي. تُصدر الحصص الاستثمارية بشكل قانوني مع نسب ملكية واضحة، وتوثّق العوائد المضمونة في عقد التأسيس.
         </p>
       </div>
     ),
   },
   {
     question_en: "Are There Internal Regulations Or A Founding Agreement For Shareholders?",
-    question_ar: "هل توجد لوائح داخلية أو اتفاقية تأسيس للمساهمين؟",
+    question_ar: "ما هو الوضع القانوني للشركة؟ وهل هي مرخّصة؟",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes, there are internal governance regulations and a founding agreement outlining shareholder rights and responsibilities.
+         الشركة هي شركة مساهمة مبسطة (S.J.S.C) مرخّصة من وزارة التجارة السعودية. يحصل المستثمرون على حقوق ملكية من خلال حصص موثقة رسميًا، وجميع أنشطة الشركة تتم بما يتوافق مع الأنظمة واللوائح المعمول بها.
         </p>
       </div>
     ),
@@ -93,12 +93,12 @@ export default function FaqAccordion() {
   return (
     <section className="max-w-7xl mx-auto px-6 min-h-screen flex flex-col justify-center py-14 lg:py-20" dir={isArabic ? "rtl" : "ltr"}>
       <div className="pb-14 text-center mx-auto">
-        <h2 className="text-3xl lg:text-5xl font-medium mb-8">
-          {isArabic ? "أسئلة استثمارك مجاب عليها" : <>{"Your Investment "}<br />{"Questions Answered"}</>}
+        <h2 className="text-3xl lg:text-5xl font-medium mb-8 max-w-6xl">
+          {isArabic ? " إجابات واضحة لأسئلتك الاستثمارية. اكتشف وضوحًا أكبر حول فرصنا الاستثمارية، وآلياتنا، والعوائد المتوقعة. " : <>{"Your Investment "}<br />{"Questions Answered"}</>}
         </h2>
-        <p className="leading-relaxed max-w-[600px] text-gray-600">
+        <p className="leading-relaxed max-w-[600px] text-gray-600 mx-auto">
           {isArabic
-            ? "لقد قمنا بتجميع إجابات لأكثر الأسئلة شيوعًا حول مشاريعنا، وهيكل الشركة القانوني، والعوائد، وحقوق المساهمين لمساعدتك على اتخاذ قرارات استثمارية مستنيرة بثقة."
+            ? "جمعنا لك إجابات عن أكثر الأسئلة شيوعًا حول مشاريعنا، وهيكلنا القانوني، والعوائد، وحقوق المساهمين، لمساعدتك على اتخاذ قرارات استثمارية واثقة ومستنيرة."
             : "We’ve compiled answers to the most common questions about our projects, legal structure, returns, and shareholder rights to help you make informed investment decisions with confidence."}
         </p>
       </div>

@@ -18,9 +18,9 @@ export default function Home() {
             <Header />
             <Hero2
                 heading_en="About Us"
-                heading_ar="اتصل بنا"
+                heading_ar=" من نحن"
                 breadcrumbText_en="About Us"
-                breadcrumbText_ar="اتصل بنا"
+                breadcrumbText_ar=" من نحن"
                 breadcrumbPosition="left"
             />
             <WhoWeAre />
