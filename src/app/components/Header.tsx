@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useLang } from "../hooks/useLang";
@@ -101,7 +100,7 @@ export default function Header() {
               </nav>
               <div className="hidden md:block">
                 <button onClick={toggle} className="cursor-pointer border px-3 py-1 h-10 w-10 rounded-full text-sm flex items-center justify-center">
-                  {lang === 'ar' ? 'En' : 'عربي'}
+                  {lang === 'ar' ? 'En' : 'عر'}
                 </button>
               </div>
             </div>
@@ -129,7 +128,7 @@ export default function Header() {
                 </Link>
               ))}
               <button onClick={toggle} className="ml-auto cursor-pointer border px-3 py-1 text-white h-10 w-10 rounded-full hover:bg-green-800 text-sm flex items-center justify-center mt-4">
-                {lang === 'ar' ? 'En' : 'عربي'}
+                {lang === 'ar' ? 'En' : 'عر'}
               </button>
             </motion.div>
           )}
@@ -160,7 +159,7 @@ export default function Header() {
               </nav>
               <div className="hidden md:block">
                 <button onClick={toggle} className="cursor-pointer border px-3 py-1 h-10 w-10 rounded-full text-sm flex items-center justify-center">
-                  {lang === 'ar' ? 'En' : 'عربي'}
+                  {lang === 'ar' ? 'En' : 'عر'}
                 </button>
               </div>
             </div>
@@ -186,7 +185,7 @@ export default function Header() {
                 </Link>
               ))}
               <button onClick={toggle} className="cursor-pointer border px-3 py-1 text-white h-10 w-10 rounded-full hover:bg-green-800 text-sm flex items-center justify-center mt-4">
-                {lang === 'ar' ? 'En' : 'عربي'}
+                {lang === 'ar' ? 'En' : 'عر'}
               </button>
             </div>
           )}
