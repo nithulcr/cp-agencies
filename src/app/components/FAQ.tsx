@@ -717,7 +717,7 @@ export default function FaqAccordion() {
             <button
               onClick={() => toggle(idx)}
               aria-expanded={openIdx === idx}
-              className={`flex items-center cursor-pointer justify-between w-full px-4 lg:px-8 font-medium text-left lg:text-[1.08rem] text-sm rounded-2xl bg-white`}
+              className={`flex items-center cursor-pointer justify-between w-full px-4 lg:px-8 font-medium  lg:text-[1.08rem] text-md rounded-2xl bg-white`}
             >
               {isArabic ? faq.question_ar : faq.question_en}
               <span className="text-xl inline-flex items-center justify-center bg-[#EDF6F3] p-4 rounded-full w-8 h-8">

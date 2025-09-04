@@ -37,15 +37,20 @@ const QuoteSection = () => {
         {/* Quote Text */}
         <div className="text-white text-lg lg:text-xl text-center md:text-left leading-snug max-w-lg">
           {isArabic ? (
-            <p>
-             في سول نت ، نعتقد أن مستقبل نمو الأعمال ذكي. بصفتنا شركة تسويق ذكي ، فإننا نستفيد من الذكاء الاصطناعي وتحليلات البيانات لإعادة تعريف نجاحك. نحن هنا لنكون شريكك الاستراتيجي ، وتحويل الرؤى إلى نتائج قابلة للقياس الكمي ونمو مستدام.
-            </p>
+           <p>في ريع منتظم، نؤمن أن الاستثمار الناجح يبدأ من الثقة ويُبنى على الخبرة.
+
+باعتبارها الذراع الاستثماري لمجموعة عقارية ذات باع طويل في تطوير وتشغيل الأصول المدرة للدخل، تقدم ريع منتظم نموذجًا استثماريًا متكاملًا، مبنيًا على هيكلة دقيقة، شراكات تشغيلية موثوقة، وعقود قانونية واضحة.
+
+نلتزم أمام عملاءنا بالشفافية والانضباط، ونعمل على تحويل الفرص العقارية الفعلية إلى منتجات استثمارية تحقق دخلًا منتظمًا ومستدامًا من خلال شركاءنا وفرقنا المحترفة بخبراتهم المختلفة .
+
+نعدكم بأن تكون ريع منتظم شريككم الموثوق في بناء دخل عقاري حقيقي ومستدام</p>
           ) : (
             <p>
-              At WssolNet, We Believe The Future Of Business Growth Is Intelligent.
-              As An Intelligent Marketing Company, We Leverage AI And Data Analytics
-              To Redefine Your Success. We’re Here To Be Your Strategic Partner,
-              Transforming Insights Into Quantifiable Results And Sustainable Growth.
+              Successful investment begins with trust and is built on expertise.
+
+As the investment arm of a real estate group with long-standing experience in developing and operating income-generating assets, Rayi’ Muntazim offers a comprehensive investment model, built on precise structuring, reliable operational partnerships, and clear legal contracts.
+
+We are committed to our clients with transparency and discipline, working to transform actual real estate opportunities into investment products that deliver consistent and sustainable income—through our trusted partners and professional teams with diverse expertise.
             </p>
           )}
         </div>
