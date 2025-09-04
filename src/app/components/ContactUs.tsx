@@ -7,11 +7,13 @@ import { useLang } from "../hooks/useLang";
 export default function ContactSection() {
   const { isArabic } = useLang();
   const [loading, setLoading] = useState(false);
+  const [messageStatus, setMessageStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
   // Handle form submit (send POST to API route)
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setMessageStatus(null);
 
     // Get data from form fields
     const form = e.target as HTMLFormElement;
@@ -31,10 +33,10 @@ export default function ContactSection() {
 
     setLoading(false);
     if (res.ok) {
-      alert(isArabic ? "تم إرسال رسالتك بنجاح!" : "Your message has been sent!");
+      setMessageStatus({ type: 'success', message: isArabic ? "تم إرسال رسالتك بنجاح!" : "Your message has been sent!" });
       form.reset();
     } else {
-      alert(isArabic ? "فشل في إرسال الرسالة." : "Message sending failed.");
+      setMessageStatus({ type: 'error', message: isArabic ? "فشل في إرسال الرسالة." : "Message sending failed." });
     }
   };
 
@@ -58,14 +60,14 @@ export default function ContactSection() {
             <Mail size={40} color="#0B5242" />
             <div>
               <div className="text-sm">{isArabic ? "البريد الإلكتروني" : "E-mail"}</div>
-              <div className="text-md font-medium">terrahconnects@gmail.com</div>
+              <div className="text-md font-medium">raymontazim@outlook.com</div>
             </div>
           </div>
           <div className="flex items-start gap-4">
             <Phone size={40} color="#0B5242" />
             <div>
               <div className="text-sm">{isArabic ? "رقم الهاتف" : "Phone number"}</div>
-              <div className="text-md font-medium">+91 9048551144</div>
+              <div className="text-md font-medium">0966 920032359</div>
             </div>
           </div>
         </div>
@@ -128,6 +130,13 @@ export default function ContactSection() {
                 : isArabic ? " احصل على حل" : "Get a Solution"}
             </button>
           </div>
+           <div className="mt-3 justify-self-end message-status">
+            {messageStatus && (
+              <p className={`${messageStatus.type === 'success' ? 'text-green-500' : 'text-red-500'}`}>
+                {messageStatus.message}
+              </p>
+            )}
+           </div>
         </form>
       </div>
     </section>
