@@ -56,7 +56,12 @@ body {
 .features-section{
   position: relative;
 }
-
+.partners-container .swiper{
+  padding-bottom: 70px;
+}
+.swiper-pagination-bullet-active {
+    background: var(--green)!important;
+}
 .bg-nav::before {
   content: "";
   position: absolute;

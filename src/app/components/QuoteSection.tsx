@@ -37,20 +37,20 @@ const QuoteSection = () => {
         {/* Quote Text */}
         <div className="text-white text-lg lg:text-xl text-center md:text-left leading-snug max-w-lg">
           {isArabic ? (
-           <p>في ريع منتظم، نؤمن أن الاستثمار الناجح يبدأ من الثقة ويُبنى على الخبرة.
+            <p className="text-right">في ريع منتظم، نؤمن أن الاستثمار الناجح يبدأ من الثقة ويُبنى على الخبرة.
 
-باعتبارها الذراع الاستثماري لمجموعة عقارية ذات باع طويل في تطوير وتشغيل الأصول المدرة للدخل، تقدم ريع منتظم نموذجًا استثماريًا متكاملًا، مبنيًا على هيكلة دقيقة، شراكات تشغيلية موثوقة، وعقود قانونية واضحة.
+              باعتبارها الذراع الاستثماري لمجموعة عقارية ذات باع طويل في تطوير وتشغيل الأصول المدرة للدخل، تقدم ريع منتظم نموذجًا استثماريًا متكاملًا، مبنيًا على هيكلة دقيقة، شراكات تشغيلية موثوقة، وعقود قانونية واضحة.
 
-نلتزم أمام عملاءنا بالشفافية والانضباط، ونعمل على تحويل الفرص العقارية الفعلية إلى منتجات استثمارية تحقق دخلًا منتظمًا ومستدامًا من خلال شركاءنا وفرقنا المحترفة بخبراتهم المختلفة .
+              نلتزم أمام عملاءنا بالشفافية والانضباط، ونعمل على تحويل الفرص العقارية الفعلية إلى منتجات استثمارية تحقق دخلًا منتظمًا ومستدامًا من خلال شركاءنا وفرقنا المحترفة بخبراتهم المختلفة .
 
-نعدكم بأن تكون ريع منتظم شريككم الموثوق في بناء دخل عقاري حقيقي ومستدام</p>
+              نعدكم بأن تكون ريع منتظم شريككم الموثوق في بناء دخل عقاري حقيقي ومستدام</p>
           ) : (
             <p>
               Successful investment begins with trust and is built on expertise.
 
-As the investment arm of a real estate group with long-standing experience in developing and operating income-generating assets, Rayi’ Muntazim offers a comprehensive investment model, built on precise structuring, reliable operational partnerships, and clear legal contracts.
+              As the investment arm of a real estate group with long-standing experience in developing and operating income-generating assets, Rayi’ Muntazim offers a comprehensive investment model, built on precise structuring, reliable operational partnerships, and clear legal contracts.
 
-We are committed to our clients with transparency and discipline, working to transform actual real estate opportunities into investment products that deliver consistent and sustainable income—through our trusted partners and professional teams with diverse expertise.
+              We are committed to our clients with transparency and discipline, working to transform actual real estate opportunities into investment products that deliver consistent and sustainable income—through our trusted partners and professional teams with diverse expertise.
             </p>
           )}
         </div>

@@ -21,11 +21,11 @@ Light City, Saudi Arabia`}
           </div>
           <div className="flex-1 text-center">
             <h4 className="font-medium text-2xl mb-2">{isArabic ? "الهاتف" : "Phone"}</h4>
-            <p className="text-sm text-gray-300 whitespace-pre-line">
+            <a href="tel:0966 920032359"  className="text-sm text-gray-300 whitespace-pre-line">
               {isArabic
                 ? ` 0966 920032359`
                 : ` 0966 920032359`}
-            </p>
+            </a>
           </div>
           <div className="flex-1 text-center">
             <h4 className="font-medium text-2xl mb-2">{isArabic ? "البريد الإلكتروني" : "E-Mail"}</h4>

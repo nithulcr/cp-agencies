@@ -1,62 +1,85 @@
 "use client";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
+import "swiper/css/pagination";
 import { useLang } from "../hooks/useLang";
 
 const partnersEn = [
   {
     id: "01",
-    icon: "/pepsico.png",
-    title: "Pepsico",
-    description: "The term logos has multiple meanings depending on the context, primarily referring to either a brand identifier ",
+    icon: "/logo1.png",
+   
   },
   {
     id: "02",
-    icon: "/pepsico2.png",
-    title: "Pepsico",
-    description: "The term logos has multiple meanings depending on the context, primarily referring to either a brand identifier ",
+     icon: "/logo2.png",
+   
   },
   {
     id: "03",
-    icon: "/pepsico3.png",
-    title: "Pepsico",
-    description: "The term logos has multiple meanings depending on the context, primarily referring to either a brand identifier ",
+    icon: "/logo3.png",
+   
   },
   {
     id: "04",
-    icon: "/pepsico4.png",
-    title: "Pepsico",
-    description: "The term logos has multiple meanings depending on the context, primarily referring to either a brand identifier ",
+     icon: "/logo4.png",
+  
+  },
+  {
+    id: "05",
+     icon: "/logo5.png",
+  
+  },
+  {
+    id: "06",
+     icon: "/logo6.png",
+  
+  },
+  {
+    id: "07",
+     icon: "/logo7.png",
+  
   },
 ];
 
 const partnersAr = [
-  {
+    {
     id: "01",
-    icon: "/pepsico.png",
-    title: "بيبسيكو",
-    description: "مصطلح الشعارات له معانٍ متعددة حسب السياق، يشير أساساً إلى معرف العلامة التجارية.",
+    icon: "/logo1.png",
+   
   },
   {
     id: "02",
-    icon: "/pepsico2.png",
-    title: "بيبسيكو",
-    description: "مصطلح الشعارات له معانٍ متعددة حسب السياق، يشير أساساً إلى معرف العلامة التجارية.",
+     icon: "/logo2.png",
+   
   },
   {
     id: "03",
-    icon: "/pepsico3.png",
-    title: "بيبسيكو",
-    description: "مصطلح الشعارات له معانٍ متعددة حسب السياق، يشير أساساً إلى معرف العلامة التجارية.",
+    icon: "/logo3.png",
+   
   },
   {
     id: "04",
-    icon: "/pepsico4.png",
-    title: "بيبسيكو",
-    description: "مصطلح الشعارات له معانٍ متعددة حسب السياق، يشير أساساً إلى معرف العلامة التجارية.",
+     icon: "/logo4.png",
+  
+  },
+  {
+    id: "05",
+     icon: "/logo5.png",
+  
+  },
+  {
+    id: "06",
+     icon: "/logo6.png",
+  
+  },
+  {
+    id: "07",
+     icon: "/logo7.png",
+  
   },
 ];
 
@@ -77,50 +100,44 @@ const Partners = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto lg:px-6 partners-container">
-        <div className="lg:hidden">
+        <div className="">
           <Swiper
-            modules={[Autoplay]}
+            modules={[Autoplay, Pagination]}
             spaceBetween={20}
-            slidesPerView={1.5}
+            slidesPerView={1.6}
+            breakpoints={{
+              640: {
+                slidesPerView: 2.2,
+              },
+              768: {
+                slidesPerView: 3.2,
+              },
+              1024: {
+                slidesPerView: 4,
+              },
+            }}
             autoplay={{ delay: 2500, disableOnInteraction: false }}
             loop={true}
             grabCursor={true}
+            pagination={{ clickable: true }}
+            
           >
             {partners.map((partner) => (
               <SwiperSlide key={partner.id}>
                 <div className="partners-child bg-white rounded-3xl text-center rounded-bl-none p-5 transition-all duration-300 relative top-0 hover:top-[-6px]">
                   <Image
                     src={partner.icon}
-                    alt={partner.title}
-                    className="w-34 h-34 object-contain mx-auto mb-2"
+                    alt="Logo"
+                    className="w-28 h-28 object-contain mx-auto mb-2"
                     width={100}
                     height={100}
                   />
-                  <h3 className="text-2xl font-medium mb-2">{partner.title}</h3>
-                  <p className="text-md leading-snug text-gray-700">{partner.description}</p>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-        <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
-          {partners.map((partner) => (
-            <div
-              key={partner.id}
-              className="partners-child bg-white rounded-3xl text-center rounded-bl-none p-5 transition-all duration-300 relative top-0 hover:top-[-6px]"
-            >
-              <Image
-                src={partner.icon}
-                alt={partner.title}
-                className="w-34 h-34 object-contain mx-auto mb-2"
-                width={100}
-                height={100}
-              />
-              <h3 className="text-2xl font-medium mb-2">{partner.title}</h3>
-              <p className="text-md leading-snug text-gray-700">{partner.description}</p>
-            </div>
-          ))}
-        </div>
+
       </div>
     </section>
   );

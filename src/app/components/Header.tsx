@@ -18,9 +18,9 @@ const navItems_en = [
 const navItems_ar = [
   { href: "/", label: "الرئيسية" },
   { href: "/AboutUs", label: "من نحن" },
-  { href: "/FAQ", label: "تواصل معنا" },
+  { href: "/FAQ", label:  "الأسئلة الشائعة" },
 
-  { href: "/ContactUs", label: "الأسئلة الشائعة" },
+  { href: "/ContactUs", label: "تواصل معنا" },
 ];
 
 export default function Header() {

@@ -21,7 +21,7 @@ export default function ConsultationBanner() {
                         <div>
                             <div className="text-xs text-gray-200">{isArabic ? "اتصل للمزيد من المعلومات" : "Call For More Info"}</div>
                             <div className="font-semibold text-lg lg:text-xl mt-2 tracking-wide">
-                                +91 9048551144
+                               0966 920032359
                             </div>
                         </div>
                     </div>
