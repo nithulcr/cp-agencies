@@ -1,81 +1,51 @@
 "use client";
-import Image from 'next/image';
 import { motion } from "framer-motion";
-import { useLang } from "../hooks/useLang";
 import Link from "next/link";
+import AnimatedButton from "./AnimatedButton";
 
 
 const Hero = () => {
-    const { isArabic } = useLang();
     return (
         <>
-            {isArabic ? (
-                <section className="w-full md:min-h-screen bg-[var(--green)] text-white flex flex-col justify-center items-center text-center px-6 relative">
-                    {/* Background pattern */}
-                    <div className="bg-fixed absolute inset-0 bg-[url('/pattern.png')] bg-cover bg-center"></div>
+            <section className="w-full md:min-h-screen bg-[var(--green)] text-white flex flex-col justify-center items-center text-center px-6 relative mt-[100px] lg:pb-[120px]">
+                {/* Background pattern */}
+                <div className="absolute hero-cover inset-0  bg-cover bg-center">
+                    <video
+                        src="/video.mp4" // correct spelling: video, not 'viedo'
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover relative"
+                    />
+                </div>
 
-                    <motion.div initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }} className="relative z-10 max-w-3xl py-20">
-                        <Image src="/hero-shape.png" alt="Logo" className="mx-auto md:w-[380px] w-[300px]" width={380} height={150} />
+                <motion.div initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }} className="relative z-10 max-w-3xl py-20">
 
-                        <h2  className="text-6xl md:text-8xl font-bold mb-4 font-script-mt-bold">
-                            مرحبا بكم في<br></br> ريع منتظم
-                        </h2>
-                        <div  className="my-6 lg:my-8">
-                            <p className="text-md md:text-lg my-1 font-light">
-                                بوابتكم إلى استثمارات عقارية مستقرة ومدرّة للدخل
 
-                            </p>
-                            <p className="text-xl md:text-3xl my-1 font-light">
-                                عوائد سنوية تتراوح بين 10% و 15% تُوزّع بشكل دوري
-                            </p>
-                            <p className="text-md md:text-lg my-1 font-light">
-                                ضمن هيكل منظم وشفاف
-                            </p>
-                        </div>
-                        <Link href="#features">
-                            <button className="inline-flex items-center gap-2 px-10 py-[12px] bg-[var(--green2)] text-white border rounded-full  transition-transform duration-300 hover:scale-105 cursor-pointer">
-                                ابدأ الآن
-                            </button>
-                        </Link>
+                    <h2 className="text-5xl md:text-7xl font-bold mb-2 head-font">
+                        Welcome To <br></br><span>CP AGENCIES</span>
+                    </h2>
+                    <div className="my-6 lg:my-4">
+                        <p className="text-lg md:text-3xl my-2 font-light2">
+                            Your Trusted Partner in Superior Machine Tool Technology
 
-                    </motion.div>
-                </section>
-            ) : (
-                <section className="w-full md:min-h-screen bg-[var(--green)] text-white flex flex-col justify-center items-center text-center px-6 relative">
-                    {/* Background pattern */}
-                    <div className="bg-fixed absolute inset-0 bg-[url('/pattern.png')] bg-cover bg-center"></div>
+                        </p>
 
-                    <motion.div  initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5 }} className="relative z-10 max-w-3xl py-20">
-                        <Image src="/hero-shape.png" alt="Logo" className="mx-auto md:w-[380px] w-[300px]" width={380} height={150} />
+                        <p className="text-md md:text-lg my-2 font-light2">
+                            Delivering high-precision solutions, customer support, and unmatched service.
+                        </p>
+                    </div>
+                    <div className="flex justify-center flex-wrap gap-4 mt-8">
+                        <div className='shuffle'> <AnimatedButton href="" label="Explore Products" className="w-fit" /></div>
+                        <div className='shuffle'><AnimatedButton href="" label="Contact Us" className="w-fit transparent-btn" /></div>
+                    </div>
 
-                        <h2  className="text-6xl md:text-8xl font-bold mb-4 font-script-mt-bold">
-                            Welcome To
-                        </h2>
-                        <div  className="my-6 lg:my-8">
-                            <p className="text-md md:text-lg my-1 font-light">
-                                Your Gateway To Stable, Income-Producing Real Estate Investments.
 
-                            </p>
-                            <p className="text-xl md:text-3xl my-1 font-light">
-                                Earn Quarterly Returns Of 10%–15% Annually
-                            </p>
-                            <p className="text-md md:text-lg my-1 font-light">
-                                With A Clear, Regulated Structure
-                            </p>
-                        </div>
-                        <Link href="#features">
-                            <button className="inline-flex items-center gap-2 px-10 py-[12px] bg-[var(--green2)] text-white border rounded-full  transition-transform duration-300 hover:scale-105 cursor-pointer">
-                                Get Started
-                            </button>
-                        </Link>
-
-                    </motion.div>
-                </section>
-            )}
+                </motion.div>
+            </section>
         </>
     );
 };

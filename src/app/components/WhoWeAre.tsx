@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useLang } from "../hooks/useLang";
 
 
 const whywhoweareDataEN = [
@@ -93,18 +92,17 @@ const sectionTextAR = {
 
 
 const WhoWeAre = () => {
-  const { isArabic, lang } = useLang();
-  const section = isArabic ? sectionTextAR : sectionTextEN;
-  const data = isArabic ? whywhoweareDataAR : whywhoweareDataEN;
+  const section = sectionTextEN;
+  const data = whywhoweareDataEN;
   return (
-    <section className="py-12 lg:py-20 text-[var(--foreground)]" dir={isArabic ? "rtl" : "ltr"}>
+    <section className="py-12 lg:py-20 text-[var(--foreground)]" >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-8">
         <div className="flex flex-col items-start gap-5 justify-start lg:pt-32 lg:col-span-2">
           <div>
             <h2 className="text-3xl lg:text-5xl font-medium mb-6">{section.heading}</h2>
             <p className="leading-relaxed max-w-[500px] text-gray-600">{section.description}</p>
           </div>
-          <Link href={isArabic ? "/ContactUs" : "/en/ContactUs"}>
+          <Link href={"/ContactUs"}>
             <button className="inline-flex items-center gap-2 px-10 py-[12px] bg-[var(--green2)] text-white border rounded-full transition-transform duration-300 hover:scale-105 cursor-pointer">
               {section.button}
             </button>

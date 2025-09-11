@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
-import { useLang } from "../hooks/useLang";
+import AnimatedButton from "./AnimatedButton";
+
 
 export default function ConsultationBanner() {
-    const { isArabic } = useLang();
     return (
         <section className=" w-full max-w-7xl px-6 mx-auto ">
             <div className="bg-[var(--green2)] rounded-3xl w-full max-w-7xl mx-auto grid gap-8  lg:grid-cols-2 p-8 lg:py-16 lg:px-12  my-8 text-white">
                 <div className="flex-1 text-left content-center">
-                    <h3 className="font-medium text-xl md:text-2xl text-center">
-                        {isArabic ? "دعنا نطلب موعدًا لاستشارة مجانية" : "Let’s Request A Schedule For Free Consultation"}
+                    <h3 className="font-medium text-xl md:text-2xl text-center lg:text-left">
+                        Get in touch with us to discover the right solutions for your machining needs.
                     </h3>
                 </div>
                 <div className="grid  md:grid-cols-2 gap-8">
@@ -19,21 +19,16 @@ export default function ConsultationBanner() {
                         </svg>
 
                         <div>
-                            <div className="text-xs text-gray-200">{isArabic ? "اتصل للمزيد من المعلومات" : "Call For More Info"}</div>
-                            <div className="font-semibold text-lg lg:text-xl mt-2 tracking-wide">
-                               0966 920032359
+                            <div className="text-xs text-gray-200">Call For More Info</div>
+                            <div className="font-semibold text-lg lg:text-xl mt-2 tracking-wide" >
+                                +91-9849018828
                             </div>
                         </div>
                     </div>
-                    <Link href={isArabic ? "/ContactUs" : "/en/ContactUs"} className="justify-items-center content-center">
-                        <button className="border border-white rounded-full px-6 py-3 flex items-center gap-2 text-white transition-transform duration-300 hover:scale-105 cursor-pointer">
-                            {isArabic ? "اقرأ المزيد" : "Read more"}
-                            <svg width="20" height="20" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" clipRule="evenodd" d="M13.4768 5.51109C13.6175 5.37064 13.8081 5.29175 14.0068 5.29175C14.2056 5.29175 14.3962 5.37064 14.5368 5.51109L20.5368 11.5111C20.6773 11.6517 20.7562 11.8423 20.7562 12.0411C20.7562 12.2398 20.6773 12.4305 20.5368 12.5711L14.5368 18.5711C14.4682 18.6448 14.3854 18.7039 14.2934 18.7449C14.2014 18.7859 14.1021 18.8079 14.0014 18.8097C13.9007 18.8115 13.8006 18.7929 13.7072 18.7552C13.6138 18.7175 13.529 18.6613 13.4578 18.5901C13.3866 18.5189 13.3304 18.4341 13.2927 18.3407C13.255 18.2473 13.2365 18.1473 13.2382 18.0466C13.24 17.9459 13.2621 17.8465 13.3031 17.7545C13.344 17.6625 13.4031 17.5797 13.4768 17.5111L18.1968 12.7911H4.00684C3.80792 12.7911 3.61716 12.7121 3.47651 12.5714C3.33585 12.4308 3.25684 12.24 3.25684 12.0411C3.25684 11.8422 3.33585 11.6514 3.47651 11.5108C3.61716 11.3701 3.80792 11.2911 4.00684 11.2911H18.1968L13.4768 6.57109C13.3364 6.43046 13.2575 6.23984 13.2575 6.04109C13.2575 5.84234 13.3364 5.65171 13.4768 5.51109Z" fill="white" />
-                            </svg>
+                    <div className="justify-items-center content-center">
+                        <AnimatedButton href="" label="Contact Us" className="w-fit transparent-btn" />
 
-                        </button>
-                    </Link>
+                    </div>
                 </div>
             </div>
 

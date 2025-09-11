@@ -5,8 +5,9 @@ import Preloader from "./Preloader";
 import Header from "./Header";
 import Hero from "./Hero";
 import Features from "./Features";
-import WhyInvest from "./WhyInvest";
-import InvestmentSections from "./InvestmentSections";
+import AboutUs from "./AboutUs";
+import ConsultationBanner from "./ConsultationBanner";
+
 import QuoteSection from "./QuoteSection";
 import WhyChooseUs from "./WhyChooseUs";
 import Partners from "./Partners";
@@ -37,8 +38,9 @@ export default function HomePageClient() {
           <Header />
           <Hero />
           <Features />
-          <WhyInvest />
-          <InvestmentSections />
+          <AboutUs />
+                      <ConsultationBanner />
+          
           <WhyChooseUs />
           <QuoteSection />
           <Partners />

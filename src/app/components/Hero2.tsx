@@ -1,29 +1,23 @@
 "use client";
 import Link from "next/link";
-import { useLang } from "../hooks/useLang";
 import { motion } from "framer-motion";
 
 
 interface Hero2Props {
     heading_en: string;
-    heading_ar: string;
     breadcrumbText_en?: string;
-    breadcrumbText_ar?: string;
     breadcrumbPosition?: "left" | "center" | "right";
 }
 
 const Hero2 = ({
     heading_en,
-    heading_ar,
     breadcrumbText_en,
-    breadcrumbText_ar,
     breadcrumbPosition = "left",
 }: Hero2Props) => {
-    const { isArabic } = useLang();
 
     // Choose based on language
-    const heading = isArabic ? heading_ar : heading_en;
-    const breadcrumbText = isArabic ? breadcrumbText_ar ?? heading_ar : breadcrumbText_en ?? heading_en;
+    const heading = heading_en;
+    const breadcrumbText = breadcrumbText_en ?? heading_en;
 
     // Breadcrumb alignment
     const breadcrumbAlignClass =
@@ -36,7 +30,7 @@ const Hero2 = ({
     return (
         <section className="mt-[70px] lg:mt-[90px] w-full bg-[var(--green)] text-white flex flex-col justify-center items-center text-center relative">
             <div
-    className={`bg-fixed absolute inset-0 bg-[url('/about.png')] bg-cover bg-[40%_center] lg:bg-[30%_center] ${isArabic ? "scale-x-[-1]" : ""}`}
+    className={`bg-fixed absolute inset-0 bg-[url('/about.png')] bg-cover bg-[40%_center] lg:bg-[30%_center] `}
   ></div>
 
             <motion.div initial={{ opacity: 0, y: 20 }}
@@ -44,7 +38,7 @@ const Hero2 = ({
                             transition={{ duration: 0.5 }}
                 className={`relative z-10 py-8 lg:py-14 flex flex-col w-full max-w-7xl px-6 items-${breadcrumbPosition} text-${breadcrumbPosition}`}
             >
-                <h2 className={`text-3xl lg:text-4xl font-medium ${isArabic ? "text-right" : "text-left"}`}>
+                <h2 className={`text-3xl lg:text-4xl font-medium text-left`}>
                     {heading}
                 </h2>
 
@@ -52,10 +46,10 @@ const Hero2 = ({
                 {(breadcrumbText ?? heading) && (
                     <div className={`flex items-center gap-2 breadcrumb mt-3 mb-2 ${breadcrumbAlignClass}`}>
                         <Link href="/" className="text-md md:text-lg my-1 text-white hover:text-[var(--green1)]">
-                            {isArabic ? "الرئيسية " : "Home"}
+                            Home
                         </Link>
 
-                        <div style={{ transform: isArabic ? "scaleX(-1)" : "none" }}>
+                        <div style={{ transform: "none" }}>
                             <svg
                                 width="20"
                                 height="20"
