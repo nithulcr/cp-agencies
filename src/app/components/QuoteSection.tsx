@@ -11,7 +11,7 @@ const QuoteSection = () => {
      
       className="bg-[var(--green)] py-12 lg:py-20"
     >
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center justify-between gap-8">
+      <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row-reverse items-center justify-between gap-8">
         {/* Quote Icon */}
         <div className="flex-shrink-0 text-[#4CAF1B] md:w-auto w-full">
           <svg

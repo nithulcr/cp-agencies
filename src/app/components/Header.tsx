@@ -51,15 +51,14 @@ export default function Header() {
 
   const headerClass = [
     "content-center  bg-white w-full fixed top-0 left-0 z-50 transition-colors duration-300 bg-nav",
-    isHome && scrolled ? "bg-nav-cover" : "",
-    !isHome ? "bg-[var(--green)]" : ""
+     scrolled ? "bg-nav-cover" : ""
   ].filter(Boolean).join(" ");
 
   return (
     <header className={headerClass}>
       <div className="w-full h-[35px]  bg-[var(--green)]">
         {/* Left Side: Contact Info */}
-        <div className="max-w-7xl mx-auto  text-white flex items-center justify-between px-6 py-2 text-sm ">
+        <div className="max-w-[1400px] mx-auto  text-white flex items-center justify-between px-6 py-2 text-sm ">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4" strokeWidth={1} />
@@ -82,7 +81,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-[72px] text-white z-10 relative">
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 h-[72px] text-white z-10 relative">
         <div className="text-2xl font-bold h-full align-content-center flex">
           <Link href="/" className="items-center flex">
             <img src="/logo-dark.png" alt="Logo" width={140} height={50} className="w-[160px] lg:w-[220px]" />

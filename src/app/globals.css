@@ -120,7 +120,11 @@ font-family: "Everett Regular";
   z-index: 1;
 
 }
+.hero-cover2::before {
+  background: #18368a78;
 
+
+}
 /* button style start */
 .button {
   border: 2px none var(--yellow);

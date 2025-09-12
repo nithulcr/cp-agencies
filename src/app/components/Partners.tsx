@@ -9,37 +9,87 @@ import "swiper/css/pagination";
 const partnersEn = [
   {
     id: "01",
-    icon: "/logo1.png",
+    icon: "/partners/1.jpeg",
    
   },
   {
     id: "02",
-     icon: "/logo2.png",
+     icon: "/partners/2.jpeg",
    
   },
   {
     id: "03",
-    icon: "/logo3.png",
+    icon: "/partners/3.jpeg",
    
   },
   {
     id: "04",
-     icon: "/logo4.png",
+     icon: "/partners/4.jpeg",
   
   },
   {
     id: "05",
-     icon: "/logo5.png",
+     icon: "/partners/5.jpeg",
   
   },
   {
     id: "06",
-     icon: "/logo6.png",
+     icon: "/partners/6.jpeg",
   
   },
   {
     id: "07",
-     icon: "/logo7.png",
+     icon: "/partners/7.jpeg",
+  
+  },
+    {
+    id: "08",
+    icon: "/partners/8.jpg",
+   
+  },
+  {
+    id: "09",
+     icon: "/partners/9.jpg",
+   
+  },
+  {
+    id: "010",
+    icon: "/partners/10.jpg",
+   
+  },
+  {
+    id: "011",
+     icon: "/partners/11.jpg",
+  
+  },
+  {
+    id: "012",
+     icon: "/partners/12.jpg",
+  
+  },
+  {
+    id: "013",
+     icon: "/partners/13.jpeg",
+  
+  },
+  {
+    id: "014",
+     icon: "/partners/14.jpeg",
+  
+  },
+  {
+    id: "015",
+     icon: "/partners/15.jpeg",
+  
+  },
+  {
+    id: "016",
+     icon: "/partners/16.jpeg",
+  
+  },
+  {
+    id: "017",
+     icon: "/partners/17.jpeg",
   
   },
 ];
@@ -49,7 +99,7 @@ const Partners = () => {
 
   return (
     <section className="py-12 lg:py-20 text-[var(--foreground)]">
-      <div className="max-w-7xl mx-auto px-6 flex lg:flex-row flex-col items-start lg:items-center gap-5 justify-between mb-18">
+      <div className="max-w-[1400px] mx-auto px-6 flex lg:flex-row flex-col items-start lg:items-center gap-5 justify-between mb-10 lg:mb-18">
         <div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Partners</h2>
           <p className="leading-relaxed max-w-[420px] text-gray-700">
@@ -58,7 +108,7 @@ const Partners = () => {
           </p>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto lg:px-6 partners-container">
+      <div className="max-w-[1400px] mx-auto lg:px-6 partners-container">
         <div>
           <Swiper
             modules={[Autoplay, Pagination]}
@@ -86,8 +136,8 @@ const Partners = () => {
                 <div className="partners-child bg-white rounded-3xl text-center rounded-bl-none p-5 transition-all duration-300 relative top-0 hover:top-[-6px]">
                   <Image
                     src={partner.icon}
-                    alt="Logo"
-                    className="w-28 h-28 object-contain mx-auto mb-2"
+                    alt="logo"
+                    className="w-36 h-36 object-contain mx-auto mb-2"
                     width={100}
                     height={100}
                   />

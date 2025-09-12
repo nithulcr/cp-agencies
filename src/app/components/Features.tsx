@@ -6,28 +6,26 @@ const featuresEn = [
     {
         id: "01",
 
-        title: "Manufacturing Solutions",
-        description: "Efficient and advanced technologies to optimize your production processes."
+        title: "Machine Tools",
+        description: "We Are delivers advanced machine tools and industrial solutions from leading global brands."
     },
     {
         id: "02",
 
-        title: "Applications Assistance",
-        description: "Expert help to tailor machine tool applications for your needs."
+        title: "Metrology",
+        description: "We Are provides advanced metrology equipment for precision measurement and quality control"
     },
     {
         id: "03",
 
-        title: "Customer Training",
-        description:
-            "Practical training to operate and maintain your equipment confidently."
+        title: "Heat Treatment",
+        description: "We Are supplies advanced heat treatment solutions, including induction heating etc..."
     },
     {
         id: "04",
 
-        title: "After-Sales Service",
-        description:
-            "Reliable maintenance and support to ensure smooth operations."
+        title: "Fabrication & Automation",
+        description: "We Are provides advanced fabrication and automation solutions, including CNC welding etc..."
     }
 ];
 
@@ -36,7 +34,7 @@ export default function Features() {
 
     return (
         <section id="features" className="py-12 lg:py-20 features-section text-[var(--foreground)] lg:mt-[-180px] z-2">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+            <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
                 {features.map((feature) => (
                     <motion.div
                         key={feature.id}

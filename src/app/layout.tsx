@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html  dir="ltr">
+    <html lang="en" dir="ltr">
       <body className="antialiased">
         <SmoothScrollWrapper>{children}</SmoothScrollWrapper>
       </body>

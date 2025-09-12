@@ -52,7 +52,7 @@ export default function AboutUs() {
   return (
 
     <section dir="ltr" className="py-10 lg:py-14 text-left">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="">
           <div className="overflow-hidden lg:hidden mb-10">
             <Image
@@ -60,7 +60,7 @@ export default function AboutUs() {
               alt="Investor at Computer"
               width={550}
               height={550}
-              className="object-cover mx-auto rounded-tl-[60px] rounded-br-[60px]"
+              className="object-cover mx-auto rounded-tl-[60px] rounded-br-[60px] rounded-bl-[60px]"
             />
           </div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">About CP Agencies</h2>
@@ -74,7 +74,7 @@ export default function AboutUs() {
                 <div className="flex items-center gap-4  w-full">
                   <div className="w-12 h-12 bg-gray-200 rounded-full p-2 flex items-center justify-center">{point.icon}</div>
 
-                  <h3 className="text-xl font-semibold text-gray-900">{point.title}</h3>
+                  <h3 className="lg:text-[19px] font-semibold text-gray-900">{point.title}</h3>
                 </div>
                 <p className="text-sm mt-1">{point.description}</p>
               </div>
@@ -89,7 +89,7 @@ export default function AboutUs() {
               alt="Investor at Computer"
               width={550}
               height={550}
-              className="object-cover rounded-tl-[100px] rounded-br-[100px]"
+              className="object-cover rounded-tl-[100px] rounded-br-[100px] rounded-bl-[100px]"
             />
           
         </div>

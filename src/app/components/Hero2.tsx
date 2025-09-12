@@ -13,7 +13,8 @@ const Hero2 = ({
     heading_en,
     breadcrumbText_en,
     breadcrumbPosition = "left",
-}: Hero2Props) => {
+}:
+    Hero2Props) => {
 
     // Choose based on language
     const heading = heading_en;
@@ -28,15 +29,15 @@ const Hero2 = ({
                 : "justify-start";
 
     return (
-        <section className="mt-[70px] lg:mt-[90px] w-full bg-[var(--green)] text-white flex flex-col justify-center items-center text-center relative">
+        <section className="mt-[70px] lg:mt-[100px] w-full bg-[var(--green)] text-white flex flex-col justify-center items-center text-center relative">
             <div
-    className={`bg-fixed absolute inset-0 bg-[url('/about.png')] bg-cover bg-[40%_center] lg:bg-[30%_center] `}
-  ></div>
+                className={`bg-fixed absolute inset-0 bg-[url('/about.png')] bg-cover bg-[40%_center] lg:bg-[30%_center] `}
+            ></div>
 
             <motion.div initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                className={`relative z-10 py-8 lg:py-14 flex flex-col w-full max-w-7xl px-6 items-${breadcrumbPosition} text-${breadcrumbPosition}`}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className={`relative z-10 py-12 lg:py-20 flex flex-col w-full max-w-[1400px] px-6 items-${breadcrumbPosition} text-${breadcrumbPosition}`}
             >
                 <h2 className={`text-3xl lg:text-4xl font-medium text-left`}>
                     {heading}
@@ -78,7 +79,7 @@ const Hero2 = ({
                             </svg>
                         </div>
 
-                        <span className="text-md md:text-lg my-1 font-medium text-[var(--green1)]">{breadcrumbText}</span>
+                        <span className="text-md md:text-lg my-1 font-medium ">{breadcrumbText}</span>
                     </div>
                 )}
             </motion.div>

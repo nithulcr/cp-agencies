@@ -100,7 +100,7 @@ const WhyChooseUs = () => {
 
   return (
     <section  className="py-12 lg:py-20 text-[var(--foreground)]">
-      <div className="max-w-7xl mx-auto px-6 flex lg:flex-row flex-col items-start lg:items-center gap-5 justify-between mb-18">
+      <div className="max-w-[1400px] mx-auto px-6 flex lg:flex-row flex-col items-start lg:items-center gap-5 justify-between mb-18">
         <div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Why Choose Us?</h2>
           <p className="leading-relaxed max-w-[700px] text-gray-600">
@@ -111,7 +111,7 @@ const WhyChooseUs = () => {
         <AnimatedButton href="" label="More About Us" className="w-fit text-white" />
         
       </div>
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-5 relative">
+      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-5 relative">
         {data.map((choose) => (
           <div
             key={choose.id}

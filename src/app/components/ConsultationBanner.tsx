@@ -5,8 +5,8 @@ import AnimatedButton from "./AnimatedButton";
 
 export default function ConsultationBanner() {
     return (
-        <section className=" w-full max-w-7xl px-6 mx-auto ">
-            <div className="bg-[var(--green2)] rounded-3xl w-full max-w-7xl mx-auto grid gap-8  lg:grid-cols-2 p-8 lg:py-16 lg:px-12  my-8 text-white">
+        <section className=" w-full max-w-[1400px] px-6 mx-auto ">
+            <div className="bg-[var(--green2)] rounded-3xl w-full max-w-[1400px] mx-auto grid gap-8  lg:grid-cols-2 p-8 lg:py-16 lg:px-12  my-8 text-white">
                 <div className="flex-1 text-left content-center">
                     <h3 className="font-medium text-xl md:text-2xl text-center lg:text-left">
                         Get in touch with us to discover the right solutions for your machining needs.
