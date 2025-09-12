@@ -34,8 +34,8 @@ const teamDataEN = [
   },
   {
     id: "05",
-    icon: "/products/1.jpeg",
-    title: "Ionheat",
+    icon: "/products/9.jpg",
+    title: "MAS SRL",
   },
 
   // ...other products

@@ -98,11 +98,11 @@ const Partners = () => {
   const partners = partnersEn;
 
   return (
-    <section className="py-12 lg:py-20 text-[var(--foreground)]">
-      <div className="max-w-[1400px] mx-auto px-6 flex lg:flex-row flex-col items-start lg:items-center gap-5 justify-between mb-10 lg:mb-18">
+    <section className="py-12 lg:py-14 text-[var(--foreground)]">
+      <div className="max-w-[1400px] mx-auto px-6 flex text-center  flex-col items-start lg:items-center gap-5 justify-between mb-10">
         <div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Partners</h2>
-          <p className="leading-relaxed max-w-[420px] text-gray-700">
+          <p className="leading-relaxed max-w-[460px] text-gray-700">
             
              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
           </p>
@@ -122,7 +122,7 @@ const Partners = () => {
                 slidesPerView: 3.2,
               },
               1024: {
-                slidesPerView: 4,
+                slidesPerView: 5,
               },
             }}
             autoplay={{ delay: 2500, disableOnInteraction: false }}

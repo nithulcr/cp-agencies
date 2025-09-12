@@ -41,7 +41,7 @@ export default function Features() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="bg-white rounded-2xl shadow-sm p-6 transition-all duration-300 relative top-0 hover:top-[-6px]"
+                        className="bg-[#fff8f5] rounded-2xl shadow-sm p-6 transition-all duration-300 relative top-0 hover:top-[-6px]"
                     >
                         <div className="flex items-center justify-between gap-3 mb-4">
 
