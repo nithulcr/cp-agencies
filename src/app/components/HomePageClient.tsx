@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Preloader from "./Preloader";
 import Header from "./Header";
-import Hero3 from "./Hero3";
+import Hero from "./Hero";
 import Features from "./Features";
 import AboutUs from "./AboutUs";
 import Services from "./Services";
@@ -45,8 +45,8 @@ export default function HomePageClient() {
       {showContent && (
         <>
           <Header />
-          <Hero3 />
-          <Features />
+          <Hero />
+          {/* <Features /> */}
           <AboutUs />
                       <ConsultationBanner />
           

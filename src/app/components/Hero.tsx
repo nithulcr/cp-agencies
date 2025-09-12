@@ -13,7 +13,7 @@ import Image from "next/image";
 
 const slidesContent = [
     {
-        videoSrc: "/bg1.jpg",
+        videoSrc: "/bg5.jpg",
         heading: "Welcome To <br/> CP AGENCIES",
         description1: "Your Trusted Partner in Superior Machine Tool Technology",
         description2: "Delivering high-precision solutions, customer support, and unmatched service.",
@@ -21,13 +21,38 @@ const slidesContent = [
         contactLink: "",
     },
         {
-        videoSrc: "/bg2.jpg",
+        videoSrc: "/bg4.jpg",
         heading: "Engineering Our Passion",
         description1: "TOS-KURIM",
         description2: "We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.",
         exploreLink: "",
         contactLink: "",
     },
+          {
+        videoSrc: "/bg2.jpg",
+        heading: "Innovation A Way Of Life",
+        description1: "TAJMAC",
+        description2: "We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.",
+        exploreLink: "",
+        contactLink: "",
+    },
+      {
+        videoSrc: "/bg3.jpg",
+        heading: "Driving Industry Progress",
+        description1: "Reliable Machine Tool Solutions",
+        description2: "Empowering your projects with state-of-the-art equipment and expertise.",
+        exploreLink: "",
+        contactLink: "",
+    },
+      {
+        videoSrc: "/bg6.jpg",
+        heading: "Partnering for Success",
+        description1: " Trusted Technology Providers",
+        description2: "Supporting your growth with quality products and dedicated service.",
+        exploreLink: "",
+        contactLink: "",
+    },
+
 
 ];
 
@@ -40,9 +65,10 @@ const Hero = () => {
                 slidesPerView={1}
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
                 loop={true}
-                pagination={{ clickable: true }}
+                speed={1500}
+                // pagination={{ clickable: true }}
                 navigation={true}
-                className="w-full  bg-[var(--green)] text-white flex flex-col justify-center items-center text-center px-6 relative mt-[100px] lg:pb-[120px]"
+                className="w-full hero bg-[var(--green)] text-white flex flex-col justify-center items-center text-center px-6 relative mt-[100px] lg:pb-[120px]"
             >
                 {slidesContent.map((slide, index) => (
                     <SwiperSlide key={index} className="h-full">
@@ -59,12 +85,12 @@ const Hero = () => {
 
                         <motion.div initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }} className="relative z-10 max-w-3xl py-20 h-full flex flex-col justify-center mx-auto">
+                            transition={{ duration: 0.5 }} className="relative z-10 max-w-[1400px] mx-auto px-6 py-20 h-full flex flex-col text-left">
 
 
-                            <h2 className="text-5xl md:text-7xl font-bold mb-2 head-font" dangerouslySetInnerHTML={{ __html: slide.heading }}>
+                            <h2 className="text-5xl md:text-7xl font-bold mb-2 head-font max-w-[540px]" dangerouslySetInnerHTML={{ __html: slide.heading }}>
                             </h2>
-                            <div className="my-6 lg:my-4">
+                            <div className="my-6 lg:my-4 max-w-[540px]">
                                 <p className="text-lg md:text-3xl my-2 font-light2">
                                     {slide.description1}
 
@@ -74,7 +100,7 @@ const Hero = () => {
                                     {slide.description2}
                                 </p>
                             </div>
-                            <div className="flex justify-center flex-wrap gap-4 mt-4">
+                            <div className="flex flex-wrap gap-4 mt-4 max-w-[540px]">
                                 <div className='shuffle'> <AnimatedButton href={slide.exploreLink} label="Explore Products" className="w-fit" /></div>
                                 <div className='shuffle'><AnimatedButton href={slide.contactLink} label="Contact Us" className="w-fit transparent-btn" /></div>
                             </div>

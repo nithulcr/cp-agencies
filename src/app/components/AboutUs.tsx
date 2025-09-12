@@ -51,16 +51,16 @@ export default function AboutUs() {
 
   return (
 
-    <section dir="ltr" className="py-10 lg:py-14 text-left">
+    <section dir="ltr" className="py-10 lg:pb-14 lg:pt-22 text-left">
       <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="">
           <div className="overflow-hidden lg:hidden mb-10">
             <Image
-              src="/about-us.jpg"
+              src="/products/10.jpg"
               alt="Investor at Computer"
               width={550}
               height={550}
-              className="object-cover mx-auto rounded-tl-[60px] rounded-br-[60px] rounded-bl-[60px]"
+              className="object-cover f-full rounded-tl-[100px] rounded-br-[100px] rounded-bl-[100px]"
             />
           </div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">About CP Agencies</h2>
@@ -82,14 +82,14 @@ export default function AboutUs() {
           </div>
          
         </div>
-        <div className="relative flex justify-center lg:justify-end hidden lg:flex">
+        <div className="relative flex justify-center lg:justify-end hidden lg:flex h-full">
        
             <Image
-              src="/about-us.jpg"
+              src="/products/10.jpg"
               alt="Investor at Computer"
               width={550}
               height={550}
-              className="object-cover rounded-tl-[100px] rounded-br-[100px] rounded-bl-[100px]"
+              className="object-cover f-full rounded-tl-[100px] rounded-br-[100px] rounded-bl-[100px]"
             />
           
         </div>

@@ -22,13 +22,13 @@ const teamDataEN = [
   },
   {
     id: "03",
-         icon: "/products/3.jpg",
+         icon: "/products/7.jpg",
 
     title: "CKD Blansko",
   },
   {
     id: "04",
-         icon: "/products/4.png",
+         icon: "/products/8.jpg",
 
     title: "LPM VTL",
   },

@@ -121,7 +121,7 @@ font-family: "Everett Regular";
 
 }
 .hero-cover2::before {
-  background: #18368a78;
+  background: linear-gradient(90deg, black, rgba(0, 0, 0, 0.642), rgba(30, 21, 195, 0.347), transparent);
 
 
 }
@@ -222,7 +222,32 @@ font-family: "Everett Regular";
 .shuffle {
   animation: shuffle 4s infinite ease-in-out;
 }
+.hero .swiper-slide{
+  height: auto;
+}
+
+element.style {
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: var(--swiper-navigation-sides-offset, 10px);
+    left: auto;
+}
+.hero .swiper-button-prev, .hero .swiper-button-next{
+  background: rgba(3, 3, 3, 0.156);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  backdrop-filter: blur(5);
+}
+.hero .swiper-button-prev:after, .hero .swiper-button-next:after{
+  font-size: 22px;
+  color: white;
+}
 @media (min-width: 1024px) {
+  
 
   /* .features-section::before {
     content: "";
@@ -234,6 +259,11 @@ font-family: "Everett Regular";
     background: var(--green);
     background-size: cover;
   } */
+}
+@media (max-width: 600px) {
+  .hero .swiper-button-prev, .hero .swiper-button-next{
+display: none;
+}
 }
 
 
