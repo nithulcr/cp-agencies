@@ -85,7 +85,7 @@ export default function AboutUs() {
         <div className="relative flex justify-center lg:justify-end hidden lg:flex h-full">
        
             <Image
-              src="/products/10.jpg"
+              src="/bg5.jpg"
               alt="Investor at Computer"
               width={550}
               height={550}

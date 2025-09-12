@@ -28,7 +28,7 @@ const teamDataEN = [
   },
   {
     id: "04",
-         icon: "/products/8.jpg",
+         icon: "/products/4.png",
 
     title: "LPM VTL",
   },
