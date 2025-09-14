@@ -98,7 +98,7 @@ const Partners = () => {
   const partners = partnersEn;
 
   return (
-    <section className="py-12 lg:py-14 text-[var(--foreground)]">
+    <section className="py-10 lg:py-16 text-[var(--foreground)]">
       <div className="max-w-[1400px] mx-auto px-6 flex text-center  flex-col items-start lg:items-center gap-5 justify-between mb-10">
         <div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Partners</h2>

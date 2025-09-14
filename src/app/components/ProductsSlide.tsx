@@ -51,7 +51,7 @@ const Products = () => {
   const data =  teamDataEN;
 
   return (
-    <section className="py-12 lg:py-20 text-[var(--foreground)]">
+    <section className="py-10 lg:py-16 text-[var(--foreground)]">
       <div className="max-w-[1400px] mx-auto px-6 flex lg:flex-row flex-col items-start lg:items-center gap-5 justify-between mb-14">
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Our Products</h2>

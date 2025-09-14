@@ -29,7 +29,7 @@ const Hero2 = ({
                 : "justify-start";
 
     return (
-        <section className="mt-[70px] lg:mt-[100px] w-full bg-[var(--green)] text-white flex flex-col justify-center items-center text-center relative">
+        <section className="hero2 relative mt-[70px] lg:mt-[100px] w-full bg-[var(--green)] text-white flex flex-col justify-center items-center text-center relative">
             <div
                 className={`bg-fixed absolute inset-0 bg-[url('/about.png')] bg-cover bg-[40%_center] lg:bg-[30%_center] `}
             ></div>
@@ -46,7 +46,7 @@ const Hero2 = ({
 
                 {(breadcrumbText ?? heading) && (
                     <div className={`flex items-center gap-2 breadcrumb mt-3 mb-2 ${breadcrumbAlignClass}`}>
-                        <Link href="/" className="text-md md:text-lg my-1 text-white hover:text-[var(--green1)]">
+                        <Link href="/" className="text-md md:text-lg my-1 text-white">
                             Home
                         </Link>
 

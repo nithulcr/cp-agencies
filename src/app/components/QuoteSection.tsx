@@ -9,7 +9,7 @@ const QuoteSection = () => {
   return (
     <section
      
-      className="bg-[var(--green)] py-12 lg:py-20"
+      className="bg-[var(--green)] my-10 py-12 lg:py-20"
     >
       <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row-reverse items-center justify-between gap-8">
         {/* Quote Icon */}

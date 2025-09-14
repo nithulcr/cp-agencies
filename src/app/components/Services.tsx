@@ -36,7 +36,7 @@ const services = [
 export default function ServiceSection() {
     return (
         <section className="relative  services">
-            <div className=' py-12 lg:pt-10 lg:pb-26 max-w-[1400px] mx-auto px-6'>
+            <div className=' py-10 lg:py-16  max-w-[1400px] mx-auto px-6'>
                 
                 <div
                     className="grid md:grid-cols-2 gap-10 lg:gap-16"
@@ -44,7 +44,7 @@ export default function ServiceSection() {
 
                     {/* Left Section */}
                     <div className="mb-4 text-center md:text-left lg:sticky lg:top-[120px] h-fit">
-                        <h3 className="text-2xl md:text-3xl  mb-3 ">OUR SERVICES</h3>
+                        <h3 className="text-3xl md:text-5xl  mb-3 ">OUR SERVICES</h3>
                         <p className="text-gray-600  mb-5 max-w-[440px]  mx-auto md:mx-0 ">
                            We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.
                         </p>

@@ -50,7 +50,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       <div className="bg-fixed absolute inset-0 bg-[url('/pattern.png')] bg-cover bg-center"></div>
       <div className=" ">
 
-        <img src="/logo.png" alt="Logo" width={140} height={50} className="w-[160px] lg:w-[200px]" />
+        <img src="/logo.png" alt="Logo" width={200} height={70} className="w-[200px] lg:w-[250px]" />
 
       </div>
 

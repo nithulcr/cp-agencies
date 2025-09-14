@@ -9,6 +9,8 @@ import AboutUs from "./AboutUs";
 import Services from "./Services";
 
 import ProductsSlide from "./ProductsSlide";
+import CSR from "./CSR";
+
 
 import Testimonials from "./Testimonials";
 import ContactUs from "./ContactUs";
@@ -48,10 +50,12 @@ export default function HomePageClient() {
           <Hero />
           {/* <Features /> */}
           <AboutUs />
-                      <ConsultationBanner />
+                    <CSR />  
+                    <ConsultationBanner />
           
           <WhyChooseUs />
           <ProductsSlide />
+          
           <Services />
 
 

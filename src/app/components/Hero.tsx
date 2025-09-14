@@ -11,6 +11,7 @@ import "swiper/css/autoplay";
 import Image from "next/image";
 
 
+
 const slidesContent = [
     {
         videoSrc: "/bg5.jpg",
@@ -20,7 +21,7 @@ const slidesContent = [
         exploreLink: "",
         contactLink: "",
     },
-        {
+    {
         videoSrc: "/bg4.jpg",
         heading: "Engineering Our Passion",
         description1: "TOS-KURIM",
@@ -28,7 +29,7 @@ const slidesContent = [
         exploreLink: "",
         contactLink: "",
     },
-          {
+    {
         videoSrc: "/bg2.jpg",
         heading: "Innovation A Way Of Life",
         description1: "TAJMAC",
@@ -36,7 +37,7 @@ const slidesContent = [
         exploreLink: "",
         contactLink: "",
     },
-      {
+    {
         videoSrc: "/bg3.jpg",
         heading: "Driving Industry Progress",
         description1: "Reliable Machine Tool Solutions",
@@ -44,7 +45,7 @@ const slidesContent = [
         exploreLink: "",
         contactLink: "",
     },
-      {
+    {
         videoSrc: "/bg6.jpg",
         heading: "Partnering for Success",
         description1: " Trusted Technology Providers",
@@ -110,6 +111,7 @@ const Hero = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+            
         </>
     );
 };

@@ -44,7 +44,7 @@ const testimonialsItems = [
 export default function Testimonials() {
 
     return (
-        <section className="testimonials-section overflow-hidden relative lg:py-20 py-14">
+        <section className="testimonials-section overflow-hidden relative lg:py-16 py-10">
             <div className="max-w-[1400px] mx-auto px-6 flex flex-col items-center justify-center">
                 <div className="max-w-[600px] mx-auto text-center">
                     <h2 className="text-3xl lg:text-5xl font-medium mb-6">What Our Clients Say</h2>
@@ -63,7 +63,7 @@ export default function Testimonials() {
                         >
                             <p className="mb-3  text-md leading-relaxed font-medium">&ldquo;{item.review}&rdquo;</p>
                             <div className="flex items-center my-1">
-                                <span className=" text-md opacity-70 mr-2">{item.rating.toFixed(1)}</span>
+                                <span className=" text-md  mr-2">{item.rating.toFixed(1)}</span>
                                 {[...Array(5)].map((star, i) => (
                                     <svg
                                         key={i}
@@ -92,7 +92,7 @@ export default function Testimonials() {
                                 />
                                 <div>
                                     <div className=" textlg mb-1">{item.name}</div>
-                                    <div className="text-[#A4AAC7] text-xs">{item.role}</div>
+                                    <div className="text-gray-800 text-xs">{item.role}</div>
 
                                 </div>
                             </div>
@@ -122,7 +122,7 @@ export default function Testimonials() {
                                 <div className="bg-white rounded-[16px] lg:rounded-[26px] lg:rounded-bl-none rounded-bl-none p-4  lg:p-6 transition-all duration-300 relative top-0 hover:top-[-6px] flex flex-col h-full  ">
                                     <p className="mb-4  text-lg leading-relaxed font-medium">&ldquo;{item.review}&rdquo;</p>
                                     <div className="flex items-center my-2">
-                                        <span className="text-[#E6ECFF] text-md opacity-70 mr-2">{item.rating.toFixed(1)}</span>
+                                        <span className="text-gray-700 text-md mr-2">{item.rating.toFixed(1)}</span>
                                         {[...Array(5)].map((star, i) => (
                                             <svg
                                                 key={i}
@@ -148,8 +148,8 @@ export default function Testimonials() {
                                             className="rounded-full mr-3 object-cover border border-[#23243b]"
                                         />
                                         <div>
-                                            <div className="text-white text-lg mb-1">{item.name}</div>
-                                            <div className="text-[#A4AAC7] text-xs">{item.role}</div>
+                                            <div className="text-lg mb-1">{item.name}</div>
+                                            <div className="text-gray-700 text-xs">{item.role}</div>
                                         </div>
                                     </div>
                                 </div>
