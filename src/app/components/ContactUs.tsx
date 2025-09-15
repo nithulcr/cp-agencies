@@ -151,6 +151,79 @@ export default function ContactSection() {
           </form>
         </div>
 
+        <div className="max-w-[1400px] px-6  mt-18 lg:mt-36">
+
+          <div className="max-w-[730px] mx-auto text-center mb-10">
+            <h2 className="text-3xl lg:text-5xl font-medium mb-6">Find Our Offices</h2>
+            <p className="leading-relaxed ">
+              Our offices are strategically located across key regions to provide accessible, efficient service and support to our valued customers. Explore our head office and branch locations to find the nearest contact point for your needs.
+            </p>
+          </div>
+          <div className="mx-auto grid  md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-3xl  rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
+              <h3 className="text-xl  mb-4">Head Office</h3>
+              <p>CP AGENCIES.<br />
+                Plot #74, Road #3, Jupiter Colony, Sikh Road, Sikh Village<br />
+                Secunderabad, Telangana, INDIA 500009<br />
+                Telefax: 040-27841857<br />
+                Phone: +91-9849018828, +91-9985370478, 040 - 27841857
+              </p>
+              <div className="flex items-center gap-4 mt-3">
+                <Mail size={24} color="var(--green)" />
+                <div>
+                  <a href="mailto:info@cpagencies.co.in" className="text-md font-medium block">info@cpagencies.co.in</a>
+                  <a href="mailto:support@cpagencies.co.in" className="text-md font-medium block">support@cpagencies.co.in</a>
+                </div>
+              </div>
+            </div>
+
+
+            {/* Branch Offices */}
+            <div className="bg-white rounded-3xl  rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
+              <h3 className="text-xl  mb-4">Branch Office</h3>
+
+              {/* Bangalore Branch */}
+              <div className="mb-6">
+                <p>
+                  CP AGENCIES<br />
+                  No.112, First floor, 12th cross<br />
+                  OPP: Mount Carmel school<br />
+                  Ideal Homes, Rajarajeswari Nagar<br />
+                  Bangalore – 560098, Karnataka<br />
+                  <strong>Contact Person:</strong> MR. K Murali<br />
+                  Phone: +91-9741120522<br />
+                  Mon - Sat 9.00 - 20.00, Sunday CLOSED
+                </p>
+                <div className="flex items-center gap-4 mt-2">
+                  <Mail size={20} color="var(--green)" />
+                  <a href="mailto:km@cpagencies.co.in" className="text-md font-medium">km@cpagencies.co.in</a>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="bg-white rounded-3xl  rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
+              <h3 className="text-xl  mb-4">Branch Office</h3>
+
+              <div>
+                <p>
+                  CP AGENCIES<br />
+                  D Block, D22, 3rd Floor<br />
+                  NELSON Chambers, Nelson Manickam Road<br />
+                  Chennai – 600029, Tamil Nadu<br />
+                  <strong>Contact Person:</strong> MR. P Ghuhan<br />
+                  Phone: +91-9566270812<br />
+                  Mon - Sat 9.00 - 20.00, Sunday CLOSED
+                </p>
+                <div className="flex items-center gap-4 mt-2">
+                  <Mail size={20} color="var(--green)" />
+                  <a href="mailto:pg@cpagencies.co.in" className="text-md font-medium">pg@cpagencies.co.in</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
       <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={5}>

@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Phone, Mail, Tag } from 'lucide-react';
+import { Phone, Mail, MapPin} from 'lucide-react';
+
 import AnimatedButton from "./AnimatedButton";
 
 
@@ -73,11 +74,9 @@ export default function Header() {
           </div>
           {/* Right Side: Location & Flags */}
           <div className="items-center space-x-2 hidden md:flex">
-            <Tag className="w-4 h-4" strokeWidth={1} />
+            <MapPin className="w-4 h-4" strokeWidth={1} />
             <span>
-              Now in
-
-              Kannur, Kerala For Local Support &amp; Service
+              Telangana <span className="px-1">|</span> Bangalore <span className="px-1">|</span> Tamil Nadu
 
             </span>
           </div>
