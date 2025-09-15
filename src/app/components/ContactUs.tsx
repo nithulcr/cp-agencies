@@ -162,7 +162,7 @@ export default function ContactSection() {
           <div className="mx-auto grid  md:grid-cols-3 gap-8">
             <div className="bg-white rounded-3xl  rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
               <h3 className="text-xl  mb-4">Head Office</h3>
-              <p>CP AGENCIES.<br />
+              <p>
                 Plot #74, Road #3, Jupiter Colony, Sikh Road, Sikh Village<br />
                 Secunderabad, Telangana, INDIA 500009<br />
                 Telefax: 040-27841857<br />
@@ -185,7 +185,7 @@ export default function ContactSection() {
               {/* Bangalore Branch */}
               <div className="mb-6">
                 <p>
-                  CP AGENCIES<br />
+                  
                   No.112, First floor, 12th cross<br />
                   OPP: Mount Carmel school<br />
                   Ideal Homes, Rajarajeswari Nagar<br />
@@ -207,7 +207,7 @@ export default function ContactSection() {
 
               <div>
                 <p>
-                  CP AGENCIES<br />
+                
                   D Block, D22, 3rd Floor<br />
                   NELSON Chambers, Nelson Manickam Road<br />
                   Chennai – 600029, Tamil Nadu<br />

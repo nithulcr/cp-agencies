@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from "react";
 import Preloader from "./Preloader";
@@ -29,13 +29,18 @@ export default function HomePageClient() {
   const [shouldShowPreloader, setShouldShowPreloader] = useState(true);
 
   useEffect(() => {
+    console.log("HomePageClient mounted");
     if (typeof window !== 'undefined' && sessionStorage.getItem("hasSeenPreloader")) {
+      console.log("hasSeenPreloader is true, not showing preloader");
       setShouldShowPreloader(false);
       setShowContent(true); // Immediately show content if preloader not needed
+    } else {
+      console.log("hasSeenPreloader is false, showing preloader");
     }
   }, []);
 
   const handlePreloaderComplete = () => {
+    console.log("Preloader complete, setting hasSeenPreloader to true");
     sessionStorage.setItem("hasSeenPreloader", "true");
     setShouldShowPreloader(false);
     setShowContent(true);
