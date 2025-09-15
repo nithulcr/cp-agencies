@@ -12,21 +12,21 @@ import AnimatedButton from "./AnimatedButton";
 const navItems = [
     { href: "/", label: "Home" },
     { href: "/Home2", label: "Home2" },
-    { href: "/AboutUs", label: "About us" },
+    { href: "#AboutUs", label: "About us" },
     { href: "#products", label: "Products" },
     {
         label: "Our Services",
         href: "#our-services",
         submenu: [
-            { href: "/services/machine-tools", label: "Machine Tools" },
-            { href: "/services/fabrication-automation", label: "Fabrication & Automation" },
-            { href: "/services/metrology", label: "Metrology" },
-            { href: "/services/heat-treatment", label: "Heat Treatment" },
+            { href: "#services/machine-tools", label: "Machine Tools" },
+            { href: "#services/fabrication-automation", label: "Fabrication & Automation" },
+            { href: "#services/metrology", label: "Metrology" },
+            { href: "#services/heat-treatment", label: "Heat Treatment" },
         ],
     },
     { href: "#blogs", label: "Blogs" },
-    { href: "/CSR", label: "CSR" },
-    { href: "/FAQ", label: "FAQ's" },
+    { href: "#CSR", label: "CSR" },
+    { href: "#FAQ", label: "FAQ's" },
 ];
 
 export default function Header() {
@@ -102,7 +102,7 @@ export default function Header() {
                                 >
                                     <Link
                                         href={item.href}
-                                        className={`place-items-center flex transition-colors duration-300 font-light text-md menu-item ${pathname === item.href ? "menu-active" : ""}`}
+                                        className={`place-items-center h-full flex transition-colors duration-300 font-light text-md menu-item ${pathname === item.href ? "menu-active" : ""}`}
                                     >
                                         {item.label}
                                         <ChevronDown size={16} className={`ml-1 transition-transform duration-300 ${serviceMenuOpen ? 'rotate-180' : ''}`} />
