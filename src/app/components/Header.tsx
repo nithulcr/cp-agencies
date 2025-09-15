@@ -138,7 +138,7 @@ export default function Header() {
                             )
                         ))}
                     </nav>
-                    <div > <AnimatedButton href="/ContactUs" label="Contact Us" className="w-fit" /></div>
+                    <div > <AnimatedButton href="#" label="Contact Us" className="w-fit" /></div>
                 </div>
                 <button onClick={handleMenuToggle} className="md:hidden text-black">
                     {open ? <X size={28} strokeWidth={1} /> : <Menu size={28} strokeWidth={1} />}
