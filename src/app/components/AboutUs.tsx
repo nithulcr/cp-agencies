@@ -56,7 +56,7 @@ export default function AboutUs() {
         <div className="">
           <div className="overflow-hidden lg:hidden mb-10">
             <Image
-              src="/products/10.jpg"
+              src="/bg5.jpg"
               alt="Investor at Computer"
               width={550}
               height={550}

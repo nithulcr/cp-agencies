@@ -4,175 +4,153 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question_en: "What is the legal status of the company? Is it licensed?",
+    question_en: "What is the legal status of CP AGENCIES?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          The company is a Simplified Joint-Stock Company, licensed by the Saudi Ministry of Commerce. Investors gain ownership rights through officially documented shares, and all company activities comply with the applicable laws and regulations.
+          CP AGENCIES is a registered company operating under applicable Saudi Arabian commercial laws, fully licensed for business in the machine tool industry.
         </p>
       </div>
     ),
   },
   {
-    question_en: "Is the company officially registered as a Simplified Joint-Stock Company?",
+    question_en: "Is CP AGENCIES officially registered?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes, the company is officially registered under Saudi Companies Law. Investment shares are issued legally with clear ownership percentages and guaranteed returns documented in the Articles of Association.
+          Yes, CP AGENCIES is officially registered with Saudi Ministry of Commerce and complies with regulatory requirements for commercial agencies.
         </p>
       </div>
     ),
   },
   {
-    question_en: "Are There Internal Regulations Or A Founding Agreement For Shareholders?",
+    question_en: "Are there formal agreements governing shareholder roles?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-4 text-gray-700 text-sm">
-          Yes, a legally documented agreement clearly defines:
+          Yes, formal documents clearly define shareholder rights, profit distribution, voting, transfer rules, and liabilities.
         </p>
-        <div className="mt-2">
-          <span className="my-4 block">Yes, A Legally Documented Agreement Clearly Defines:</span>
-          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-            <li>Investor share percentages</li>
-            <li>Rights to profits and exit</li>
-            <li>Distribution mechanics for returns</li>
-            <li>Limits of liability</li>
-            <li>Voting rights (if applicable)</li>
-            <li>Rules for transferring or selling shares</li>
-          </ul>
-        </div>
       </div>
     ),
   },
   {
-    question_en: "Who audits the company legally and financially?",
+    question_en: "Who audits CP AGENCIES legally and financially?",
     answer_en: (
       <div className="pt-7">
         <div className="flex gap-2">
           <p className="text-[var(--foreground)] font-medium">Legal: </p>
           <p>
-            A licensed legal advisor reviews all contracts and ensures compliance with the Ministry of Commerce.
+            A licensed legal advisor ensures full compliance with Saudi regulations.
           </p>
         </div>
         <div className="flex gap-2">
-          <p className="text-[var(--foreground)] font-medium"> Financial: </p>
+          <p className="text-[var(--foreground)] font-medium">Financial: </p>
           <p>
-            A certified accountant registered with the Saudi Organization for Certified Public Accountants reviews all financial statements, ensuring transparency and accurate reporting.
+            Certified accountants registered in Saudi Arabia audit and approve financial statements.
           </p>
         </div>
       </div>
     ),
   },
   {
-    question_en: "How is the annual return calculated, and is it guaranteed?",
+    question_en: "How are returns calculated for investors?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Annual returns are calculated as a percentage of the invested amount and distributed quarterly. Returns are guaranteed and pre-funded through binding agreements with tenants benefiting from the property, ensuring consistent payouts.
+          Returns are calculated as a percentage of invested capital, paid quarterly, and secured by contracts ensuring consistent payouts.
         </p>
       </div>
     ),
   },
   {
-    question_en: "What are the sources of returns?",
+    question_en: "What are the main sources of income?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-4 text-gray-700 text-md font-medium">
-          Returns come from:
+          Income sources include:
         </p>
         <div className="mt-2">
           <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-            <li>Rental income  </li>
-            <li>Lease-to-own agreements</li>
-            <li>Property usufruct rights</li>
+            <li>Rental revenue</li>
+            <li>Lease-to-own arrangements</li>
+            <li>Usufruct rights on properties</li>
           </ul>
-          <p className="mt-4 text-gray-700 text-sm ">
-            Other income-generating real estate opportunities, all vetted financially, legally, and technically by the investment committee.
+          <p className="mt-4 text-gray-700 text-sm">
+            Each opportunity is thoroughly vetted by our investment committee.
           </p>
         </div>
       </div>
     ),
   },
   {
-    question_en: "Have similar projects been implemented before?",
+    question_en: "Have you conducted similar projects before?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes. Previous projects followed the same investment model, delivering consistent returns and structured exits. The model is proven, transparent, and aligns with best practices in governance, risk management, and investor protection.
+          Yes, our prior projects followed this investment model, delivering transparent and reliable returns.
         </p>
       </div>
     ),
   },
   {
-    question_en: "When are returns paid?",
+    question_en: "When are investor returns paid out?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Returns start three months after investment activation (contract signing and fund transfer) and are distributed quarterly directly to investors’ bank accounts.
+          Returns begin three months after investment activation and are paid quarterly directly to investor accounts.
         </p>
       </div>
     ),
   },
   {
-    question_en: "Can investors exit early? What are the conditions and costs?",
+    question_en: "Is early investor exit possible? What are the terms?",
     answer_en: (
       <div className="pt-7 flex flex-col gap-4">
-        <div className="">
+        <div>
           <p className="mb-2 text-gray-700 text-md font-medium">
-            Yes, early exit is allowed with these conditions:
+            Yes, early exit is allowed if:
           </p>
-          <div className="mt-2">
-            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-              <li>Investor must provide an approved replacement buyer </li>
-              <li>Sign a transfer/sale agreement with management approval </li>
-            </ul>
-
-          </div>
+          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+            <li>Investor provides an approved replacement buyer</li>
+            <li>Management approves the transfer agreement</li>
+          </ul>
         </div>
-        <div className="">
+        <div>
           <p className="mb-2 text-gray-700 text-md font-medium">
-            Costs:
+            Related costs:
           </p>
-          <div className="mt-2">
-            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-              <li>No penalty fees  Returns are calculated only up to the sale date</li>
-              <li>Administrative fees for documentation</li>
-              <li>Returns are calculated only up to the sale date</li>
-
-            </ul>
-
-          </div>
+          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+            <li>No penalties; returns calculated up to sale date</li>
+            <li>Administrative documentation fees apply</li>
+          </ul>
         </div>
-        <div className="">
+        <div>
           <p className="mb-2 text-gray-700 text-md font-medium">
-            Full exit at the end of the term:
+            Full exit at term end:
           </p>
-          <div className="mt-2">
-            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-              <li>A pre-signed agreement ensures structured exit and capital return.</li>
-            </ul>
-
-          </div>
+          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+            <li>Pre-agreed structured exit and capital return in place</li>
+          </ul>
         </div>
       </div>
     ),
   },
   {
-    question_en: "What types of projects will be implemented? Where are they located?",
+    question_en: "What types of projects does CP AGENCIES invest in? Where?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          The company targets income-generating real estate or projects with third-party usufruct agreements in strategic locations within major Saudi cities. Project selection is based on expected ROI studies.
+          Our focus is on income-generating real estate and projects in prime Saudi locations, selected based on ROI analyses.
         </p>
       </div>
     ),
   },
   {
-    question_en: "What is the risk level of these investments?",
+    question_en: "What is the risk profile of these investments?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Investments are low-risk, designed to balance security with attractive returns in a controlled investment framework.
+          Investments are low-risk, designed with a balanced approach for security and attractive returns.
         </p>
       </div>
     ),
@@ -182,157 +160,138 @@ const faqs = [
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Projects are funded through investor contributions and may include participation from affiliated real estate development companies (up to 25% of capital).
+          Financing is through investor capital, with possible participation from associated real estate developers.
         </p>
       </div>
     ),
   },
   {
-    question_en: "What is the contingency plan in case of project failure?",
+    question_en: "What is the contingency plan for project failure?",
     answer_en: (
       <div className="pt-7 flex flex-col gap-4">
-        <div className="">
+        <div>
           <p className="mb-2 text-gray-700 text-md font-medium">
-            A comprehensive risk management plan is in place, including:
+            Our risk management plan includes:
           </p>
-          <div className="mt-2">
-            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-              <li>Pre-arranged contractual risk transfer to tenants</li>
-              <li>Asset guarantees to secure financing</li>
-              <li>Measures to protect capital and ensure consistent returns</li>
-
-            </ul>
-
-          </div>
+          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+            <li>Contractual risk transfer to tenants</li>
+            <li>Asset guarantees securing financing</li>
+            <li>Capital protection and consistent return measures</li>
+          </ul>
         </div>
-
       </div>
     ),
   },
   {
-    question_en: "Who manages the company, and what is their experience?",
+    question_en: "Who manages CP AGENCIES and what expertise do they bring?",
     answer_en: (
       <div className="pt-7 flex flex-col gap-4">
-        <div className="">
+        <div>
           <p className="mb-2 text-gray-700 text-md font-medium">
-            Managed by a team of experts with deep experience in real estate, asset management, finance, and legal compliance, including
+            Our management team includes experts with deep knowledge in:
           </p>
-          <div className="mt-2">
-            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-              <li>Board of Directors & Executive Team </li>
-              <li>Real estate development professionals with successful projects</li>
-              <li>Financial and legal advisors ensuring compliance</li>
-              <li>Operations and marketing specialists</li>
-            </ul>
-          </div>
+          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+            <li>Board of Directors & Executive leadership</li>
+            <li>Real estate development</li>
+            <li>Finance and legal compliance</li>
+            <li>Operations and marketing</li>
+          </ul>
         </div>
-
       </div>
     ),
   },
   {
-    question_en: "Is there an independent board, and how are major decisions made?",
+    question_en: "Is there an independent board for major decisions?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes, the board includes founding members, investors’ representatives, and independent experts. Major decisions are made by majority vote within the board, in accordance with the regulations outlined in the founding documents.
+          Yes, the board comprises founding members, investors’ representatives, and independent experts. Major decisions are made by majority vote in line with founding documents.
         </p>
       </div>
     ),
   },
   {
-    question_en: "Can shareholders participate in voting or monitor performance?",
+    question_en: "Can shareholders vote and monitor performance?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes. Shareholders on the board can vote based on ownership percentage and receive quarterly financial and operational reports for transparency and governance.
+          Yes, shareholders vote proportionally and receive quarterly reports on financial and operational performance.
         </p>
       </div>
     ),
   },
   {
-    question_en: "How are investors communicated with?",
+    question_en: "How are investors kept informed?",
     answer_en: (
       <div className="pt-7 flex flex-col gap-4">
-        <div className="">
-          <p className="mb-2 text-gray-700 text-md font-medium">
-            Official channels include:
-          </p>
-          <div className="mt-2">
-            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-              <li>Dedicated investor email  </li>
-              <li>Online investor portal/dashboard</li>
-              <li>Direct support line</li>
-            </ul>
-          </div>
+        <div>
+          <p className="mb-2 text-gray-700 text-md font-medium">Communication channels include:</p>
+          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+            <li>Dedicated investor email</li>
+            <li>Online investor dashboard</li>
+            <li>Direct support line</li>
+          </ul>
         </div>
-        <div className="">
-          <p className="mb-2 text-gray-700 text-md font-medium">
-            Reports:
-          </p>
-          <div className="mt-2">
-            <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-              <li>Quarterly financial & operational reports</li>
-              <li>Annual summary report.</li>
-            </ul>
-          </div>
+        <div>
+          <p className="mb-2 text-gray-700 text-md font-medium">Reports provided:</p>
+          <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
+            <li>Quarterly financial & operational reports</li>
+            <li>Annual summary reports</li>
+          </ul>
         </div>
-
       </div>
     ),
   },
   {
-    question_en: "What guarantees protect investors’ rights?",
+    question_en: "What protections secure investors’ rights?",
     answer_en: (
       <div className="pt-7">
-
         <ul className="list-disc list-inside marker:text-[var(--green2)] marker:text-2xl mt-2 text-sm space-y-1 pl-6">
-          <li>Legally binding contracts (Articles of Association, Shareholders’ Agreement, and Escrow Agreement) </li>
+          <li>Legally binding contracts including Articles of Association and Shareholders’ Agreement</li>
           <li>Pre-funded returns</li>
-          <li>Real estate assets as tangible collateral</li>
-          <li>Structured exit options and early exit</li>
-          <li>conditions Governance & legal oversight</li>
+          <li>Real estate assets as collateral</li>
+          <li>Structured exit strategies</li>
+          <li>Governance and legal oversight</li>
         </ul>
-
       </div>
     ),
   },
   {
-    question_en: "What happens after the investment term ends?",
+    question_en: "What happens when the investment term ends?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          The contractual relationship ends, investors receive their capital, and they may participate in new investment opportunities with priority access.
+          Contractual relationship ends, capital is returned, and investors may get priority in new opportunities.
         </p>
       </div>
     ),
   },
   {
-    question_en: "Can investors increase their shares or sell to others?",
+    question_en: "Can investors increase shares or transfer them?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes, during the offering period, shares can be increased. Sale to another investor follows early exit rules, allowing flexible transfer under clear terms.
+          Yes, shares can be increased during offering, and transfers follow early exit rules for flexible ownership changes.
         </p>
       </div>
     ),
   },
   {
-    question_en: "Are returns deposited directly to investors?",
+    question_en: "Are returns paid directly to investors?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes, quarterly returns are transferred directly to the investor’s registered bank account.
+          Yes, returns are deposited quarterly to registered investor bank accounts.
         </p>
       </div>
     ),
   },
   {
-    question_en: "What if rental income isn’t realized?",
+    question_en: "What if rental income is not realized?",
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          This is precluded by agreements with tenants. Returns remain consistent and guaranteed throughout the investment period, backed by real estate assets.
+          Agreements with tenants guarantee consistent returns, backed by real estate collateral.
         </p>
       </div>
     ),
@@ -342,7 +301,7 @@ const faqs = [
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes, all contracts and documents are available for review before participation.
+          Yes, all investment documents are available for review prior to participation.
         </p>
       </div>
     ),
@@ -352,7 +311,7 @@ const faqs = [
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Yes, subject to Saudi regulations.
+          Yes, subject to Saudi regulatory approval.
         </p>
       </div>
     ),
@@ -362,13 +321,13 @@ const faqs = [
     answer_en: (
       <div className="pt-7">
         <p className="mb-2 text-gray-700">
-          Investors are shareholding partners with documented shares, rights to dividends, voting (if on the board), exit rights, and access to reports.
+          Investors become shareholders with documented rights to dividends, voting (if applicable), exit, and access to reports.
         </p>
       </div>
     ),
   },
-
 ];
+
 
 export default function FaqAccordion() {
   const [openIdx, setOpenIdx] = useState<number | null>(0); // open first by default
@@ -379,11 +338,11 @@ export default function FaqAccordion() {
     <section className="max-w-7xl mx-auto px-6 min-h-screen flex flex-col justify-center py-14 lg:py-20">
       <div className="pb-14 text-center mx-auto">
         <h2 className="text-3xl lg:text-5xl font-medium mb-8 max-w-6xl">
-          <>{"Your Investment "}<br />{"Questions Answered"}</>
+          Frequently Asked Questions
         </h2>
         <p className="leading-relaxed max-w-[600px] text-gray-600 mx-auto">
-          {"We’ve compiled answers to the most common questions about our projects, legal structure, returns, and shareholder rights to help you make informed investment decisions with confidence."}
-        </p>
+          Our experienced team ensures customer satisfaction through innovation and reliability.
+          </p>
       </div>
       <div className="w-full space-y-5">
         {faqs.map((faq, idx) => (

@@ -17,8 +17,8 @@ const navItems = [
   { href: "#products", label: "Products" },
   { href: "#our-services", label: "Our Services" },
   { href: "#blogs", label: "Blogs" },
-  { href: "#csr", label: "CSR" },
-  { href: "#FAQ", label: "FAQ's" },
+  { href: "/CSR", label: "CSR" },
+  { href: "/FAQ", label: "FAQ's" },
   // { href: "/ContactUs", label: "Contact us" },
 ];
 
@@ -102,7 +102,7 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <div > <AnimatedButton href="" label="Contact Us" className="w-fit" /></div>
+          <div > <AnimatedButton href="/ContactUs" label="Contact Us" className="w-fit" /></div>
 
         </div>
         <button onClick={handleMenuToggle} className="md:hidden text-black">
