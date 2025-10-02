@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Preloader from "./Preloader";
 import Header from "./Header";
 import Hero from "./Hero";
-import Features from "./Features";
 import AboutUs from "./AboutUs";
 import Services from "./Services";
 
@@ -13,7 +12,6 @@ import CSR from "./CSR";
 
 
 import Testimonials from "./Testimonials";
-import ContactUs from "./ContactUs";
 
 
 
@@ -53,7 +51,6 @@ export default function HomePageClient() {
         <>
           <Header />
           <Hero />
-          {/* <Features /> */}
           <AboutUs />
                     <CSR />  
                     <ConsultationBanner />
@@ -66,7 +63,7 @@ export default function HomePageClient() {
 
           <QuoteSection />
           <Testimonials />
-          {/* <ContactUs /> */}
+
 
 
           <Partners />

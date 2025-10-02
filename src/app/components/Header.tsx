@@ -11,21 +11,21 @@ import AnimatedButton from "./AnimatedButton";
 
 const navItems = [
     { href: "/", label: "Home" },
-    { href: "#AboutUs", label: "About us" },
-    { href: "#products", label: "Products" },
+    { href: "/AboutUs", label: "About us" },
+    { href: "/products", label: "Products" },
     {
         label: "Our Services",
         href: "#our-services",
         submenu: [
-            { href: "#services/machine-tools", label: "Machine Tools" },
-            { href: "#services/fabrication-automation", label: "Fabrication & Automation" },
-            { href: "#services/metrology", label: "Metrology" },
-            { href: "#services/heat-treatment", label: "Heat Treatment" },
+            { href: "/services/machine-tools", label: "Machine Tools" },
+            { href: "/services/fabrication-automation", label: "Fabrication & Automation" },
+            { href: "/services/metrology", label: "Metrology" },
+            { href: "/services/heat-treatment", label: "Heat Treatment" },
         ],
     },
-    { href: "#blogs", label: "Blogs" },
-    { href: "#CSR", label: "CSR" },
-    { href: "#FAQ", label: "FAQ's" },
+    { href: "/blogs", label: "Blogs" },
+    { href: "/CSR", label: "CSR" },
+    { href: "/FAQ", label: "FAQ's" },
 ];
 
 export default function Header() {
@@ -138,7 +138,7 @@ export default function Header() {
                             )
                         ))}
                     </nav>
-                    <div > <AnimatedButton href="#" label="Contact Us" className="w-fit" /></div>
+                    <div > <AnimatedButton href="/ContactUs" label="Contact Us" className="w-fit" /></div>
                 </div>
                 <button onClick={handleMenuToggle} className="md:hidden text-black">
                     {open ? <X size={28} strokeWidth={1} /> : <Menu size={28} strokeWidth={1} />}
