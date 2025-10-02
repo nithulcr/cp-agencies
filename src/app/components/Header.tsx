@@ -11,7 +11,6 @@ import AnimatedButton from "./AnimatedButton";
 
 const navItems = [
     { href: "/", label: "Home" },
-    { href: "/Home2", label: "Home2" },
     { href: "#AboutUs", label: "About us" },
     { href: "#products", label: "Products" },
     {
@@ -79,7 +78,8 @@ export default function Header() {
                     <div className="items-center space-x-2 hidden md:flex">
                         <MapPin className="w-4 h-4" strokeWidth={1} />
                         <span>
-                            Telangana <span className="px-1">|</span> Bangalore <span className="px-1">|</span> Tamil Nadu
+                            
+                            Hyderabad <span className="px-1">|</span> Bangalore <span className="px-1">|</span> Chennai
                         </span>
                     </div>
                 </div>

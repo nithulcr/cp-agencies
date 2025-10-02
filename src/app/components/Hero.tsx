@@ -23,8 +23,8 @@ const slidesContent = [
     },
     {
         videoSrc: "/bg4.jpg",
-        heading: "Engineering Our Passion",
-        description1: "TOS-KURIM",
+        heading: "Engineering is Our Passion",
+        description1: "Discover CP Agencies Your Partner in Advanced Machining Solutions",
         description2: "We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.",
         exploreLink: "",
         contactLink: "",
@@ -32,7 +32,7 @@ const slidesContent = [
     {
         videoSrc: "/bg2.jpg",
         heading: "Innovation A Way Of Life",
-        description1: "TAJMAC",
+        description1: "Forging the Future of Manufacturing Since 2009",
         description2: "We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.",
         exploreLink: "",
         contactLink: "",

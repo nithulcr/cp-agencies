@@ -54,7 +54,7 @@ export default function Footer() {
                   
                   <p className="opacity-70 text-sm py-1">Plot #74, Road #3, Jupiter Colony, Sikh Road, Sikh Village
                   Secunderabad, Telangana, INDIA 500009</p>
-                  <p className="py-1">+91-9849018828, +91-9985370478, 040 - 27841857</p>
+                  <p className="py-1">+91-9849018828, +91-9985370478</p>
                   <p className="py-1">info@cpagencies.co.in, support@cpagencies.co.in</p>
                   
                 </div>

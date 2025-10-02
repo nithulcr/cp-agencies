@@ -166,7 +166,7 @@ export default function ContactSection() {
                 Plot #74, Road #3, Jupiter Colony, Sikh Road, Sikh Village<br />
                 Secunderabad, Telangana, INDIA 500009<br />
                 Telefax: 040-27841857<br />
-                Phone: +91-9849018828, +91-9985370478, 040 - 27841857
+                Phone: +91-9849018828, +91-9985370478
               </p>
               <div className="flex items-center gap-4 mt-3">
                 <Mail size={24} color="var(--green)" />
