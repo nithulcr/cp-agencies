@@ -12,15 +12,15 @@ import AnimatedButton from "./AnimatedButton";
 const navItems = [
     { href: "/", label: "Home" },
     { href: "/AboutUs", label: "About us" },
-    { href: "/products", label: "Products" },
+    { href: "#products", label: "Products" },
     {
         label: "Our Services",
-        href: "#our-services",
+        href: "/our-servicess",
         submenu: [
-            { href: "/services/machine-tools", label: "Machine Tools" },
-            { href: "/services/fabrication-automation", label: "Fabrication & Automation" },
-            { href: "/services/metrology", label: "Metrology" },
-            { href: "/services/heat-treatment", label: "Heat Treatment" },
+            { href: "/servicess/machine-tools", label: "Machine Tools" },
+            { href: "/servicess/fabrication-automation", label: "Fabrication & Automation" },
+            { href: "/servicess/metrology", label: "Metrology" },
+            { href: "/servicess/heat-treatment", label: "Heat Treatment" },
         ],
     },
     { href: "/blogs", label: "Blogs" },

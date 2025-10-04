@@ -27,11 +27,11 @@ export default function BlogListPage() {
       <Header />
       <section ref={blogsRef} className=" other-section pt-14 lg:pt-22 pb-14 lg:pb-22  overflow-hidden relative">
 
-        <div className="max-w-[1460px] px-6 w-full mx-auto pt-14 lg:pt-20">
+        <div className="max-w-[1400px] px-6 w-full mx-auto pt-14 lg:pt-20">
           <div className='relative'>
             <div className='fade-up max-w-3xl mx-auto text-center'>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 fade-up">Latest News & Blog</h1>
-              <p className="fade-up text-slate-200 mb-6 text-[#E6ECFF] opacity-70">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 fade-up">Latest News & Blog</h1>
+              <p className="fade-up  mb-6  opacity-70">
                 Stay informed with the latest articles, market insights, and trading tips from the Jeta FX team. Our blog is designed to help traders at every level — from beginners learning the basics to experienced investors exploring advanced strategies.
               </p>
             </div>
@@ -45,11 +45,11 @@ export default function BlogListPage() {
                 <Image src={post.image} alt="blog img" width="400" height="250" className=' w-full rounded-xl' />
                 <div className='p-5 pt-3'>
                   <span className='text-sm text-[#E6ECFF] opacity-70 fw-200'>{post.date}</span>
-                  <h2 className="text-2xl font-semibold my-3">
+                  <h2 className="text-2xl font-semibold my-3 line-clamp-3">
                     <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
                   </h2>
-                  <p className="text-[#E6ECFF] opacity-70">By {post.content}</p>
-                  <Link className='text-[#E6ECFF] opacity-70 fw-200 cursor-pointer float-right mt-4' href={`/blogs/${post.slug}`}>Read More</Link>
+                  <p className="opacity-70 line-clamp-5">By {post.content}</p>
+                  <Link className='opacity-70 fw-200 cursor-pointer inline-block mt-4' href={`/blogs/${post.slug}`}>Read More</Link>
                 </div>
               </div>
             ))}
