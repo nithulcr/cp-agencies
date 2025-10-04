@@ -71,11 +71,11 @@ export default function BlogPostPage({ params: initialParams }: { params: Promis
                 <div key={relatedPost.slug} className="site-card blog-card rounded-lg ">
                   <Image src={relatedPost.image} alt="blog img" width="400" height="250" className=' w-full rounded-xl' />
                   <div className='p-5 pt-3'>
-                    <span className='text-sm text-[#E6ECFF] opacity-70 fw-200'>{relatedPost.date}</span>
-                    <h2 className="text-2xl font-semibold my-3 line-clamp-3">
+                    <span className='text-sm opacity-70 fw-200'>{relatedPost.date}</span>
+                    <h2 className="text-xl font-semibold my-3 line-clamp-2">
                       <Link href={`/blogs/${relatedPost.slug}`}>{relatedPost.title}</Link>
                     </h2>
-                    <p className=" opacity-70 line-clamp-5">By {relatedPost.content}</p>
+                    <p className=" opacity-70 line-clamp-4 text-sm">By {relatedPost.content}</p>
                     <Link className='opacity-70 fw-200 cursor-pointer inline-block mt-4' href={`/blogs/${relatedPost.slug}`}>Read More</Link>
                   </div>
                 </div>

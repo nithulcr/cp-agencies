@@ -37,18 +37,18 @@ export default function BlogListPage() {
             </div>
           </div>
         </div>
-        <div className='max-w-[1460px] mx-auto px-6 mt-10 lg:mt-30'>
+        <div className='max-w-[1460px] mx-auto px-6 mt-10 lg:mt-20'>
 
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-x-8 gap-y-14 fade-up">
             {blogsToDisplay.map((post) => (
               <div key={post.slug} className="site-card blog-card rounded-lg ">
                 <Image src={post.image} alt="blog img" width="400" height="250" className=' w-full rounded-xl' />
                 <div className='p-5 pt-3'>
-                  <span className='text-sm text-[#E6ECFF] opacity-70 fw-200'>{post.date}</span>
-                  <h2 className="text-2xl font-semibold my-3 line-clamp-3">
+                  <span className='text-sm  opacity-70 fw-200'>{post.date}</span>
+                  <h2 className="text-xl font-semibold my-3 line-clamp-2">
                     <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
                   </h2>
-                  <p className="opacity-70 line-clamp-5">By {post.content}</p>
+                  <p className="opacity-70 line-clamp-4 text-sm">By {post.content}</p>
                   <Link className='opacity-70 fw-200 cursor-pointer inline-block mt-4' href={`/blogs/${post.slug}`}>Read More</Link>
                 </div>
               </div>
