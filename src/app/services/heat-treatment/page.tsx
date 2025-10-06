@@ -19,7 +19,7 @@ export default function HeatTreatment() {
             <ServiceTabs current="/services/heat-treatment" />
 
             <div className="py-10 lg:py-16">
-                <div className="max-w-[1400px] mx-auto px-6 flex flex-col-reverse lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="max-w-[1000px] mx-auto px-6 flex flex-col-reverse lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="flex flex-col gap-6">
                         <div >
                             <ul className="">
@@ -44,7 +44,7 @@ export default function HeatTreatment() {
                             alt="Investor at Computer"
                             width={550}
                             height={550}
-                            className="object-cover f-full rounded-tl-[30px] rounded-br-[30px] rounded-bl-[30px] lg:rounded-tl-[100px] lg:rounded-br-[100px] lg:rounded-bl-[100px]"
+                            className="object-cover f-full "
                         />
 
                     </div>

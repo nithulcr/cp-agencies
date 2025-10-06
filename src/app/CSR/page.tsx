@@ -51,7 +51,7 @@ export default function AboutUs() {
                             alt="Investor at Computer"
                             width={550}
                             height={550}
-                            className="object-cover f-full rounded-tl-[100px] w-full rounded-br-[100px] rounded-bl-[100px]"
+                            className="object-cover f-full "
                         />
 
                     </div>
@@ -63,7 +63,7 @@ export default function AboutUs() {
                             alt="Investor at Computer"
                             width={550}
                             height={550}
-                            className="object-cover w-full f-full rounded-tl-[100px] rounded-br-[100px] rounded-bl-[100px]"
+                            className="object-cover w-full f-full "
                         />
 
                     </div>
@@ -88,21 +88,21 @@ export default function AboutUs() {
                             alt="Investor at Computer"
                             width={550}
                             height={550}
-                            className="object-cover f-full w-full rounded-tl-[40px] rounded-br-[40px] rounded-bl-[40px]"
+                            className="object-cover f-full w-full "
                         />
                         <Image
                             src="/csr2.jpg"
                             alt="Investor at Computer"
                             width={550}
                             height={550}
-                            className="object-cover f-full w-full rounded-tl-[40px] rounded-br-[40px] rounded-bl-[40px]"
+                            className="object-cover f-full w-full "
                         />
                         <Image
                             src="/csr3.jpg"
                             alt="Investor at Computer"
                             width={550}
                             height={550}
-                            className="object-cover f-full w-full rounded-tl-[40px] rounded-br-[40px] rounded-bl-[40px]"
+                            className="object-cover f-full w-full"
                         />
                         </div>
 
@@ -122,7 +122,7 @@ export default function AboutUs() {
                             alt="Investor at Computer"
                             width={550}
                             height={550}
-                            className="object-cover f-full w-full rounded-tl-[100px] rounded-br-[100px] rounded-bl-[100px]"
+                            className="object-cover f-full w-full "
                         />
 
                     </div>

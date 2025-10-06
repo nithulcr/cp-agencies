@@ -89,7 +89,7 @@ export default function AboutUs() {
               alt="Investor at Computer"
               width={550}
               height={550}
-              className="object-cover f-full rounded-tl-[100px] rounded-br-[100px] rounded-bl-[100px]"
+              className="object-cover f-full"
             />
           
         </div>
