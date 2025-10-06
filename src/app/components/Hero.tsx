@@ -30,7 +30,7 @@ const slidesContent = [
         contactLink: "",
     },
     {
-        videoSrc: "/bg2.jpg",
+        videoSrc: "/bg4.jpg",
         heading: "Innovation A Way Of Life",
         description1: "Forging the Future of Manufacturing Since 2009",
         description2: "We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.",
@@ -46,7 +46,7 @@ const slidesContent = [
         contactLink: "",
     },
     {
-        videoSrc: "/bg6.jpg",
+        videoSrc: "/bg4.jpg",
         heading: "Partnering for Success",
         description1: " Trusted Technology Providers",
         description2: "Supporting your growth with quality products and dedicated service.",
