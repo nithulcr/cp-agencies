@@ -75,55 +75,44 @@ const Hero = () => {
                 {slidesContent.map((slide, index) => (
                     <SwiperSlide key={index} className="h-full">
                         {/* Background pattern */}
+                        <div className="absolute hero-cover hero-cover2 inset-0  bg-cover bg-center">
+                            <Image
+                                src={slide.videoSrc}
+                                width="1000"
+                                height="1000"
+                                alt="bg"
+                                className="w-full h-full object-cover relative"
+                            />
+                        </div>
 
-                        <div className="h-full grid lg:grid-cols-2">
-                            <div className="lg:hidden">
-                                <Image
-                                    src={slide.videoSrc}
-                                    width="700"
-                                    height="700"
-                                    alt="bg"
-                                    className="w-full h-full object-cover relative"
-                                />
-                            </div>
-                            <motion.div initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5 }} className="relative z-10 max-w-[1400px] mx-auto px-6 py-10 lg:py-40 h-full flex flex-col text-left">
+                        <motion.div initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }} className="relative z-10 max-w-[1400px] mx-auto px-6 py-20 lg:py-40 h-full flex flex-col text-left">
 
 
-                                <h1 className="text-4xl md:text-[50px] font-bold mb-2 head-font max-w-[570px]" dangerouslySetInnerHTML={{ __html: slide.heading }}>
-                                </h1>
-                                <div className="my-4 lg:my-2 max-w-[540px]">
-                                    <p className="text-lg md:text-2xl my-2 font-light2">
-                                        {slide.description1}
+                            <h1 className="text-5xl md:text-[50px] font-bold mb-2 head-font max-w-[570px]" dangerouslySetInnerHTML={{ __html: slide.heading }}>
+                            </h1>
+                            <div className="my-4 lg:my-2 max-w-[540px]">
+                                <p className="text-lg md:text-2xl my-2 font-light2">
+                                    {slide.description1}
 
-                                    </p>
+                                </p>
 
-                                    {/* <p className="text-md md:text-lg my-2 font-light2">
+                                {/* <p className="text-md md:text-lg my-2 font-light2">
                                     {slide.description2}
                                 </p> */}
-                                </div>
-                                <div className="flex flex-wrap gap-4 mt-4 max-w-[540px]">
-                                    {/* <div className='shuffle'> <AnimatedButton href={slide.exploreLink} label="Explore Products" className="w-fit" /></div> */}
-                                    <div className='shuffle'><AnimatedButton href={slide.contactLink} label="Contact Us" className="w-fit transparent-btn" /></div>
-                                </div>
-
-
-                            </motion.div>
-                            <div className="hidden lg:block">
-                                <Image
-                                    src={slide.videoSrc}
-                                    width="1000"
-                                    height="1000"
-                                    alt="bg"
-                                    className="w-full h-full object-cover relative"
-                                />
                             </div>
-                        </div>
+                            <div className="flex flex-wrap gap-4 mt-4 max-w-[540px]">
+                                <div className='shuffle'> <AnimatedButton href={slide.exploreLink} label="Explore Products" className="w-fit" /></div>
+                                <div className='shuffle'><AnimatedButton href={slide.contactLink} label="Contact Us" className="w-fit transparent-btn" /></div>
+                            </div>
+
+
+                        </motion.div>
                     </SwiperSlide>
                 ))}
             </Swiper>
-
+            
         </>
     );
 };

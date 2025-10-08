@@ -133,7 +133,7 @@ const Partners = () => {
           >
             {partners.map((partner) => (
               <SwiperSlide key={partner.id}>
-                <div className="partners-child rounded-3xl text-center rounded-bl-none p-5 transition-all duration-300 relative top-0 hover:top-[-6px]">
+                <div className="partners-child rounded-3xl text-center rounded-bl-none p-3 transition-all duration-300 relative top-0 hover:top-[-6px]">
                   <Image
                     src={partner.icon}
                     alt="logo"

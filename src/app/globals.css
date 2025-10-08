@@ -125,7 +125,7 @@ font-family: "Everett Regular";
 
 
 }
-.hero2:before {
+/* .hero2:before {
     content: "";
   position: absolute;
   top: 0;
@@ -135,7 +135,7 @@ font-family: "Everett Regular";
   background: linear-gradient(90deg,  rgba(30, 21, 195, 0.579), transparent);
 z-index: 1;
 
-}
+} */
 /* button style start */
 .button {
   border: 2px none var(--yellow);
@@ -152,7 +152,13 @@ z-index: 1;
   font-weight: 300;
 
 }
+.btn-xl.button{
+  padding: 14px 42px;
 
+}
+.btn-xl.button div{
+  font-size: 20px;
+}
 .menu span {
   transition: transform 0.2s cubic-bezier(.33, 1.04, .67, 1.02);
   will-change: transform;
@@ -168,7 +174,9 @@ z-index: 1;
   transition: .3s;
   backdrop-filter: blur(2px);
 }
-
+.btn-xl.button .button-outline{
+  border-radius: 34px;
+}
 .white-btn .button-outline {
   background: rgba(255, 255, 255, 1);
   border: 2px solid rgba(255, 255, 255, 1);
@@ -258,8 +266,16 @@ element.style {
   color: white;
 }
 
-.fw-200 {
-  font-weight: 200;
+
+.process-card-svg {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    right: -42px;
+    transform: translateY(-50%);
+}
+.process-card:last-child .process-card-svg {
+    display: none;
 }
 @media (min-width: 1024px) {
   .what-we-do-grid:nth-child(1) > div, .what-we-do-grid:nth-child(2) > div{
@@ -280,6 +296,13 @@ element.style {
 }
 
 @media (max-width: 600px) {
+      .process-card-svg {
+        top: auto;
+        bottom: -36px;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%) rotate(90deg);
+    }
   .hero .swiper-button-prev, .hero .swiper-button-next{
 display: none;
 }

@@ -2,6 +2,8 @@
 
 import { useRef, useEffect } from "react";
 import clsx from "clsx";
+import Link from "next/link";
+
 
 type AnimatedButtonProps = {
   label: string;
@@ -51,38 +53,38 @@ export default function AnimatedButton({
     };
   }, []);
 
-  // Determine if link is external
-  const isExternal =
-    href && /^https?:\/\//i.test(href);
-
-  // 👉 If "type" is provided, render a <button>
-  if (type) {
+  if (href) {
+    const isExternal = /^https?:\/\//i.test(href);
     return (
-      <button
-        ref={buttonRef as React.RefObject<HTMLButtonElement>}
+      <Link
+        ref={buttonRef as React.RefObject<HTMLAnchorElement>}
         onClick={onClick}
-        type={type}
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         className={clsx("button", className)}
+        download={href?.endsWith(".pdf") ? true : undefined}
       >
-        <div  className="button-outline"></div>
-        <div ref={outlineRef} className="button-text">{label}</div>
-      </button>
+        <div className="button-outline"></div>
+        <div ref={outlineRef} className="button-text">
+          {label}
+        </div>
+      </Link>
     );
   }
 
-  // 👉 Otherwise, render as <a>
+  // Otherwise, it's a button
   return (
-    <a
-      ref={buttonRef as React.RefObject<HTMLAnchorElement>}
+    <button
+      ref={buttonRef as React.RefObject<HTMLButtonElement>}
       onClick={onClick}
-      href={href}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
+      type={type || "button"}
       className={clsx("button", className)}
-      download={href?.endsWith(".pdf") ? true : undefined}
     >
-      <div  className="button-outline"></div>
-      <div ref={outlineRef} className="button-text">{label}</div>
-    </a>
+      <div className="button-outline"></div>
+      <div ref={outlineRef} className="button-text">
+        {label}
+      </div>
+    </button>
   );
 }

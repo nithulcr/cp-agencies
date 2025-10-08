@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { Mail, Phone, ArrowRight } from "lucide-react";
+import { Mail, Phone, ArrowRight, Clock } from "lucide-react";
 import { LoadScript, GoogleMap, Marker } from "@react-google-maps/api";
 const containerStyle = { width: "100%", height: "400px" };
 const center = { lat: 37.7749, lng: -122.4194 }; // Example coordinates
@@ -51,34 +51,38 @@ export default function ContactSection() {
   return (
     <>
       <section className="py-10  lg:py-16   mx-auto ">
-        <div className="max-w-[1400px] px-6 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="max-w-[1400px] mx-auto px-6  grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left: Info */}
           <div>
             <div className="mb-8">
               <h2 className="text-3xl lg:text-5xl font-medium mb-4 max-w-[600px]">
                 {"Have Questions? Our Team is Ready Anytime"}
               </h2>
-              <p className="leading-relaxed max-w-[600px] text-gray-700">
+              <p className="leading-relaxed max-w-[500px] text-gray-700">
                 {"Got questions or need guidance? Our team is always ready to help you take the next step—whether it's a quick inquiry or a full project discussion."}
               </p>
             </div>
 
             <div className="flex items-start gap-4 mb-6">
-              <Mail size={40} color="var(--green)" />
+              <Mail size={26} color="var(--green)" />
               <div>
-                <div className="text-sm">{"E-mail"}</div>
-                <div className="text-md font-medium">info@cpagencies.co.in</div>
-                <div className="text-md font-medium">support@cpagencies.co.in</div>
+                <div className="text-xl mb-2">{"E-mail"}</div>
+                <div className="flex flex-wrap gap-1 flex-col">
+                  <a href="mailto:info@cpagencies.co.in" className="text-md font-medium">info@cpagencies.co.in</a>
+                <a href="mailto:support@cpagencies.co.in" className="text-md font-medium">support@cpagencies.co.in</a>
+                </div>
 
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <Phone size={40} color="var(--green)" />
+              <Phone size={26} color="var(--green)" />
               <div>
-                <div className="text-sm">{"Phone number"}</div>
-                <div className="text-md font-medium">+91-9849018828</div>
-                <div className="text-md font-medium">+91-9985370478</div>
-                <div className="text-md font-medium">040 - 27841857</div>
+                <div className="text-xl mb-2">{"Phone number"}</div>
+                <div className="flex flex-wrap gap-1 flex-col">
+                  <a href="tel:+91-9849018828" className="text-md font-medium">+91-9849018828,</a>
+                  <a href="tel:+91-9985370478" className="text-md font-medium">+91-9985370478,</a>
+                  <a href="tel:040 - 27841857" className="text-md font-medium">040 - 27841857</a>
+                </div>
 
               </div>
             </div>
@@ -151,7 +155,8 @@ export default function ContactSection() {
           </form>
         </div>
 
-        <div className="max-w-[1400px] px-6  mt-18 lg:mt-36">
+
+        <div className="max-w-[1400px] mx-auto px-6  mt-18 lg:mt-36">
 
           <div className="max-w-[730px] mx-auto text-center mb-10">
             <h2 className="text-3xl lg:text-5xl font-medium mb-6">Find Our Offices</h2>
@@ -159,69 +164,140 @@ export default function ContactSection() {
               Our offices are strategically located across key regions to provide accessible, efficient service and support to our valued customers. Explore our head office and branch locations to find the nearest contact point for your needs.
             </p>
           </div>
-          <div className="mx-auto grid  md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-3xl  rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
-              <h3 className="text-xl  mb-4">Head Office</h3>
-              <p>
-                Plot #74, Road #3, Jupiter Colony, Sikh Road, Sikh Village<br />
-                Secunderabad, Telangana, INDIA 500009<br />
-                Telefax: 040-27841857<br />
-                Phone: +91-9849018828, +91-9985370478
-              </p>
-              <div className="flex items-center gap-4 mt-3">
-                <Mail size={24} color="var(--green)" />
-                <div>
-                  <a href="mailto:info@cpagencies.co.in" className="text-md font-medium block">info@cpagencies.co.in</a>
-                  <a href="mailto:support@cpagencies.co.in" className="text-md font-medium block">support@cpagencies.co.in</a>
+
+
+
+          <div className="flex flex-col md:flex-row gap-8  justify-center items-stretch">
+            <div className="flex-1 flex flex-col process-card p-5 lg:p-7  rounded-3xl bg-white relative transition-all duration-500 relative top-0 hover:top-[-5px]">
+              <svg width="54" height="54" viewBox="0 0 57 58" fill="none" xmlns="http://www.w3.org/2000/svg" className="process-card-svg">
+                <circle cx="28.7426" cy="29.1167" r="28.1875" fill="#dddcffff" />
+                <circle cx="28.7425" cy="29.1165" r="22.3797" fill="white" />
+                <path d="M21.3978 29.1167H23.2606M33.3197 29.1167L28.849 24.646M33.3197 29.1167L28.849 33.5874M33.3197 29.1167H25.496" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <div className="gradient-text mb-4 text-7xl font-semibold bg-[linear-gradient(180deg,#193685_16%,#FFFFFF_88%)] bg-clip-text text-transparent">
+                1
+              </div>
+
+
+              <div className="bg-[var(--blue1)] w-full">
+
+                <h3 className="text-xl md:text-[22px] font-bold mb-2 text-site">Head Office</h3>
+                <div className="flex flex-col gap-1">
+                  <p className="text-md  font-light ">Plot #74, Road #3, Jupiter Colony</p>
+                  <p className="text-md  font-light ">Sikh Road, Sikh Village</p>
+
+                  <p className="text-md  font-light ">
+                    Secunderabad, Telangana, INDIA 500 009</p>
+                  <p className="text-md  font-light ">
+                    Telefax: 040-27841857</p>
+
+                </div>
+
+                <div className="flex items-center gap-4 mt-3">
+                  <Phone size={24} color="var(--green)" />
+                  <div>
+                    <a href="tel:+91-9849018828" className="text-md font-medium block">+91-9849018828</a>
+                    <a href="tel:+91-9985370478" className="text-md font-medium block">+91-9985370478</a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 mt-3">
+                  <Mail size={24} color="var(--green)" />
+                  <div>
+                    <a href="mailto:info@cpagencies.co.in" className="text-md font-medium block">info@cpagencies.co.in</a>
+                    <a href="mailto:support@cpagencies.co.in" className="text-md font-medium block">support@cpagencies.co.in</a>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="flex-1 flex flex-col process-card p-5 lg:p-7  rounded-3xl bg-white relative transition-all duration-500 relative top-0 hover:top-[-5px]">
+              <svg width="54" height="54" viewBox="0 0 57 58" fill="none" xmlns="http://www.w3.org/2000/svg" className="process-card-svg">
+                <circle cx="28.7426" cy="29.1167" r="28.1875" fill="#dddcffff" />
+                <circle cx="28.7425" cy="29.1165" r="22.3797" fill="white" />
+                <path d="M21.3978 29.1167H23.2606M33.3197 29.1167L28.849 24.646M33.3197 29.1167L28.849 33.5874M33.3197 29.1167H25.496" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <div className="gradient-text mb-4 text-7xl  font-semibold bg-[linear-gradient(180deg,#193685_16%,#FFFFFF_88%)] bg-clip-text text-transparent">
+                2
+              </div>
 
 
-            {/* Branch Offices */}
-            <div className="bg-white rounded-3xl  rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
-              <h3 className="text-xl  mb-4">Branch Office</h3>
+              <div className="bg-[var(--blue1)] w-full">
 
-              {/* Bangalore Branch */}
-              <div className="mb-6">
-                <p>
-                  
-                  No.112, First floor, 12th cross<br />
-                  OPP: Mount Carmel school<br />
-                  Ideal Homes, Rajarajeswari Nagar<br />
-                  Bangalore – 560098, Karnataka<br />
-                  <strong>Contact Person:</strong> MR. K Murali<br />
-                  Phone: +91-9741120522<br />
-                  Mon - Sat 9.00 - 20.00, Sunday CLOSED
-                </p>
+                <h3 className="text-xl md:text-[22px] font-bold mb-2 text-site">Branch Office</h3>
+                <div className="flex-col flex gap-1">
+                  <p className="text-md  font-light ">No.112, First floor, 12th cross
+
+                  </p>
+                  <p className="text-md  font-light ">
+                    OPP: Mount Carmel school
+                  </p>
+                  <p className="text-md  font-light ">
+                    Ideal Homes, Rajarajeswari Nagar
+                    Bangalore, Karnataka, 560 098
+                  </p>
+                  <p className="text-md  font-light ">
+                    Contact Person: MR. K Murali
+                  </p>
+
+                </div>
+                <div className="flex items-center gap-4 mt-2">
+                  <Phone size={20} color="var(--green)" />
+                  <a href="tel:+91-9741120522" className="text-md font-medium">+91-9741120522</a>
+                </div>
+
                 <div className="flex items-center gap-4 mt-2">
                   <Mail size={20} color="var(--green)" />
                   <a href="mailto:km@cpagencies.co.in" className="text-md font-medium">km@cpagencies.co.in</a>
                 </div>
+                <div className="inline-flex items-center gap-2 mt-4 bg-gray-200 rounded-2xl py-1 px-2">
+                  <Clock size={20} color="var(--green)" />
+                  <a href="mailto:km@cpagencies.co.in" className="text-xs font-medium">Mon - Sat 9.00 - 20.00, Sunday CLOSED</a>
+                </div>
+
+              </div>
+            </div>
+            <div className="flex-1 flex flex-col process-card p-5 lg:p-7  rounded-3xl bg-white relative transition-all duration-500 relative top-0 hover:top-[-5px]">
+              <svg width="54" height="54" viewBox="0 0 57 58" fill="none" xmlns="http://www.w3.org/2000/svg" className="process-card-svg">
+                <circle cx="28.7426" cy="29.1167" r="28.1875" fill="#dddcffff" />
+                <circle cx="28.7425" cy="29.1165" r="22.3797" fill="white" />
+                <path d="M21.3978 29.1167H23.2606M33.3197 29.1167L28.849 24.646M33.3197 29.1167L28.849 33.5874M33.3197 29.1167H25.496" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <div className="gradient-text mb-4 text-7xl  font-semibold bg-[linear-gradient(180deg,#193685_16%,#FFFFFF_88%)] bg-clip-text text-transparent">
+                3
               </div>
 
-            </div>
 
-            <div className="bg-white rounded-3xl  rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
-              <h3 className="text-xl  mb-4">Branch Office</h3>
+              <div className="bg-[var(--blue1)] w-full">
 
-              <div>
-                <p>
-                
-                  D Block, D22, 3rd Floor<br />
-                  NELSON Chambers, Nelson Manickam Road<br />
-                  Chennai – 600029, Tamil Nadu<br />
-                  <strong>Contact Person:</strong> MR. P Ghuhan<br />
-                  Phone: +91-9566270812<br />
-                  Mon - Sat 9.00 - 20.00, Sunday CLOSED
-                </p>
+                <h3 className="text-xl md:text-[22px] font-bold mb-2 text-site">Branch Office</h3>
+                <div className="flex flex-col gap-1">
+                  <p className="text-md  font-light ">D Block, D22, 3rd Floor
+                    NELSON Chambers, Nelson Manickam Road
+                  </p>
+                  <p className="text-md  font-light ">
+                    Chennai, Tamil Nadu, 600 029</p>
+                  <p className="text-md  font-light ">
+                    Contact Person: MR. P Ghuhan</p>
+
+                </div>
+                <div className="flex items-center gap-4 mt-2">
+                  <Phone size={20} color="var(--green)" />
+                  <a href="tel:+91-9566270812" className="text-md font-medium">+91-9566270812</a>
+                </div>
+
                 <div className="flex items-center gap-4 mt-2">
                   <Mail size={20} color="var(--green)" />
                   <a href="mailto:pg@cpagencies.co.in" className="text-md font-medium">pg@cpagencies.co.in</a>
                 </div>
+                <div className="inline-flex items-center gap-2 mt-4 bg-gray-200 rounded-2xl py-1 px-2">
+                  <Clock size={20} color="var(--green)" />
+                  <a href="mailto:km@cpagencies.co.in" className="text-xs font-medium">Mon - Sat 9.00 - 20.00, Sunday CLOSED</a>
+                </div>
               </div>
             </div>
+
           </div>
+
+
         </div>
 
       </section>

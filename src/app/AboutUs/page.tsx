@@ -18,7 +18,7 @@ export async function generateMetadata(
 
 import Header from "../components/Header";
 import Hero2 from "../components/Hero2";
-import AboutUs from "../components/AboutUs";
+import AboutUs2 from "../components/AboutUs2";
 import WhoWeAre from "../components/WhoWeAre";
 
 import WhatWeDo from "../components/WhatWeDo";
@@ -40,7 +40,7 @@ export default function Home() {
                 breadcrumbText_en="About Us"
                 breadcrumbPosition="left"
             />
-            <AboutUs />
+            <AboutUs2 />
             <WhoWeAre />
             <WhatWeDo />
             <ConsultationBanner />

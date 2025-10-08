@@ -25,7 +25,6 @@ const navItems = [
     },
     { href: "/blogs", label: "Blogs" },
     { href: "/CSR", label: "CSR" },
-    { href: "/FAQ", label: "FAQ's" },
 ];
 
 export default function Header() {

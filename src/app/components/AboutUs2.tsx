@@ -47,7 +47,7 @@ const points_en = [
 
 
 
-export default function AboutUs() {
+export default function AboutUs2() {
 
   return (
 
@@ -63,11 +63,11 @@ export default function AboutUs() {
               className="object-cover f-full"
             />
           </div>
-          <h2 className="text-3xl lg:text-5xl font-medium mb-6">Welcom to CP Agencies</h2>
+          <h2 className="text-3xl lg:text-5xl font-medium mb-6"> CP Agencies, Connecting You to Global Excellence</h2>
           <p className="leading-relaxed mb-5 max-w-[560px]">
             CP AGENCIES is a leading provider of advanced technology and exceptional service in the machine tool industry. Since our inception, we have committed to delivering high-tech products and innovative designs tailored to meet each customer s unique machining requirements. We proudly offer comprehensive manufacturing solutions, expert applications support, specialized customer training, and reliable after-sales service to our growing client base.
           </p>
-          <p className="font-medium text-2xl">Industries We Serve:</p>
+          {/* <p className="font-medium text-2xl">Industries We Serve:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 my-5">
             {points_en.map((point, idx) => (
               <div key={idx} className="flex flex-col items-start gap-3 bg-white rounded-3xl rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
@@ -79,7 +79,7 @@ export default function AboutUs() {
                 <p className="text-sm mt-1">{point.description}</p>
               </div>
             ))}
-          </div>
+          </div> */}
          
         </div>
         <div className="relative flex justify-center lg:justify-end hidden lg:flex h-full">
@@ -87,8 +87,8 @@ export default function AboutUs() {
             <Image
               src="/bg5.jpg"
               alt="Investor at Computer"
-              width={550}
-              height={550}
+              width={750}
+              height={750}
               className="object-cover f-full"
             />
           

@@ -15,7 +15,7 @@ const QuoteSection = () => {
         {/* Quote Icon */}
         <div className="flex-shrink-0 text-[#4CAF1B] md:w-auto w-full">
 
-          <Image src="/quate.webp" alt="Logo" className="mx-auto md:w-[380px] w-[300px]" width={380} height={150} /> 
+          <Image src="/dummy-user.jpg" alt="Logo" className="mx-auto md:w-[380px] w-[300px]" width={380} height={150} /> 
         </div>
         {/* Quote Text */}
         <div className="text-white text-lg lg:text-xl text-center md:text-left leading-snug max-w-xl">
