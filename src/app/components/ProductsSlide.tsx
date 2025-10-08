@@ -17,7 +17,7 @@ const teamDataEN = [
   },
   {
     id: "02",
-     icon: "/products/2.jpg",
+     icon: "/products/2.jpeg",
     title: "Bond Technologies",
   },
   {

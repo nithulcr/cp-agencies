@@ -65,17 +65,14 @@ const WhatWeDo = () => {
           </button>
         </Link>
       </div>
-      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 relative">
         {data.map((whatwedo) => (
           <div
             key={whatwedo.id}
-            className="bg-white rounded-3xl overflow-hidden transition-all duration-300 relative top-0 hover:top-[-6px]"
+            className="bg-white max-w-[800px] rounded-3xl overflow-hidden transition-all duration-300 relative top-0 hover:top-[-6px] what-we-do-grid"
           >
-            <div className="flex gap-3 lg:gap-0 items-center lg:items-start lg:flex-col">
-              <div className="flex items-center justify-between gap-3">
-                {/* <div className="w-16 h-16 flex items-center justify-center rounded-full p-4 bg-[var(--green2)] text-white">
-                {whatwedo.icon}
-              </div> */}
+            <div className="flex lg:flex-row flex-col flex-wrap">
+              <div className="lg:w-[50%] h-auto flex items-center justify-between gap-3 overflow-hidden">
                 <Image
                   src={whatwedo.img}
                   width="500"
@@ -84,12 +81,12 @@ const WhatWeDo = () => {
                   className="w-full h-full object-cover relative"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 lg:p-8 lg:w-[50%]">
                 <h3 className="text-[20px] lg:text-xl font-semibold">{whatwedo.title}</h3>
-              <p className="text-md leading-snug lg:pt-4 pt-2">{whatwedo.description}</p>
-                </div>
+                <p className="text-md leading-snug lg:pt-4 pt-2">{whatwedo.description}</p>
+              </div>
             </div>
-            
+
           </div>
         ))}
       </div>

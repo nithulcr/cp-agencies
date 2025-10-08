@@ -141,7 +141,7 @@ z-index: 1;
   border: 2px none var(--yellow);
   justify-content: center;
   align-items: center;
-  padding: 14px 28px;
+  padding: 10px 28px;
   font-size: 16px;
   text-decoration: none;
   display: flex;
@@ -257,8 +257,15 @@ element.style {
   font-size: 22px;
   color: white;
 }
+
+.fw-200 {
+  font-weight: 200;
+}
 @media (min-width: 1024px) {
-  
+  .what-we-do-grid:nth-child(1) > div, .what-we-do-grid:nth-child(2) > div{
+  flex-direction: row-reverse;
+}
+
 
   /* .features-section::before {
     content: "";
@@ -271,6 +278,7 @@ element.style {
     background-size: cover;
   } */
 }
+
 @media (max-width: 600px) {
   .hero .swiper-button-prev, .hero .swiper-button-next{
 display: none;

@@ -100,7 +100,7 @@ const Partners = () => {
   return (
     <section className="py-10 lg:py-16 text-[var(--foreground)]">
       <div className="max-w-[1400px] mx-auto px-6 flex text-center  flex-col items-start lg:items-center gap-5 justify-between mb-10">
-        <div>
+        <div className="mx-auto">
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Partners</h2>
           <p className="leading-relaxed max-w-[460px] text-gray-700">
             
@@ -133,11 +133,11 @@ const Partners = () => {
           >
             {partners.map((partner) => (
               <SwiperSlide key={partner.id}>
-                <div className="partners-child bg-white rounded-3xl text-center rounded-bl-none p-5 transition-all duration-300 relative top-0 hover:top-[-6px]">
+                <div className="partners-child rounded-3xl text-center rounded-bl-none p-5 transition-all duration-300 relative top-0 hover:top-[-6px]">
                   <Image
                     src={partner.icon}
                     alt="logo"
-                    className="w-36 h-36 object-contain mx-auto mb-2"
+                    className="w-44 h-44 object-contain mx-auto mb-2"
                     width={100}
                     height={100}
                   />
