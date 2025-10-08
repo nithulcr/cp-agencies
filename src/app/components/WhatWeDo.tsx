@@ -1,32 +1,39 @@
 "use client";
 import Link from "next/link";
 import { HardDrive, Wrench, Target, Sun } from 'lucide-react';
+import Image from "next/image";
 
 
 const whatWeDoDataEN = [
   {
     id: "01",
-    icon: <HardDrive size={32} strokeWidth={1} />
-        ,
+    icon: <HardDrive size={32} strokeWidth={1} />,
+    img: "/machine-tools2.jpg",
     title: "Machine Tools",
     description: "Delivering high-precision CNC machining and automation with trusted global brands, ensuring reliability and advanced performance for modern manufacturing.",
   },
   {
     id: "02",
     icon: <Wrench size={32} strokeWidth={1} />
-        ,
+    ,
+    img: "/fabrication2.jpg",
+
     title: "Fabrication & Automation",
     description: "Providing cutting-edge CNC laser cutting, welding automation, and waterjet solutions to streamline production with efficiency and accuracy.",
   },
   {
     id: "03",
     icon: <Target size={32} strokeWidth={1} />,
+    img: "/metrology2.jpg",
+
     title: "Metrology",
     description: "Offering advanced measurement and leak testing systems to guarantee quality, accuracy, and compliance in every manufacturing process.",
   },
   {
     id: "04",
     icon: <Sun size={32} strokeWidth={1} />,
+    img: "/heat-treatment2.jpg",
+
     title: "Heat Treatment",
     description: "Specializing in induction heating, vacuum furnaces, and electron beam technologies to enhance durability and performance of critical components.",
   }
@@ -43,7 +50,7 @@ const sectionTextEN = {
 
 
 const WhatWeDo = () => {
-  const section =   sectionTextEN;
+  const section = sectionTextEN;
   const data = whatWeDoDataEN;
   return (
     <section className="py-10 lg:py-16 text-[var(--foreground)]" >
@@ -62,17 +69,27 @@ const WhatWeDo = () => {
         {data.map((whatwedo) => (
           <div
             key={whatwedo.id}
-            className="bg-white rounded-3xl rounded-br-none p-7 transition-all duration-300 relative top-0 hover:top-[-6px]"
+            className="bg-white rounded-3xl overflow-hidden transition-all duration-300 relative top-0 hover:top-[-6px]"
           >
             <div className="flex gap-3 lg:gap-0 items-center lg:items-start lg:flex-col">
-              <div className="flex items-center justify-between gap-3 lg:mb-4">
-              <div className="w-16 h-16 flex items-center justify-center rounded-full p-4 bg-[var(--green2)] text-white">
+              <div className="flex items-center justify-between gap-3">
+                {/* <div className="w-16 h-16 flex items-center justify-center rounded-full p-4 bg-[var(--green2)] text-white">
                 {whatwedo.icon}
+              </div> */}
+                <Image
+                  src={whatwedo.img}
+                  width="500"
+                  height="500"
+                  alt="bg"
+                  className="w-full h-full object-cover relative"
+                />
               </div>
+              <div className="p-6">
+                <h3 className="text-[20px] lg:text-xl font-semibold">{whatwedo.title}</h3>
+              <p className="text-md leading-snug lg:pt-4 pt-2">{whatwedo.description}</p>
+                </div>
             </div>
-            <h3 className="text-[20px] lg:text-xl font-semibold">{whatwedo.title}</h3>
-            </div>
-            <p className="text-md leading-snug lg:pt-4 pt-2">{whatwedo.description}</p>
+            
           </div>
         ))}
       </div>

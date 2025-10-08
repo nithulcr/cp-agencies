@@ -31,7 +31,7 @@ const Hero2 = ({
     return (
         <section className="hero2 relative mt-[100px] w-full bg-[var(--green)] text-white flex flex-col justify-center items-center text-center relative">
             <div
-                className={`bg-fixed absolute inset-0 bg-[url('/about.png')] bg-cover bg-[40%_center] lg:bg-[30%_center] `}
+                className={`bg-fixed absolute inset-0 bg-[url('/about.jpg')] bg-cover bg-[40%_center] lg:bg-[30%_center] `}
             ></div>
 
             <motion.div initial={{ opacity: 0, y: 20 }}

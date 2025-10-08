@@ -60,7 +60,7 @@ export default function AboutUs() {
               alt="Investor at Computer"
               width={550}
               height={550}
-              className="object-cover f-full rounded-tl-[100px] rounded-br-[100px] rounded-bl-[100px]"
+              className="object-cover f-full"
             />
           </div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">About CP Agencies</h2>
@@ -72,7 +72,7 @@ export default function AboutUs() {
             {points_en.map((point, idx) => (
               <div key={idx} className="flex flex-col items-start gap-3 bg-white rounded-3xl rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
                 <div className="flex items-center gap-4  w-full">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full p-2 flex items-center justify-center">{point.icon}</div>
+                  <div className="w-12 h-12 bg-[var(--green)] rounded-full p-2 flex items-center justify-center text-white">{point.icon}</div>
 
                   <h3 className="lg:text-[19px] font-semibold text-gray-900">{point.title}</h3>
                 </div>
