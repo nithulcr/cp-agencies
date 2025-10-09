@@ -17,13 +17,13 @@ const navItems = [
         label: "Our Services",
         href: "/our-servicess",
         submenu: [
-            { href: "/services/machine-tools", label: "Machine Tools" },
-            { href: "/services/fabrication-automation", label: "Fabrication & Automation" },
-            { href: "/services/metrology", label: "Metrology" },
-            { href: "/services/heat-treatment", label: "Heat Treatment" },
+            { href: "/servicess/machine-tools", label: "Machine Tools" },
+            { href: "/servicess/fabrication-automation", label: "Fabrication & Automation" },
+            { href: "/servicess/metrology", label: "Metrology" },
+            { href: "/servicess/heat-treatment", label: "Heat Treatment" },
         ],
     },
-    { href: "/blogs", label: "Blogs" },
+    { href: "/blogss", label: "Blogs" },
     { href: "/CSR", label: "CSR" },
 ];
 

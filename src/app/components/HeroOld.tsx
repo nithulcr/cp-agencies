@@ -58,7 +58,7 @@ const slidesContent = [
 
 ];
 
-const Hero = () => {
+const HeroOld = () => {
     return (
         <>
             <Swiper
@@ -117,4 +117,4 @@ const Hero = () => {
     );
 };
 
-export default Hero;
+export default HeroOld;
