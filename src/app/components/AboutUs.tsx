@@ -66,7 +66,7 @@ export default function AboutUs() {
           <p className="font-medium text-2xl">Industries We Serve:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 my-5">
             {points_en.map((point, idx) => (
-              <div key={idx} className="flex flex-col items-start gap-3 bg-white rounded-3xl rounded-bl-none p-6 transition-all duration-300 relative top-0 hover:top-[-6px]">
+              <div key={idx} className="flex flex-col items-start gap-3 bg-white rounded-3xl rounded-bl-none p-4 transition-all duration-300 relative top-0 hover:top-[-6px]">
                 <div className="flex items-center gap-4  w-full">
                   <div className="w-12 h-12 bg-[var(--green)] rounded-full p-2 flex items-center justify-center text-white">{point.icon}</div>
 
