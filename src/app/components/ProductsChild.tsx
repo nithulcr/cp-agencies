@@ -15,7 +15,7 @@ const ProductsChild: React.FC<ProductsChildProps> = ({ icon, title }) => {
       <Image
         src={icon}
         alt={title}
-        className="w-full object-contain mx-auto mb-2 rounded-tl-[20px] rounded-br-[20px] rounded-tr-[20px] aspect-[1/1.1] object-cover"
+        className="w-full object-contain mx-auto mb-2 rounded-tl-[20px] rounded-br-[20px] rounded-tr-[20px] aspect-[1/1.1]"
         width={100}
         height={100}
       />

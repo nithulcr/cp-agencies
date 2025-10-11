@@ -14,13 +14,19 @@ export default function Metrology() {
             <Header />
             <Hero2
                 heading_en="Metrology"
-            breadcrumbText_en="Metrology"
+                breadcrumbText_en="Metrology"
             />
-            <ServiceTabs current="/services/metrology" />
 
             <div className="py-10 lg:py-16">
-                <div className="max-w-[800px] mx-auto px-6 flex flex-col-reverse lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div className="flex flex-col gap-6">
+                <div className="max-w-[1200px] mx-auto px-6 flex flex-col-reverse md:flex-row  gap-y-8">
+                    <div className="flex w-full flex-col gap-6">
+                        <Image
+                            src="/metrology.jpg"
+                            alt="Investor at Computer"
+                            width={550}
+                            height={550}
+                            className="object-cover f-full"
+                        />
                         <div >
                             <ul className="">
                                 <li>1. LASER SCANNERS</li>
@@ -33,22 +39,16 @@ export default function Metrology() {
 
                             </ul>
                         </div>
-                        
-                    </div>
-                    <div className="relative flex justify-center lg:justify-end lg:flex h-full">
 
-                        <Image
-                            src="/metrology.jpg"
-                            alt="Investor at Computer"
-                            width={550}
-                            height={550}
-                            className="object-cover f-full"
-                        />
+                    </div>
+                    <div className="relative md:w-[430px] flex flex-none md:pl-8 justify-center lg:justify-end lg:flex lg:sticky lg:top-[100px] h-fit">
+                        <ServiceTabs current="/services/metrology" />
 
                     </div>
                 </div>
 
             </div>
+
             <Footer />
         </>
     );

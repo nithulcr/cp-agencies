@@ -7,17 +7,12 @@ import { HardDrive, Wrench, Target, Sun } from 'lucide-react';
 
 const services = [
     {
-        title: 'Machine Tools',
-        desc: 'Precision CNC machining and automation with trusted brands, plus new additions like PRAYOSHA, GH Induction, IMT, and NUMTEC for enhanced deburring and aluminium wheel manufacturing.',
+        title: 'Machinne Tools and Automation',
+        desc: 'Precision CNC Machining &amp; Automation Solutions from Reputed Brands from World over',
         icon: <> <HardDrive size={32} strokeWidth={1} />
         </>,
     },
-    {
-        title: 'Fabrication & Automation',
-        desc: 'Specialized CNC laser cutting, welding automation, electron beam welding, wirecut EDMs, and waterjet cutting for efficient manufacturing.',
-        icon: <><Wrench size={32} strokeWidth={1} />
-        </>,
-    },
+  
     {
         title: 'Metrology',
         desc: 'Accurate measurement and leak testing solutions from VDH and MAKRA for quality assurance.',
@@ -36,7 +31,7 @@ const services = [
 export default function ServiceSection() {
     return (
         <section className="relative  services">
-            <div className=' py-10 lg:py-16  max-w-[1400px] mx-auto px-6'>
+            <div className=' py-14 lg:py-24  max-w-[1400px] mx-auto px-6'>
                 
                 <div
                     className="grid md:grid-cols-2 gap-10 lg:gap-16"

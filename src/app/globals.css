@@ -4,6 +4,8 @@
 
 :root {
   --background: #ffffff;
+  --background2: #dce0eb;
+
   --foreground: #000;
   --green: #193685;
   --green1: #2d51b5;
@@ -37,7 +39,7 @@ html{
 
 }
 body {
-  background: #f1f4fd;
+  background: var(--background2);
   color: var(--foreground);
 font-family: "Everett Regular";
   font-weight: 300;

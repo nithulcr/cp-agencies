@@ -9,33 +9,33 @@ import Image from "next/image";
 // Example avatars (replace src paths with your actual assets)
 const testimonialsItems = [
     {
-        name: "Alex jonas",
+        name: "M/s.Hindustan Aeronautics Limited",
         role: "JS Marketing",
         rating: 5.0,
-        review: "Pleased to inform that we have been successful in selling IMT Intermato, Italy Wheel Turning Cells and M/s.LPM, Italy Low Pressure Die Casting Machines to M/s.WHEELS INDIA LTD, CHENNAI.",
-        avatar: "/client1.png",
+        review: "It is with immense satisfaction that we announce that we have successfully commissioned/proved M/s.TAJMAC, Czech Republic make CNC 5 AXES HORIZONTAL MACHINING CENTRE model H50FA for Aero Engine Blade for SU30 Project",
+        avatar: "/profile.png",
     },
     {
-        name: "John Robert",
-        role: "SM Strategy",
+        name: "M/s.Bharat Heavy Electricals Limited",
+        role: "Ramachandrapuram, Hyderabad",
         rating: 5.0,
-        review: "Also exited to mention here that M/s.TOS KURIM, Czech Republic CNC Horizontal Boring Machine model FU 200/12 has been sold to M/s.MTAR TECHNOLOGIES PVT LTD, HYDERABAD.",
-        avatar: "/client1.png",
+        review: "We are delighted to state that we have executed contract for M/s.TOS KURIM, Czech Republic make largest Gantry CNC Machine model FRUF 400C-V/14 to M/s.Bharat Heavy Electricals Limited, Ramachandrapuram, Hyderabad for their Gas Turbine/Steam Turbine and Compressor casing unit.This is the largest contract in terms of size & value to have been executed by us as on date!",
+        avatar: "/profile.png",
     },
     {
-        name: "Maggie Hue",
-        role: "BS Growth Ceo",
+        name: "M/s.Bharat Heavy Electricals Limited",
+        role: "Ramachandrapuram, Hyderabad",
         rating: 4.8,
-        review: "Proud the state that M/s.ORT ITALIA, Italy ‘s CNC thread Rolling Machine model RP 100 has been sold to M/s.Sundaram Fasteners Limited, Villupuram, Tamil Nadu.",
-        avatar: "/client1.png",
+        review: "It gives us great pleasure to inform about supply of M/s.TOS KURIM, Czech Republic make Gantry CNC Machine model FRFQ 250-VR A/6",
+        avatar: "/profile.png",
     },
 
     {
-        name: "jack hamma",
-        role: "JK Finance",
+        name: "M/s.Fine Arc Systems Limited",
+        role: " Pune",
         rating: 5.0,
-        review: "M/s.ROCKMAN INDUSTRIES LTD, TIRUPATI has become one of our prestigious customer, who bought M/s.IMT Intermato, Italy Wheel Turning Cells &amp; Desprue punching machines.",
-        avatar: "/client1.png",
+        review: "It is a challenging order for execution from M/s.Bharat Dynamics Limited, Bhanur for Tig Welding Machine with automation",
+        avatar: "/profile.png",
     },
 
 
@@ -44,13 +44,13 @@ const testimonialsItems = [
 export default function Testimonials() {
 
     return (
-        <section className="testimonials-section overflow-hidden relative lg:py-16 py-10">
+        <section className="testimonials-section overflow-hidden relative lg:py-24 py-14">
             <div className="max-w-[1400px] mx-auto px-6 flex flex-col items-center justify-center">
                 <div className="max-w-[600px] mx-auto text-center">
-                    <h2 className="text-3xl lg:text-5xl font-medium mb-6">What Our Clients Say</h2>
-                    <p className="leading-relaxed max-w-[740px]">
+                    <h2 className="text-3xl lg:text-5xl font-medium mb-6">Few Major Recent Supplies</h2>
+                    {/* <p className="leading-relaxed max-w-[740px]">
                        Hear from industry leaders and satisfied customers who trust our precision tools and services to drive their success.
-                    </p>
+                    </p> */}
                 </div>
                 <div
 

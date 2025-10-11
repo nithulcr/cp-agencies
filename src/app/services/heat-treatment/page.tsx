@@ -14,13 +14,22 @@ export default function HeatTreatment() {
             <Header />
             <Hero2
                 heading_en="Heat Treatment"
-            breadcrumbText_en="Heat Treatment"
+                breadcrumbText_en="Heat Treatment"
             />
-            <ServiceTabs current="/services/heat-treatment" />
+
+
 
             <div className="py-10 lg:py-16">
-                <div className="max-w-[1000px] mx-auto px-6 flex flex-col-reverse lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div className="flex flex-col gap-6">
+                <div className="max-w-[1200px] mx-auto px-6 flex flex-col-reverse md:flex-row  gap-y-8">
+                    <div className="flex w-full flex-col gap-6">
+
+                        <Image
+                            src="/heat-treatment.jpg"
+                            alt="Investor at Computer"
+                            width={550}
+                            height={550}
+                            className="object-cover f-full "
+                        />
                         <div >
                             <ul className="">
                                 <li>1. INDUCTION HEATING & BRAZING MACHINES</li>
@@ -31,22 +40,14 @@ export default function HeatTreatment() {
                                 <li>4. ION HEAT, COLUMBIA
                                     <br /> <span className="pl-3">- Nitriding Furnaces</span>
                                 </li>
-                               
+
 
                             </ul>
                         </div>
-                        
+
                     </div>
-                    <div className="relative flex justify-center lg:justify-end lg:flex h-full">
-
-                        <Image
-                            src="/heat-treatment.jpg"
-                            alt="Investor at Computer"
-                            width={550}
-                            height={550}
-                            className="object-cover f-full "
-                        />
-
+                    <div className="relative md:w-[430px] flex flex-none md:pl-8 justify-center lg:justify-end lg:flex lg:sticky lg:top-[100px] h-fit">
+                        <ServiceTabs current="/services/heat-treatment" />
                     </div>
                 </div>
 

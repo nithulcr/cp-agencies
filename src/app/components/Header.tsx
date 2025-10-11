@@ -15,15 +15,13 @@ const navItems = [
     { href: "#products", label: "Products" },
     {
         label: "Our Services",
-        href: "/our-servicess",
         submenu: [
-            { href: "/servicess/machine-tools", label: "Machine Tools" },
-            { href: "/servicess/fabrication-automation", label: "Fabrication & Automation" },
-            { href: "/servicess/metrology", label: "Metrology" },
-            { href: "/servicess/heat-treatment", label: "Heat Treatment" },
+            { href: "/services/machine-tools", label: "Machinne Tools and Automation" },
+            { href: "/services/metrology", label: "Metrology" },
+            { href: "/services/heat-treatment", label: "Heat Treatment" },
         ],
     },
-    { href: "/blogss", label: "Blogs" },
+    { href: "/blogs", label: "Blogs" },
     { href: "/CSR", label: "CSR" },
 ];
 
@@ -94,18 +92,18 @@ export default function Header() {
                         {navItems.map((item) => (
                             item.submenu ? (
                                 <div
-                                    key={item.href}
+                                    key={item.label}
                                     className="relative h-full flex items-center"
                                     onMouseEnter={() => setServiceMenuOpen(true)}
                                     onMouseLeave={() => setServiceMenuOpen(false)}
                                 >
-                                    <Link
-                                        href={item.href}
+                                    <div
+                                      
                                         className={`place-items-center h-full flex transition-colors duration-300 font-light text-md menu-item ${pathname === item.href ? "menu-active" : ""}`}
                                     >
                                         {item.label}
                                         <ChevronDown size={16} className={`ml-1 transition-transform duration-300 ${serviceMenuOpen ? 'rotate-180' : ''}`} />
-                                    </Link>
+                                </div>
                                     {serviceMenuOpen && (
                                         <motion.div
                                             initial={{ opacity: 0, y: 20 }}
@@ -128,8 +126,8 @@ export default function Header() {
                                 </div>
                             ) : (
                                 <Link
-                                    key={item.href}
-                                    href={item.href}
+                                    key={item.label}
+                                    href={item.href!}
                                     className={`place-items-center flex transition-colors duration-300 font-light text-md menu-item ${pathname === item.href ? "menu-active" : ""}`}
                                 >
                                     {item.label}
@@ -151,7 +149,7 @@ export default function Header() {
                 >
                     {navItems.map((item) => (
                         item.submenu ? (
-                            <div key={item.href}>
+                            <div key={item.label}>
                                 <div
                                     className="flex justify-between items-center text-white"
                                     onClick={() => setServiceMenuOpen(!serviceMenuOpen)}
@@ -175,8 +173,8 @@ export default function Header() {
                             </div>
                         ) : (
                             <Link
-                                key={item.href}
-                                href={item.href}
+                                key={item.label}
+                                href={item.href!}
                                 className={`block text-white hover:text-[#009D78] ${pathname === item.href ? "text-[#009D78] font-semibold" : ""}`}
                             >
                                 {item.label}

@@ -99,27 +99,35 @@ const WhyChooseUs = () => {
   const data = whyChooseDataEn;
 
   return (
-    <section className="py-10 lg:py-16 text-[var(--foreground)]">
-      <div className="max-w-[1400px] mx-auto px-6 flex lg:flex-row flex-col items-start lg:items-center gap-5 justify-between mb-18">
+    <section className="py-14 lg:py-24 text-[var(--foreground)] bg-white">
+      <div className="max-w-[1400px] mx-auto px-6 grid  md:grid-cols-2 gap-10 ">
+      <div className=" flex lg:flex-row flex-col items-start  gap-5 justify-between mb-18">
         <div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Why Choose Us?</h2>
-          <p className="leading-relaxed max-w-[700px] text-gray-600">
+          <p className="leading-relaxed max-w-[1000px] text-gray-600">
 
-            We are Your Your Trusted Partner in Superior Machine Tool Technology. we have committed to delivering high-tech products and innovative designs tailored to meet each customer s unique machining requirements.
+            At the heart of CP Agencies lies a deep-seated passion for delivering unparallel professional
+            service. Our commitment extends beyond mere transactions; we focus on providing swift,
+            responsive support and expert application guidance tailored precisely to your operational
+            needs. This dedication is the corner stone of our success and is reflected in our ever-
+            expanding roster of satisfied clients across critical sectors. We understand that in today’s
+            demanding industrial landscape, timely and effective service isn’t just an advantage – it’s
+            essential.
           </p>
+           <AnimatedButton href="" label="More About Us" className="w-fit text-white mt-8" />
         </div>
-        <AnimatedButton href="" label="More About Us" className="w-fit text-white" />
+       
 
       </div>
-      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-5 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 relative">
         {data.map((choose) => (
           <div
             key={choose.id}
-            className="bg-white rounded-3xl rounded-br-none p-7 transition-all duration-300 relative top-0 hover:top-[-6px]"
+            className="bg-[var(--background2)] rounded-3xl rounded-br-none p-7 transition-all duration-300 relative top-0 hover:top-[-6px]"
           >
             {/* Icon + Number */}
-            <div className="flex lg:flex-col items-center lg:items-start gap-3 mb-4">
-              <div className="w-16 h-16 flex items-center justify-center rounded-full p-4 bg-[var(--green2)] text-green-900">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-14 h-14 flex items-center justify-center rounded-full p-4 bg-[var(--green2)] text-green-900">
                 {choose.icon}
               </div>
               {/* Title */}
@@ -130,6 +138,7 @@ const WhyChooseUs = () => {
             <p className="text-md leading-snug">{choose.description}</p>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

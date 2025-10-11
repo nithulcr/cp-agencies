@@ -24,23 +24,19 @@ const iconRealAssetBacking = (
 // English content array with shared icons
 const points_en = [
   {
-    title: <>Automotive</>,
-    description: "Design and manufacture of motor vehicles and components for personal and commercial use.",
+    title: <>Defence &amp; Aerospace</>,
     icon: iconPredictableIncome,
   },
   {
-    title: <>Aerospace</>,
-    description: "Development and production of aircraft, spacecraft, and related systems and equipment.",
+    title: <>Automotive</>,
     icon: iconLicensedRegulated,
   },
   {
     title: <>Heavy Engineering</>,
-    description: "Manufacturing of large-scale industrial machinery and infrastructure equipment.",
     icon: iconClearExitStrategy,
   },
   {
-    title: <>General Manufacturing</>,
-    description: "Production of a wide range of goods through various industrial processes across multiple sectors.",
+    title: <>Ship Building and General Manufacturing.</>,
     icon: iconRealAssetBacking,
   },
 ];
@@ -51,7 +47,7 @@ export default function AboutUs() {
 
   return (
 
-    <section dir="ltr" className="py-10 lg:pb-14 lg:pt-22 text-left">
+    <section dir="ltr" className="py-14 lg:pb-24 lg:pt-22 text-left">
       <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="">
           <div className="overflow-hidden lg:hidden mb-10">
@@ -64,7 +60,7 @@ export default function AboutUs() {
             />
           </div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Welcom to CP Agencies</h2>
-          <p className="leading-relaxed mb-5 max-w-[560px]">
+          <p className="leading-relaxed mb-5 max-w-[700px]">
             CP AGENCIES is a leading provider of advanced technology and exceptional service in the machine tool industry. Since our inception, we have committed to delivering high-tech products and innovative designs tailored to meet each customer s unique machining requirements. We proudly offer comprehensive manufacturing solutions, expert applications support, specialized customer training, and reliable after-sales service to our growing client base.
           </p>
           <p className="font-medium text-2xl">Industries We Serve:</p>
@@ -76,7 +72,7 @@ export default function AboutUs() {
 
                   <h3 className="lg:text-[19px] font-semibold text-gray-900">{point.title}</h3>
                 </div>
-                <p className="text-sm mt-1">{point.description}</p>
+              
               </div>
             ))}
           </div>
@@ -87,8 +83,8 @@ export default function AboutUs() {
             <Image
               src="/bg5.jpg"
               alt="Investor at Computer"
-              width={550}
-              height={550}
+              width={650}
+              height={650}
               className="object-cover f-full"
             />
           

@@ -17,14 +17,14 @@ const teamDataEN = [
   },
   {
     id: "02",
-     icon: "/products/2.jpeg",
-    title: "Bond Technologies",
+     icon: "/products/TAJMAC.png",
+    title: "TAJMAC",
   },
   {
     id: "03",
-         icon: "/products/7.jpg",
+         icon: "/products/TOSHULIN.png",
 
-    title: "CKD Blansko",
+    title: "TOSHULIN",
   },
   {
     id: "04",
@@ -34,7 +34,7 @@ const teamDataEN = [
   },
   {
     id: "05",
-    icon: "/products/9.jpg",
+    icon: "/products/MAS-SRL.jpeg",
     title: "MAS SRL",
   },
 
@@ -51,7 +51,7 @@ const Products = () => {
   const data =  teamDataEN;
 
   return (
-    <section className="py-10 lg:py-16 text-[var(--foreground)]">
+    <section className="py-14 lg:py-24 text-[var(--foreground)]">
       <div className="max-w-[1400px] mx-auto px-6 flex lg:flex-row flex-col items-start lg:items-center gap-5 justify-between mb-14">
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Our Products</h2>

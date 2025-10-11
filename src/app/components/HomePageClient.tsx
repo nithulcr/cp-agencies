@@ -52,13 +52,14 @@ export default function HomePageClient() {
           <Header />
           <Hero />
           <AboutUs />
-                    <CSR />  
-                    <ConsultationBanner />
+                   
           
           <WhyChooseUs />
           <ProductsSlide />
-          
+                    <ConsultationBanner />
           <Services />
+
+           <CSR />  
 
 
           <QuoteSection />

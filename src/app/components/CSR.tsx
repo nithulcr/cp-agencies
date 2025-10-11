@@ -6,7 +6,7 @@ import AnimatedButton from "./AnimatedButton";
 
 const CSR = () => {
     return (
-        <section className=" py-12 lg:py-16">
+        <section className=" py-14 lg:py-20 bg-white">
             <div className="max-w-[1400px] mx-auto px-6  grid md:grid-cols-3 items-center  gap-5">
                 <div className="col-span-2 max-w-[700px]">
                     <h4 className="mb-4 lg:text-5xl text-3xl">CSR</h4>
