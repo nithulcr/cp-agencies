@@ -87,11 +87,7 @@ const partnersEn = [
      icon: "/partners/16.jpeg",
   
   },
-  {
-    id: "017",
-     icon: "/partners/17.jpeg",
-  
-  },
+
 ];
 
 const Partners = () => {
