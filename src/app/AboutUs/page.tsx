@@ -6,11 +6,10 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
 
-  const metadata: Metadata = {
-    title: 'About Ray Montazim | Licensed Real Estate Investment Company',
-    description: 'Ray Montazim is a licensed Saudi simplified joint-stock company offering curated, income-producing real estate investments with transparency and compliance.',
-    keywords: 'About Ray Montazim, Saudi joint stock company, licensed investment, real estate transparency, secure investment Saudi Arabia',
-
+ const metadata: Metadata = {
+    title: 'CP Agencies',
+    description: '',
+    keywords: '',
   };
 
   return metadata;

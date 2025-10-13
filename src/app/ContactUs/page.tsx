@@ -6,11 +6,10 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
 
-  const metadata: Metadata = {
-    title: 'Contact Us | Ray Montazim Investment',
-    description: 'Get in touch with Ray Montazim. Connect with our team, learn about partnerships, or explore investment opportunities in Saudi real estate.',
-    keywords: 'Contact Ray Montazim, real estate investment contact, partnerships Saudi Arabia, investment team, investor relations Ray Montazim',
-
+ const metadata: Metadata = {
+    title: 'CP Agencies',
+    description: '',
+    keywords: '',
   };
 
   return metadata;
