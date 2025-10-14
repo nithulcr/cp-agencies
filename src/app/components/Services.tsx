@@ -8,7 +8,7 @@ import { HardDrive, Wrench, Target, Sun } from 'lucide-react';
 const services = [
     {
         title: 'Machinne Tools and Automation',
-        desc: 'Precision CNC Machining &amp; Automation Solutions from Reputed Brands from World over',
+        desc: '"Precision CNC Machining & Automation Solutions from Reputed Brands from World over”.',
         icon: <> <HardDrive size={32} strokeWidth={1} />
         </>,
     },

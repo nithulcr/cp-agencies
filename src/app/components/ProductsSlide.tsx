@@ -10,11 +10,7 @@ import AnimatedButton from "./AnimatedButton";
 
 
 const teamDataEN = [
-  {
-    id: "01",
-    icon: "/products/1.jpeg",
-    title: "Ionheat",
-  },
+
   {
     id: "02",
      icon: "/products/TAJMAC.png",
@@ -26,16 +22,21 @@ const teamDataEN = [
 
     title: "TOSHULIN",
   },
+    {
+    id: "01",
+    icon: "/products/ort.png",
+    title: "ORT",
+  },
   {
     id: "04",
-         icon: "/products/4.png",
+         icon: "/products/imt.png",
 
-    title: "LPM VTL",
+    title: "IMT",
   },
   {
     id: "05",
-    icon: "/products/MAS-SRL.jpeg",
-    title: "MAS SRL",
+    icon: "/products/weiler.png",
+    title: "WEILER",
   },
 
   // ...other products

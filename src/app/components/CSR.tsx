@@ -13,7 +13,7 @@ const CSR = () => {
                     <p>  As part of the social responsibility, we have undertaken few improvement programmes at Government primary school located at Chetla Gouraram village, near Toopran. “As a responsible corporate citizen, CP agencies besides being actively engaged in its business, is fully committed to the larger goal of enhancing the standard of living of the people,</p>
                 </div>
                 <div className="flex justify-end">
-                    <AnimatedButton label="Read More" className="w-fit text-white" />
+                    <AnimatedButton label="Read More" className="w-fit text-white " />
                 </div>
 
             </div>

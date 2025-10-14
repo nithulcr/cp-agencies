@@ -19,7 +19,7 @@ const ProductsChild: React.FC<ProductsChildProps> = ({ icon, title }) => {
         width={100}
         height={100}
       />
-      <h3 className="text-lg lg:text-xl font-medium lg:mb-2  px-2  lg:px-4">{title}</h3>
+      <h3 className="text-lg lg:text-xl font-medium my-2 px-4">{title}</h3>
     </div>
   );
 };
