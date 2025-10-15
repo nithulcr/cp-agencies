@@ -1,9 +1,9 @@
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 
 
 export async function generateMetadata(
-  parent: ResolvingMetadata
+
 ): Promise<Metadata> {
 
  const metadata: Metadata = {

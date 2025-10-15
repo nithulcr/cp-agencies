@@ -24,15 +24,16 @@ interface Post {
 }
 
 async function getPosts() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}?_embed`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/posts?_embed`, {
     headers: {
      'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
 
     },
-    next: { revalidate: 60 } // Revalidate every 60 seconds
-  });
+  next: { revalidate: 60 } // Revalidate every 60 seconds
+});
 
   if (!response.ok) {
+    console.error('Failed to fetch posts:', response.status, await response.text());
     throw new Error('Failed to fetch posts');
   }
 
@@ -53,14 +54,14 @@ export default async function BlogListPage() {
             <div className='fade-up max-w-3xl mx-auto text-center'>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 fade-up">Latest News & Blog</h1>
               <p className="fade-up mb-6 opacity-70">
-                Stay informed with the latest articles, market insights, and trading tips from the Jeta FX team. Our blog is designed to help traders at every level — from beginners learning the basics to experienced investors exploring advanced strategies.
+                SOME NOTABLE MOMENTS OVER THE YEARS
               </p>
             </div>
           </div>
         </div>
         <div className='max-w-[1460px] mx-auto px-6 mt-10 lg:mt-20'>
 
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-x-8 gap-y-14 fade-up">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 fade-up">
             {posts.map((post) => {
               const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
               if (!featuredImage) {

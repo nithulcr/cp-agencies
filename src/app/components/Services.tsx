@@ -1,7 +1,7 @@
 'use client';
 
 import AnimatedButton from "./AnimatedButton";
-import { HardDrive, Wrench, Target, Sun } from 'lucide-react';
+import { HardDrive,  Target, Sun } from 'lucide-react';
 
 
 

@@ -23,49 +23,67 @@ interface Post {
 }
 
 async function getPost(slug: string): Promise<Post | null> {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}?slug=${slug}&_embed`, {
-    headers: {
-      'Authorization': 'Basic ' + btoa(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`),
-    },
-    next: { revalidate: 60 } // Revalidate every 60 seconds
-  });
-  if (!response.ok) {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/posts?slug=${slug}&_embed`, {
+      headers: {
+        'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
+      },
+      next: { revalidate: 60 } // Revalidate every 60 seconds
+    });
+    if (!response.ok) {
+      console.error(`Failed to fetch post for slug: ${slug}, status: ${response.status}, body:`, await response.text());
+      return null;
+    }
+    const posts = await response.json();
+    return posts.length > 0 ? posts[0] : null;
+  } catch (error) {
+    console.error('Error in getPost:', error);
     return null;
   }
-  const posts = await response.json();
-  return posts.length > 0 ? posts[0] : null;
 }
 
 async function getRelatedPosts(currentSlug: string): Promise<Post[]> {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}?_embed`, {
-    headers: {
-      'Authorization': 'Basic ' + btoa(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`),
-    },
-    next: { revalidate: 60 } // Revalidate every 60 seconds
-  });
-  if (!response.ok) {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/posts?_embed`, {
+      headers: {
+        'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
+      },
+      next: { revalidate: 60 } // Revalidate every 60 seconds
+    });
+    if (!response.ok) {
+      console.error(`Failed to fetch related posts, status: ${response.status}, body:`, await response.text());
+      return [];
+    }
+    const allPosts: Post[] = await response.json();
+    const related = allPosts.filter(p => p.slug !== currentSlug).slice(0, 3);
+    return related;
+  } catch (error) {
+    console.error('Error in getRelatedPosts:', error);
     return [];
   }
-  const allPosts: Post[] = await response.json();
-  const related = allPosts.filter(p => p.slug !== currentSlug).slice(0, 3);
-  return related;
 }
 
 export async function generateStaticParams() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}`,
-  {
-    headers: {
-      'Authorization': 'Basic ' + btoa(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`),
-    },
-  });
-  if (!response.ok) {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/posts`,
+    {
+      headers: {
+        'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
+      },
+    });
+    if (!response.ok) {
+      console.error(`Failed to fetch posts for generateStaticParams, status: ${response.status}, body:`, await response.text());
+      return [];
+    }
+    const posts: Post[] = await response.json();
+   
+    return posts.map((post) => ({
+      slug: post.slug,
+    }));
+  } catch (error) {
+    console.error('Error in generateStaticParams:', error);
     return [];
   }
-  const posts: Post[] = await response.json();
- 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
 }
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
