@@ -39,6 +39,13 @@ const slidesContent = [
         contactLink: "",
     },
     {
+        imageSrc: "/products/piston-line.jpg",
+        heading: "Partnering for Success",
+        description1: " Trusted Technology Providers",
+       
+        contactLink: "",
+    },
+    {
         imageSrc: "/products/TAJMAC.png",
         heading: "Partnering for Success",
         description1: " Trusted Technology Providers",
