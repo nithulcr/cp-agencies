@@ -13,7 +13,7 @@ import Image from "next/image";
 
 const slidesContent = [
     {
-        videoSrc: "/bg5.jpg",
+        imageSrc: "/bg5.jpg",
         heading: "Empowering South India’s Industries",
         description1: "Your Trusted Partner in Superior Machine Tool Technology",
         // description2: "Your Trusted Partner in Superior Machine Tool Technology",
@@ -22,37 +22,45 @@ const slidesContent = [
         contactLink: "",
     },
     {
-        videoSrc: "/bg4.jpg",
+        imageSrc: "/bg4.jpg",
         heading: "Forging the Future of Manufacturing Since 2009",
         description1: "CP Agencies stands as a testament to growth and expertise in the South Indian machine tool sector",
         // description2: "We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.",
         exploreLink: "",
         contactLink: "",
     },
-    // {
-    //     videoSrc: "/bg4.jpg",
-    //     heading: "Innovation A Way Of Life",
-    //     description1: "Forging the Future of Manufacturing Since 2009",
-    //     description2: "We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.",
-    //     exploreLink: "",
-    //     contactLink: "",
-    // },
+   
     {
-        videoSrc: "/bg3.jpg",
+        imageSrc: "/bg3.jpg",
         heading: "Driven by Passion, Defined by Service",
         description1: "CP Agencies lies a deep-seated passion for delivering unparallel professional service",
         // description2: "Empowering your projects with state-of-the-art equipment and expertise.",
         exploreLink: "",
         contactLink: "",
     },
-    // {
-    //     videoSrc: "/bg4.jpg",
-    //     heading: "Partnering for Success",
-    //     description1: " Trusted Technology Providers",
-    //     description2: "Supporting your growth with quality products and dedicated service.",
-    //     exploreLink: "",
-    //     contactLink: "",
-    // },
+    {
+        imageSrc: "/products/TAJMAC.png",
+        heading: "Partnering for Success",
+        description1: " Trusted Technology Providers",
+       
+        contactLink: "",
+    },
+     {
+        imageSrc: "/products/ort.png",
+        heading: "Innovation A Way Of Life",
+        description1: "Forging the Future of Manufacturing Since 2009",
+     
+        exploreLink: "",
+        contactLink: "",
+    },
+     {
+        imageSrc: "/products/wf.jpg",
+        heading: "Innovation A Way Of Life",
+        description1: "Forging the Future of Manufacturing Since 2009",
+     
+        exploreLink: "",
+        contactLink: "",
+    },
 
 
 ];
@@ -76,9 +84,9 @@ const Hero = () => {
                         {/* Background pattern */}
 
                         <div className="h-full grid lg:grid-cols-2">
-                            <div className="lg:hidden">
+                            <div className="lg:hidden bg-white">
                                 <Image
-                                    src={slide.videoSrc}
+                                    src={slide.imageSrc}
                                     width="700"
                                     height="700"
                                     alt="bg"
@@ -111,11 +119,11 @@ const Hero = () => {
                             </motion.div>
                             <div className="hidden lg:block">
                                 <Image
-                                    src={slide.videoSrc}
+                                    src={slide.imageSrc}
                                     width="1000"
                                     height="1000"
                                     alt="bg"
-                                    className="w-full h-full object-cover relative"
+                                    className="w-full h-full object-cover relative bg-white"
                                 />
                             </div>
                         </div>
