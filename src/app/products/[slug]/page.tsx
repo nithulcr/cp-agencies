@@ -71,13 +71,21 @@ export default async function ProductPage({ params }: { params: { slug: string }
     <>
       <Header />
       <div className="py-14 lg:py-24 mt-[100px]">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-8">
+        <div className="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-2 gap-8">
 
-
+          {featuredImage && (
+            <Image
+              src={featuredImage}
+              alt={product.title.rendered}
+              width={800}
+              height={400}
+              className="w-full max-w-[500px] h-auto object-cover lg:ml-auto rounded-lg lg:hidden"
+            />
+          )}
           <div>
             <div className='flex gap-2 items-center  mb-6'>
              
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase">
 
                 {product.title.rendered}
               </h1>
@@ -94,7 +102,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
               alt={product.title.rendered}
               width={800}
               height={400}
-              className="w-full max-w-[500px] h-auto object-cover ml-auto rounded-lg"
+              className="w-full max-w-[500px] h-auto object-cover lg:ml-auto rounded-lg hidden lg:block"
             />
           )}
 

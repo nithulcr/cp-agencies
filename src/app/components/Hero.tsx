@@ -40,30 +40,30 @@ const slidesContent = [
     },
     {
         imageSrc: "/products/piston-line.jpg",
-        heading: "Partnering for Success",
-        description1: " Trusted Technology Providers",
+        heading: "Connecting You to Global Excellence",
+        description1: "We proudly represent an elite portfolio of globally renowned companies",
        
         contactLink: "",
     },
     {
         imageSrc: "/products/TAJMAC.png",
         heading: "Partnering for Success",
-        description1: " Trusted Technology Providers",
+        description1: "Trusted Technology Providers, We are eager to understand your unique challenges and requirements",
        
         contactLink: "",
     },
      {
         imageSrc: "/products/ort.png",
-        heading: "Innovation A Way Of Life",
-        description1: "Forging the Future of Manufacturing Since 2009",
+        heading: "Comprehensive Solutions for Diverse Industries",
+        description1: "We provide cutting-edge solutions for defense, aerospace, engineering, shipbuilding, and automotive industries.",
      
         exploreLink: "",
         contactLink: "",
     },
      {
         imageSrc: "/products/wf.jpg",
-        heading: "Innovation A Way Of Life",
-        description1: "Forging the Future of Manufacturing Since 2009",
+        heading: "Unmatched Technical Support & Turnkey Expertise",
+        description1: "What truly sets CP Agencies apart is our dedicated, in-house service team",
      
         exploreLink: "",
         contactLink: "",
@@ -107,7 +107,7 @@ const Hero = () => {
 
                                 <h1 className="text-4xl md:text-[50px] font-bold mb-2 head-font max-w-[570px]" dangerouslySetInnerHTML={{ __html: slide.heading }}>
                                 </h1>
-                                <div className="my-4 lg:my-2 max-w-[540px]">
+                                <div className="my-3 lg:my-1 max-w-[540px]">
                                     <p className="text-lg md:text-2xl my-2 font-light2">
                                         {slide.description1}
 
@@ -119,7 +119,7 @@ const Hero = () => {
                                 </div>
                                 <div className="flex flex-wrap gap-4 mt-4 max-w-[540px]">
                                     {/* <div className='shuffle'> <AnimatedButton href={slide.exploreLink} label="Explore Products" className="w-fit" /></div> */}
-                                    <div className='shuffle'><AnimatedButton href={slide.contactLink} label="Contact Us" className="w-fit transparent-btn" /></div>
+                                   <AnimatedButton href={slide.contactLink} label="Contact Us" className="w-fit transparent-btn transparent-btn4" />
                                 </div>
 
 

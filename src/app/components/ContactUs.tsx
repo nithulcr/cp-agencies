@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Phone, ArrowRight, Clock } from "lucide-react";
+import AnimatedButton from "./AnimatedButton";
 import { LoadScript, GoogleMap, Marker } from "@react-google-maps/api";
 const containerStyle = { width: "100%", height: "400px" };
 const center = { lat: 37.7749, lng: -122.4194 }; // Example coordinates
@@ -144,6 +145,7 @@ export default function ContactSection() {
                   ? "Sending..."
                   : "Get a Solution"}
               </button>
+              
             </div>
             <div className="mt-3 justify-self-end message-status">
               {messageStatus && (
@@ -156,7 +158,7 @@ export default function ContactSection() {
         </div>
 
 
-        <div className="max-w-[1400px] mx-auto px-6  mt-18 lg:mt-36">
+        <div className="max-w-[1400px] mx-auto px-6 pb-6  mt-18 lg:mt-36">
 
           <div className="max-w-[730px] mx-auto text-center mb-10">
             <h2 className="text-3xl lg:text-5xl font-medium mb-6">Find Our Offices</h2>

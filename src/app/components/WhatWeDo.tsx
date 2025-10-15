@@ -1,7 +1,7 @@
 "use client";
-import Link from "next/link";
 import { HardDrive, Wrench, Target, Sun } from 'lucide-react';
 import Image from "next/image";
+import AnimatedButton from "./AnimatedButton";
 
 
 const whatWeDoDataEN = [
@@ -59,11 +59,8 @@ const WhatWeDo = () => {
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">{section.heading}</h2>
           <p className="leading-relaxed max-w-[700px] text-gray-800">{section.description}</p>
         </div>
-        <Link href={"/ContactUs"}>
-          <button className="inline-flex items-center gap-2 px-10 py-[12px] bg-[var(--green2)] text-white border rounded-full transition-transform duration-300 hover:scale-105 cursor-pointer">
-            {section.button}
-          </button>
-        </Link>
+       
+         <AnimatedButton href="/ContactUs" label="Contact Us" className="w-fit" />
       </div>
       <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 relative">
         {data.map((whatwedo) => (

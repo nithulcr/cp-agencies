@@ -26,7 +26,7 @@ export default function ConsultationBanner() {
                         </div>
                     </div>
                     <div className="justify-center items-center flex">
-                        <AnimatedButton href="" label="Contact Us" className="w-fit transparent-btn" />
+                        <AnimatedButton href="/ContactUs" label="Contact Us" className="w-fit transparent-btn transparent-btn4" />
 
                     </div>
                 </div>

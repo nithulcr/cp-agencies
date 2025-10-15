@@ -114,7 +114,7 @@ const WhyChooseUs = () => {
             demanding industrial landscape, timely and effective service isn’t just an advantage – it’s
             essential.
           </p>
-           <AnimatedButton href="" label="More About Us" className="w-fit text-white mt-8" />
+           <AnimatedButton href="/AboutUs" label="More About Us" className="w-fit text-white mt-8" />
         </div>
        
 

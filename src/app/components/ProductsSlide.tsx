@@ -93,7 +93,7 @@ const Products = () => {
         </div>
       </div>
       <div className="max-w-[500px] mx-auto px-6 mt-10 flex justify-center">
-        <AnimatedButton href="" label="View All Products" className="w-fit text-white" />
+        <AnimatedButton href="/products" label="View All Products" className="w-fit text-white" />
       </div>
     </section>
   );
