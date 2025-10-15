@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Image from "next/image";
+
 
 interface Post {
   id: number;
@@ -24,7 +26,8 @@ interface Post {
 async function getPosts() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}?_embed`, {
     headers: {
-      'Authorization': 'Basic ' + btoa(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`),
+     'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
+
     },
     next: { revalidate: 60 } // Revalidate every 60 seconds
   });
@@ -36,6 +39,7 @@ async function getPosts() {
   return response.json();
 }
 
+
 export default async function BlogListPage() {
   const posts: Post[] = await getPosts();
 
@@ -43,6 +47,7 @@ export default async function BlogListPage() {
     <>
       <Header />
       <section className=" other-section pt-14 lg:pt-22 pb-14 lg:pb-22 overflow-hidden relative">
+
         <div className="max-w-[1400px] px-6 w-full mx-auto pt-14 lg:pt-20">
           <div className='relative'>
             <div className='fade-up max-w-3xl mx-auto text-center'>
@@ -54,6 +59,7 @@ export default async function BlogListPage() {
           </div>
         </div>
         <div className='max-w-[1460px] mx-auto px-6 mt-10 lg:mt-20'>
+
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-x-8 gap-y-14 fade-up">
             {posts.map((post) => {
               const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
@@ -86,9 +92,15 @@ export default async function BlogListPage() {
               )
             })}
           </div>
+
+
+
         </div>
       </section>
+
       <Footer />
     </>
+
   );
 }
+

@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--green)] text-white text-base px-6 pt-16 lg:pt-20 border-t border-gray-100">
       <div className="max-w-[1200px] mx-auto p-8 bg-white hidden lg:flex justify-between flex-wrap gap-6 lg:flex-nowrap items-center">
-        <h2 className="text-black text-3xl lg:text-4xl max-w-[600px]">We are eager to understand your unique challenges and requirements</h2>
+        <h2 className="text-black text-3xl lg:text-4xl max-w-[600px]">We are eager to understand your unique challenges and requirements.</h2>
         <AnimatedButton href="ContactUs" label="Let’s Talk" className="w-fit whitespace-nowrap btn-xl" />
 
 

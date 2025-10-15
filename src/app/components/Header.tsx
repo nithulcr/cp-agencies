@@ -12,7 +12,7 @@ import AnimatedButton from "./AnimatedButton";
 const navItems = [
     { href: "/", label: "Home" },
     { href: "/AboutUs", label: "About us" },
-    { href: "#products", label: "Products" },
+    { href: "/products", label: "Products" },
     {
         label: "Our Services",
         submenu: [
