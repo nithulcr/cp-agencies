@@ -29,7 +29,7 @@ const slidesContent = [
         exploreLink: "",
         contactLink: "",
     },
-
+   
     {
         imageSrc: "/bg3.jpg",
         heading: "Driven by Passion, Defined by Service",
@@ -42,22 +42,22 @@ const slidesContent = [
         imageSrc: "/products/TAJMAC.png",
         heading: "Partnering for Success",
         description1: " Trusted Technology Providers",
-
+       
         contactLink: "",
     },
-    {
+     {
         imageSrc: "/products/ort.png",
         heading: "Innovation A Way Of Life",
         description1: "Forging the Future of Manufacturing Since 2009",
-
+     
         exploreLink: "",
         contactLink: "",
     },
-    {
+     {
         imageSrc: "/products/wf.jpg",
         heading: "Innovation A Way Of Life",
         description1: "Forging the Future of Manufacturing Since 2009",
-
+     
         exploreLink: "",
         contactLink: "",
     },
@@ -77,16 +77,14 @@ const Hero = () => {
                 speed={1500}
                 // pagination={{ clickable: true }}
                 navigation={true}
-                className="w-full hero  flex flex-col justify-center items-center text-center px-6 relative mt-[100px] lg:pb-[120px] bg-cover"
-                style={{ backgroundImage: "url('https://img.freepik.com/free-photo/abstract-luxury-plain-blur-grey-black-gradient-used-as-background-studio-wall-display-your-products_1258-80051.jpg?semt=ais_hybrid&w=740&q=80')" }}
+                className="w-full hero bg-[var(--green)] text-white flex flex-col justify-center items-center text-center px-6 relative mt-[100px] lg:pb-[120px]"
             >
-
                 {slidesContent.map((slide, index) => (
                     <SwiperSlide key={index} className="h-full">
                         {/* Background pattern */}
 
                         <div className="h-full grid lg:grid-cols-2">
-                            <div className="lg:hidden ">
+                            <div className="lg:hidden bg-white">
                                 <Image
                                     src={slide.imageSrc}
                                     width="700"
@@ -100,7 +98,7 @@ const Hero = () => {
                                 transition={{ duration: 0.5 }} className="relative z-10 max-w-[1400px] mx-auto px-6 py-10 lg:py-40 h-full flex flex-col text-left">
 
 
-                                <h1 className="text-4xl text-site md:text-[50px] font-bold mb-2 head-font max-w-[570px]" dangerouslySetInnerHTML={{ __html: slide.heading }}>
+                                <h1 className="text-4xl md:text-[50px] font-bold mb-2 head-font max-w-[570px]" dangerouslySetInnerHTML={{ __html: slide.heading }}>
                                 </h1>
                                 <div className="my-4 lg:my-2 max-w-[540px]">
                                     <p className="text-lg md:text-2xl my-2 font-light2">
@@ -114,7 +112,7 @@ const Hero = () => {
                                 </div>
                                 <div className="flex flex-wrap gap-4 mt-4 max-w-[540px]">
                                     {/* <div className='shuffle'> <AnimatedButton href={slide.exploreLink} label="Explore Products" className="w-fit" /></div> */}
-                                    <div className='shuffle'><AnimatedButton href={slide.contactLink} label="Contact Us" className="w-fit text-white" /></div>
+                                    <div className='shuffle'><AnimatedButton href={slide.contactLink} label="Contact Us" className="w-fit transparent-btn" /></div>
                                 </div>
 
 
@@ -125,7 +123,7 @@ const Hero = () => {
                                     width="1000"
                                     height="1000"
                                     alt="bg"
-                                    className="w-full h-full object-cover relative "
+                                    className="w-full h-full object-cover relative bg-white"
                                 />
                             </div>
                         </div>
