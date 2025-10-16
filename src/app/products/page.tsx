@@ -9,13 +9,13 @@ interface Product { id: number; title: {rendered: string}; slug: string; product
 const API_URL = process.env.NEXT_PUBLIC_WP_API_URL;
 
 async function getProducts(): Promise<Product[]> {
-  const res = await fetch(`${API_URL}/product?_embed`, { headers: { 'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64') }, next: { revalidate: 60 } });
+  const res = await fetch(`${API_URL}/product?_embed&per_page=100`, { headers: { 'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64') }, next: { revalidate: 60 } });
   if (!res.ok) throw new Error('Failed to fetch products');
   return res.json();
 }
 
 async function getBrands(): Promise<Brand[]> {
-  const res = await fetch(`${API_URL}/product_brand`, { headers: { 'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64') }, next: { revalidate: 60 } });
+  const res = await fetch(`${API_URL}/product_brand?per_page=100`, { headers: { 'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64') }, next: { revalidate: 60 } });
   if (!res.ok) throw new Error('Failed to fetch brands');
   return res.json();
 }

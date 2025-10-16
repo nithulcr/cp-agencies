@@ -10,16 +10,25 @@ interface Product { id: number; title: { rendered: string }; slug: string; produ
 
 export default function ProductsFilter({ products, brands }: { products: Product[]; brands: Brand[] }) {
   const [activeBrand, setActiveBrand] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  const handleBrandClick = (brandId: number | null) => {
+    setActiveBrand(brandId);
+    setVisibleCount(6);
+  };
 
   const filteredProducts = activeBrand === null
     ? products
     : products.filter(p => Array.isArray(p.product_brand) && p.product_brand.includes(activeBrand));
-  const [visibleProducts, setVisibleProducts] = useState(6);
 
-  const productsToShow = filteredProducts.slice(0, visibleProducts);
+  const productsToShow = filteredProducts.slice(0, visibleCount);
 
-  const showMoreProducts = () => {
-    setVisibleProducts(filteredProducts.length);
+  const showMore = () => {
+    setVisibleCount(prevCount => prevCount + 6);
+  };
+
+  const showLess = () => {
+    setVisibleCount(prevCount => Math.max(6, prevCount - 6));
   };
 
   return (
@@ -48,10 +57,14 @@ export default function ProductsFilter({ products, brands }: { products: Product
             );
           })}
         </div>
-        {filteredProducts.length > visibleProducts && (
-
-           <AnimatedButton onClick={showMoreProducts}  label="View More" className="w-fit mt-12 mx-auto" />
-        )}
+        <div className="flex flex-wrap w-fit  justify-center ml-auto gap-4 mt-12">
+          {visibleCount > 6 && (
+            <AnimatedButton onClick={showLess} label="View Less" className="w-fit transparent-btn transparent-btn4 mx-auto" />
+          )}
+          {visibleCount < filteredProducts.length && (
+            <AnimatedButton onClick={showMore} label="Next" className="w-fit mx-auto" />
+          )}
+        </div>
       </div>
 
       {/* Brand filter sidebar */}
@@ -60,16 +73,17 @@ export default function ProductsFilter({ products, brands }: { products: Product
           <h4 className="text-3xl text-white mb-2 hidden lg:block border-b border-b-[#6686c2] pb-2">Our Products</h4>
 
           <button
-            onClick={() => setActiveBrand(null)}
+            onClick={() => handleBrandClick(null)}
             className={`px-6 cursor-pointer text-sm lg:text-[16px] py-2 lg:py-3 text-left rounded-[40px] border lg:border-0 ${activeBrand === null ? 'bg-[#e5ecff]' : 'bg-[var(--green)] text-white'}`}
           >
             All Products
           </button>
+          
 
           {brands.map(brand => (
             <button
               key={brand.id}
-              onClick={() => setActiveBrand(brand.id)}
+              onClick={() => handleBrandClick(brand.id)}
               className={`px-6 cursor-pointer text-sm lg:text-[16px] py-2 lg:py-3 text-left rounded-[40px] border border-[#193685]  lg:border-0 ${activeBrand === brand.id ? 'bg-[#e5ecff]' : 'bg-[var(--green)] text-white'}`}
             >
               {brand.name}
