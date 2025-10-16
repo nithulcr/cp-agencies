@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedButton from "../components/AnimatedButton";
@@ -10,12 +10,21 @@ interface Product { id: number; title: { rendered: string }; slug: string; produ
 
 export default function ProductsFilter({ products, brands }: { products: Product[]; brands: Brand[] }) {
   const [activeBrand, setActiveBrand] = useState<number | null>(null);
-  const [visibleCount, setVisibleCount] = useState(6);
+  const [visibleCount, setVisibleCount] = useState(12);
+  const productListRef = useRef<HTMLDivElement>(null);
 
   const handleBrandClick = (brandId: number | null) => {
     setActiveBrand(brandId);
-    setVisibleCount(6);
+    setVisibleCount(12);
   };
+
+  useEffect(() => {
+    if (productListRef.current) {
+      setTimeout(() => {
+        productListRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100); // Small delay to ensure the list has started to re-render
+    }
+  }, [activeBrand]);
 
   const filteredProducts = activeBrand === null
     ? products
@@ -24,18 +33,18 @@ export default function ProductsFilter({ products, brands }: { products: Product
   const productsToShow = filteredProducts.slice(0, visibleCount);
 
   const showMore = () => {
-    setVisibleCount(prevCount => prevCount + 6);
+    setVisibleCount(prevCount => prevCount + 12);
   };
 
   const showLess = () => {
-    setVisibleCount(prevCount => Math.max(6, prevCount - 6));
+    setVisibleCount(prevCount => Math.max(12, prevCount - 12));
   };
 
   return (
     <div className="py-14 lg:py-24 max-w-[1400px] mx-auto px-6 flex flex-col-reverse lg:flex-row gap-y-8">
 
       {/* Product list */}
-      <div className="w-full">
+      <div className="w-full product-list-container" ref={productListRef}>
         <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 gap-5">
           {productsToShow.map(product => {
             const featuredImage = product._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/bg1.jpg';
@@ -58,7 +67,7 @@ export default function ProductsFilter({ products, brands }: { products: Product
           })}
         </div>
         <div className="flex flex-wrap w-fit  justify-center ml-auto gap-4 mt-12">
-          {visibleCount > 6 && (
+          {visibleCount > 12 && (
             <AnimatedButton onClick={showLess} label="View Less" className="w-fit transparent-btn transparent-btn4 mx-auto" />
           )}
           {visibleCount < filteredProducts.length && (
@@ -70,7 +79,7 @@ export default function ProductsFilter({ products, brands }: { products: Product
       {/* Brand filter sidebar */}
       <div className="relative lg:w-[480px] flex flex-none lg:pl-14 justify-center lg:justify-end lg:flex h-fit">
         <div className="w-full flex lg:flex-col flex-wrap gap-2 lg:gap-4 lg:bg-[var(--green2)] lg:rounded-xl lg:px-8 lg:py-12">
-          <h4 className="text-3xl text-white mb-2 hidden lg:block border-b border-b-[#6686c2] pb-2">Our Products</h4>
+          
 
           <button
             onClick={() => handleBrandClick(null)}

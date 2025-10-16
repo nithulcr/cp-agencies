@@ -47,9 +47,9 @@ export default async function BlogListPage() {
   return (
     <>
       <Header />
-      <section className=" other-section pt-14 lg:pt-22 pb-14 lg:pb-22 overflow-hidden relative">
+      <section className=" other-section pt-14 lg:pt-24 pb-14 lg:pb-24 overflow-hidden relative mt-[100px]">
 
-        <div className="max-w-[1400px] px-6 w-full mx-auto pt-14 lg:pt-20">
+        <div className="max-w-[1400px] px-6 w-full mx-auto">
           <div className='relative'>
             <div className='fade-up max-w-3xl mx-auto text-center'>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 fade-up">Latest News & Blog</h1>

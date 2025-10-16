@@ -98,8 +98,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     <>
       <Header />
 
-      <section className="other-section pt-14 lg:pt-22 pb-5 lg:pb-10 overflow-hidden relative">
-        <div className="max-w-[1200px] px-6 w-full mx-auto pt-14 lg:pt-20 relative">
+      <section className="other-section pt-14 lg:pt-24 pb-5 lg:pb-10 overflow-hidden relative mt-[100px]">
+        <div className="max-w-[1200px] px-6 w-full mx-auto relative">
           <div className='max-w-6xl mx-auto text-center'>
             <h1 className="text-3xl md:text-4xl font-bold mb-8">{post.title.rendered}</h1>
 
