@@ -1,5 +1,5 @@
 {
-  "name": "sandbox",
+  "name": "cp-agencies",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,6 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"
+
   },
   "dependencies": {
     "@react-google-maps/api": "^2.20.7",

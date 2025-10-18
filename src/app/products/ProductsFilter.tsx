@@ -71,7 +71,7 @@ export default function ProductsFilter({ products, brands }: { products: Product
             <AnimatedButton onClick={showLess} label="View Less" className="w-fit transparent-btn transparent-btn4 mx-auto" />
           )}
           {visibleCount < filteredProducts.length && (
-            <AnimatedButton onClick={showMore} label="Next" className="w-fit mx-auto" />
+            <AnimatedButton onClick={showMore} label="View More" className="w-fit mx-auto" />
           )}
         </div>
       </div>

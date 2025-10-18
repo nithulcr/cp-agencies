@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 import AnimatedButton from "./AnimatedButton";
 
@@ -75,7 +76,7 @@ export default function Header() {
                     <div className="items-center space-x-2 hidden md:flex">
                         <MapPin className="w-4 h-4" strokeWidth={1} />
                         <span>
-                            
+
                             Hyderabad <span className="px-1">|</span> Bangalore <span className="px-1">|</span> Chennai
                         </span>
                     </div>
@@ -84,7 +85,12 @@ export default function Header() {
             <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 h-[72px] text-white z-10 relative">
                 <div className="text-2xl font-bold h-full align-content-center flex">
                     <Link href="/" className="items-center flex">
-                        <img src="/logo-dark.png" alt="Logo" width={140} height={50} className="w-[160px] lg:w-[220px]" />
+
+                        <Image
+                            src="/logo-dark.png"
+                            alt="Logo"
+                            width={140} height={50} className="w-[160px] lg:w-[220px]"
+                        />
                     </Link>
                 </div>
                 <div className="items-center gap-6 hidden md:flex h-full">
@@ -98,12 +104,12 @@ export default function Header() {
                                     onMouseLeave={() => setServiceMenuOpen(false)}
                                 >
                                     <div
-                                      
+
                                         className={`place-items-center h-full flex transition-colors duration-300 font-light text-md menu-item ${pathname === item.href ? "menu-active" : ""}`}
                                     >
                                         {item.label}
                                         <ChevronDown size={16} className={`ml-1 transition-transform duration-300 ${serviceMenuOpen ? 'rotate-180' : ''}`} />
-                                </div>
+                                    </div>
                                     {serviceMenuOpen && (
                                         <motion.div
                                             initial={{ opacity: 0, y: 20 }}

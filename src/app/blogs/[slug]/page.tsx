@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     <>
       <Header />
 
-      <section className="other-section pt-14 lg:pt-24 pb-5 lg:pb-10 overflow-hidden relative mt-[100px]">
+      <section className="other-section pt-14 lg:pt-24 pb-1 lg:pb-20 overflow-hidden relative mt-[100px]">
         <div className="max-w-[1200px] px-6 w-full mx-auto relative">
           <div className='max-w-6xl mx-auto text-center'>
             <h1 className="text-3xl md:text-4xl font-bold mb-8">{post.title.rendered}</h1>
@@ -117,7 +117,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               />
             </div>
             <div 
-              className="mb-6 max-w-3xl mx-auto blog-content" 
+              className="mb-6 max-w-3xl mx-auto blog-content blog-details" 
               dangerouslySetInnerHTML={{ __html: post.content.rendered }}
             />
 
@@ -126,7 +126,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
         </div>
       </section >
-      <section className="pt-7 lg:pt-12 pb-14 lg:pb-16 overflow-hidden relative">
+      <section className="pt-7 lg:pt-20 pb-14 lg:pb-20 overflow-hidden relative bg-white">
         <div className="max-w-[1460px] px-6 w-full mx-auto relative">
           <h4 className='text-2xl lg:text-4xl font-medium text-center'>Related Insights</h4>
 
@@ -148,13 +148,13 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                     />
                     <div className='p-5 pt-3'>
                       <span className='text-sm opacity-70 fw-200'>{new Date(relatedPost.date).toLocaleDateString()}</span>
-                      <h2 className="text-xl font-semibold my-3 line-clamp-2">
+                      <h2 className="text-xl font-semibold my-3 line-clamp-2 min-h-[50px]">
                         <Link href={`/blogs/${relatedPost.slug}`}>{relatedPost.title.rendered}</Link>
                       </h2>
-                      <div 
+                      {/* <div 
                         className="opacity-70 line-clamp-4 text-sm" 
                         dangerouslySetInnerHTML={{ __html: relatedPost.content.rendered }}
-                      />
+                      /> */}
                       <Link className='opacity-70 fw-200 cursor-pointer inline-block mt-4' href={`/blogs/${relatedPost.slug}`}>Read More</Link>
                     </div>
                   </div>

@@ -41,21 +41,27 @@ async function getProduct(slug: string): Promise<Product | null> {
 }
 
 export async function generateStaticParams() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/product`, {
-    headers: {
-      'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
-    },
-  });
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/product`, {
+      headers: {
+        'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
+      },
+    });
 
-  if (!response.ok) {
+    if (!response.ok) {
+      console.error("Failed to fetch products for generateStaticParams:", response.status, await response.text());
+      return [];
+    }
+
+    const products: Product[] = await response.json();
+
+    return products.map((product: Product) => ({
+      slug: product.slug,
+    }));
+  } catch (error) {
+    console.error("Error in generateStaticParams:", error);
     return [];
   }
-
-  const products: Product[] = await response.json();
-
-  return products.map((product: Product) => ({
-    slug: product.slug,
-  }));
 }
 
 export default async function ProductPage({ params }: { params: { slug: string } }) {

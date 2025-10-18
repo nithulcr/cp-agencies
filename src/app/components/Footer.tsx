@@ -1,6 +1,7 @@
 // components/Footer.jsx
 import { Linkedin, Twitter, Instagram, Facebook, Youtube } from "lucide-react";
 import AnimatedButton from "./AnimatedButton";
+import Image from 'next/image';
 
 
 export default function Footer() {
@@ -17,7 +18,11 @@ export default function Footer() {
         <div className="grid lg:grid-cols-2 justify-between gap-8">
           {/* Logo */}
           <div className=" flex flex-col lg:pr-10 lg:border-r border-r-[#ffffff33]">
-            <img src="/logo.png" alt="Logo" width={140} height={50} className="w-[160px] lg:w-[260px] mb-4" />
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={140} height={50} className="w-[200px] lg:w-[260px] mb-4"
+            />
             <div className="flex flex-col gap-3">
               <div className="opacity-70">
                 Hyderabad | Bangalore | Chennai
@@ -48,9 +53,9 @@ export default function Footer() {
           {/* Services & About Us */}
           <div className=" grid grid-cols-1 lg:pl-10 md:grid-cols-2 gap-8 flex-1">
             <div>
-              
+
               <h2 className="text-2xl font-medium mb-4 flex items-center gap-2 relative pb-1">
-                 Quick Links <span className="h-[2px] w-12 bg-white block rounded opacity-50 absolute bottom-0"></span>
+                Quick Links <span className="h-[2px] w-12 bg-white block rounded opacity-50 absolute bottom-0"></span>
               </h2>
               <ul className="space-y-1 opacity-70">
 
