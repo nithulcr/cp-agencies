@@ -56,7 +56,7 @@ export default function AboutUs() {
               alt="Investor at Computer"
               width={550}
               height={550}
-              className="object-cover f-full"
+              className="object-cover f-full rounded-xl"
             />
           </div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Welcom to CP Agencies</h2>
@@ -85,7 +85,7 @@ export default function AboutUs() {
               alt="Investor at Computer"
               width={650}
               height={650}
-              className="object-cover f-full"
+              className="object-cover f-full rounded-xl"
             />
           
         </div>

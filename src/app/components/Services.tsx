@@ -43,7 +43,7 @@ export default function ServiceSection() {
                         <p className="text-gray-600  mb-5 max-w-[440px]  mx-auto md:mx-0 ">
                            We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.
                         </p>
-                        <AnimatedButton href="" label="View more" className="w-fit mx-auto md:mx-0 text-white" />
+                        <AnimatedButton href="/ContactUs" label="Contact us" className="w-fit mx-auto md:mx-0 text-white" />
                     </div>
 
                     {/* services List */}

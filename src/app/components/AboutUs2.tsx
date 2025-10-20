@@ -39,7 +39,7 @@ export default function AboutUs2() {
               alt="Investor at Computer"
               width={550}
               height={550}
-              className="object-cover f-full"
+              className="object-cover f-full rounded-xl"
             />
           </div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6"> CP Agencies, Connecting You to Global Excellence</h2>
@@ -56,7 +56,7 @@ export default function AboutUs2() {
               alt="Investor at Computer"
               width={750}
               height={750}
-              className="object-cover f-full"
+              className="object-cover f-full rounded-xl"
             />
           
         </div>

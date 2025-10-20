@@ -59,7 +59,7 @@ export default async function BlogListPage() {
             </div>
           </div>
         </div>
-        <div className='max-w-[1460px] mx-auto px-6 mt-10 lg:mt-20'>
+        <div className='max-w-[1400px] mx-auto px-6 mt-10 lg:mt-20'>
 
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 fade-up">
             {posts.map((post) => {
