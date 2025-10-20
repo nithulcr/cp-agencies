@@ -30,7 +30,7 @@ export default function MachineTools() {
                             className="object-cover f-full rounded-xl"
                         />
                         <div className="flex flex-col gap-6">
-                            <p className="mb-7 text-lg">"Precision CNC Machining & Automation Solutions from Reputed Brands from World over”.</p>
+                            <p className="mb-7 text-lg">Precision CNC Machining & Automation Solutions from Reputed Brands from World over.</p>
                             <div >
                                 <p className="mb-2 text-lg">TAJMAC:</p>
                                 <ul className="pl-4 text-gray-800">
