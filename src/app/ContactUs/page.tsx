@@ -3,7 +3,6 @@ import { Metadata, ResolvingMetadata } from 'next';
 
 
 export async function generateMetadata(
-  parent: ResolvingMetadata
 ): Promise<Metadata> {
 
  const metadata: Metadata = {
