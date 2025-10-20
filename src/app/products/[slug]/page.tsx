@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import Image from 'next/image';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
@@ -43,7 +44,7 @@ async function getProduct(slug: string): Promise<Product | null> {
   return products[0];
 }
 
-export async function generateStaticParams() {
+const getAllProducts = cache(async (): Promise<Product[]> => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/product`, {
       headers: {
@@ -52,40 +53,23 @@ export async function generateStaticParams() {
     });
 
     if (!response.ok) {
-      console.error("Failed to fetch products for generateStaticParams:", response.status, await response.text());
-      return [];
-    }
-
-    const products: Product[] = await response.json();
-
-    return products.map((product: Product) => ({
-      slug: product.slug,
-    }));
-  } catch (error) {
-    console.error("Error in generateStaticParams:", error);
-    return [];
-  }
-}
-
-async function getAllProducts(): Promise<Product[]> {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/product`, {
-      headers: {
-        'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
-      },
-    });
-
-    if (!response.ok) {
-      console.error("Failed to fetch products for generateStaticParams:", response.status, await response.text());
+      console.error("Failed to fetch products for getAllProducts:", response.status, await response.text());
       return [];
     }
 
     const products: Product[] = await response.json();
     return products;
   } catch (error) {
-    console.error("Error in generateStaticParams:", error);
+    console.error("Error in getAllProducts:", error);
     return [];
   }
+});
+
+export async function generateStaticParams() {
+  const products = await getAllProducts();
+  return products.map((product: Product) => ({
+    slug: product.slug,
+  }));
 }
 
 export default async function ProductPage({ params }: { params: { slug: string } }) {
