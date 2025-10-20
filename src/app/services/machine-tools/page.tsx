@@ -25,11 +25,12 @@ export default function MachineTools() {
                         <Image
                             src="/machine_tools.jpg"
                             alt="Investor at Computer"
-                            width={550}
-                            height={550}
-                            className="object-cover f-full "
+                            width={750}
+                            height={750}
+                            className="object-cover f-full rounded-xl"
                         />
                         <div className="flex flex-col gap-6">
+                            <p className="mb-7 text-lg">"Precision CNC Machining & Automation Solutions from Reputed Brands from World over”.</p>
                             <div >
                                 <p className="mb-2 text-lg">TAJMAC:</p>
                                 <ul className="pl-4 text-gray-800">
@@ -61,7 +62,7 @@ export default function MachineTools() {
                         </div>
 
                     </div>
-                    <div className="relative md:w-[430px] flex flex-none md:pl-8 justify-center lg:justify-end lg:flex lg:sticky lg:top-[100px] h-fit">
+                    <div className="relative md:w-[430px] flex flex-none md:pl-12 justify-center lg:justify-end lg:flex lg:sticky lg:top-[100px] h-fit">
                         <ServiceTabs current="/services/machine-tools" />
                     </div>
                 </div>

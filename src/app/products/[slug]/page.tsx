@@ -3,6 +3,9 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import { notFound } from 'next/navigation';
 import AnimatedButton from "@/app/components/AnimatedButton";
+import Link from 'next/link';
+import { ArrowLeft } from "lucide-react";
+
 
 interface Product {
   id: number;
@@ -64,12 +67,40 @@ export async function generateStaticParams() {
   }
 }
 
+async function getAllProducts(): Promise<Product[]> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/product`, {
+      headers: {
+        'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
+      },
+    });
+
+    if (!response.ok) {
+      console.error("Failed to fetch products for generateStaticParams:", response.status, await response.text());
+      return [];
+    }
+
+    const products: Product[] = await response.json();
+    return products;
+  } catch (error) {
+    console.error("Error in generateStaticParams:", error);
+    return [];
+  }
+}
+
 export default async function ProductPage({ params }: { params: { slug: string } }) {
   const product = await getProduct(params.slug);
+  const allProducts = await getAllProducts();
 
   if (!product) {
     notFound();
   }
+
+  const currentIndex = allProducts.findIndex((p) => p.slug === params.slug);
+  const previousIndex = (currentIndex - 1 + allProducts.length) % allProducts.length;
+  const nextIndex = (currentIndex + 1) % allProducts.length;
+  const previousProduct = allProducts[previousIndex];
+  const nextProduct = allProducts[nextIndex];
 
   const featuredImage = product._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
@@ -77,41 +108,63 @@ export default async function ProductPage({ params }: { params: { slug: string }
     <>
       <Header />
       <div className="py-14 lg:py-24 mt-[100px]">
-        <div className="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-2 gap-8">
+        <div className='max-w-[1200px] mx-auto px-6'>
 
-          {featuredImage && (
-            <Image
-              src={featuredImage}
-              alt={product.title.rendered}
-              width={800}
-              height={400}
-              className="w-full max-w-[500px] h-auto object-cover lg:ml-auto rounded-lg lg:hidden"
-            />
-          )}
-          <div>
-            <div className='flex gap-2 items-center  mb-6'>
-             
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase">
+          <div className=" grid lg:grid-cols-2 gap-8">
 
-                {product.title.rendered}
-              </h1>
+            {featuredImage && (
+              <Image
+                src={featuredImage}
+                alt={product.title.rendered}
+                width={800}
+                height={400}
+                className="w-full max-w-[500px] h-auto object-cover lg:ml-auto rounded-lg lg:hidden"
+              />
+            )}
+            <div>
+              <div className='mb-6'>
+                <Link href="/products" className='flex items-center gap-2'> <ArrowLeft className="w-6 h-6" strokeWidth={1} />Back to All Products</Link>
+              </div>
+              <div className='flex gap-2 items-center  mb-6'>
+
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase">
+
+                  {product.title.rendered}
+                </h1>
+              </div>
+              <div
+                className="prose lg:prose-xl max-w-none"
+                dangerouslySetInnerHTML={{ __html: product.content.rendered }}
+              />
+
+              <div className="product-paginations flex flex-wrap w-fit  justify-center  gap-4 mt-12">
+
+                {previousProduct && (
+                  <Link href={`/products/${previousProduct.slug}`}>
+                    <AnimatedButton label="Previous" className="w-fit transparent-btn transparent-btn4 mx-auto" />
+                  </Link>
+                )}
+
+
+                {nextProduct && (
+                  <Link href={`/products/${nextProduct.slug}`}>
+                    <AnimatedButton label="Next" className="w-fit mx-auto" />
+                  </Link>
+                )}
+
+              </div>
             </div>
-            <div
-              className="prose lg:prose-xl max-w-none"
-              dangerouslySetInnerHTML={{ __html: product.content.rendered }}
-            />
-            <AnimatedButton href="/products" label="Back to All Products" className="w-fit text-white mt-8" />
-          </div>
-          {featuredImage && (
-            <Image
-              src={featuredImage}
-              alt={product.title.rendered}
-              width={800}
-              height={400}
-              className="w-full max-w-[500px] h-auto object-cover lg:ml-auto rounded-lg hidden lg:block"
-            />
-          )}
+            {featuredImage && (
+              <Image
+                src={featuredImage}
+                alt={product.title.rendered}
+                width={800}
+                height={400}
+                className="w-full max-w-[500px] h-auto object-cover lg:ml-auto rounded-lg hidden lg:block"
+              />
+            )}
 
+          </div>
         </div>
       </div>
       <Footer />

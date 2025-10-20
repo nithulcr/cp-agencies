@@ -26,11 +26,13 @@ export default function HeatTreatment() {
                         <Image
                             src="/heat-treatment.jpg"
                             alt="Investor at Computer"
-                            width={550}
-                            height={550}
-                            className="object-cover f-full "
+                            width={750}
+                            height={750}
+                            className="object-cover f-full rounded-xl"
                         />
                         <div >
+                            <p className="mb-7 text-lg">Advanced induction heating, vacuum furnaces, electron beam technologies, and nitriding furnaces from Electron (Netherlands) and Ion Heat (Columbia).</p>
+
                             <ul className="">
                                 <li>1. INDUCTION HEATING & BRAZING MACHINES</li>
                                 <li>2. VACUUM FURNACES</li>
@@ -46,7 +48,7 @@ export default function HeatTreatment() {
                         </div>
 
                     </div>
-                    <div className="relative md:w-[430px] flex flex-none md:pl-8 justify-center lg:justify-end lg:flex lg:sticky lg:top-[100px] h-fit">
+                    <div className="relative md:w-[430px] flex flex-none md:pl-12 justify-center lg:justify-end lg:flex lg:sticky lg:top-[100px] h-fit">
                         <ServiceTabs current="/services/heat-treatment" />
                     </div>
                 </div>

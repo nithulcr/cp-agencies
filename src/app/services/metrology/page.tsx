@@ -23,11 +23,13 @@ export default function Metrology() {
                         <Image
                             src="/metrology.jpg"
                             alt="Investor at Computer"
-                            width={550}
-                            height={550}
-                            className="object-cover f-full"
+                            width={750}
+                            height={750}
+                            className="object-cover f-full rounded-xl"
                         />
                         <div >
+                            <p className="mb-7 text-lg">Accurate measurement and leak testing solutions from VDH and MAKRA for quality assurance.</p>
+
                             <ul className="">
                                 <li>1. LASER SCANNERS</li>
                                 <li>2. PORTABLE SURFACE ROUGHNESS TESTER</li>
@@ -41,7 +43,7 @@ export default function Metrology() {
                         </div>
 
                     </div>
-                    <div className="relative md:w-[430px] flex flex-none md:pl-8 justify-center lg:justify-end lg:flex lg:sticky lg:top-[100px] h-fit">
+                    <div className="relative md:w-[430px] flex flex-none md:pl-12 justify-center lg:justify-end lg:flex lg:sticky lg:top-[100px] h-fit">
                         <ServiceTabs current="/services/metrology" />
 
                     </div>

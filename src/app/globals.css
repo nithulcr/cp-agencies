@@ -170,7 +170,7 @@ z-index: 1;
 
 .transparent-btn{
   background: #fff;
-  border: 2px solid rgba(255, 255, 255, 1);
+  border: 2px solid var(--green1);
 
 
 }
