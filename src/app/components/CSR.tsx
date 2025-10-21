@@ -9,7 +9,7 @@ export default function CSR() {
 
     return (
 
-        <section dir="ltr" className="py-10 lg:pb-24 lg:pt-22 text-left">
+        <section  className="bg-white py-14 lg:pb-24 lg:pt-24 text-left">
             <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="">
                     <div className="overflow-hidden lg:hidden mb-10">
