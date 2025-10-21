@@ -31,7 +31,7 @@ export default function HeatTreatment() {
                             className="object-cover f-full rounded-xl"
                         />
                         <div >
-                            <p className="mb-7 text-lg">Advanced induction heating, vacuum furnaces, electron beam technologies, and nitriding furnaces from Electron (Netherlands) and Ion Heat (Columbia).</p>
+                            <p className="mb-7 text-lg text-center">Advanced induction heating, vacuum furnaces, electron beam technologies, and nitriding furnaces from Electron (Netherlands) and Ion Heat (Columbia).</p>
 
                             <ul className="">
                                 <li>1. INDUCTION HEATING & BRAZING MACHINES</li>

@@ -38,7 +38,7 @@ const WhoWeAre = () => {
         <div className="flex flex-col items-start gap-5 justify-start  lg:col-span-2">
           <div>
             <h2 className="text-3xl lg:text-5xl font-medium mb-6">{section.heading}</h2>
-            <p className="leading-relaxed max-w-[500px] text-gray-600">{section.description}</p>
+            <p className="leading-relaxed max-w-[500px] text-gray-600 text-justify">{section.description}</p>
           </div>
           
           <AnimatedButton href="/ContactUs" label="Contact Us" className="w-fit" />

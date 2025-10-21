@@ -28,7 +28,7 @@ export default function Metrology() {
                             className="object-cover f-full rounded-xl"
                         />
                         <div >
-                            <p className="mb-7 text-lg">Accurate measurement and leak testing solutions from VDH and MAKRA for quality assurance.</p>
+                            <p className="mb-7 text-lg text-center">Accurate measurement and leak testing solutions from VDH and MAKRA for quality assurance.</p>
 
                             <ul className="">
                                 <li>1. LASER SCANNERS</li>

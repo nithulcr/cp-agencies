@@ -60,7 +60,7 @@ export default function AboutUs() {
             />
           </div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Welcom to CP Agencies</h2>
-          <p className="leading-relaxed mb-5 max-w-[700px]">
+          <p className="leading-relaxed mb-5 max-w-[700px] text-justify">
             CP AGENCIES is a leading provider of advanced technology and exceptional service in the machine tool industry. Since our inception, we have committed to delivering high-tech products and innovative designs tailored to meet each customer s unique machining requirements. We proudly offer comprehensive manufacturing solutions, expert applications support, specialized customer training, and reliable after-sales service to our growing client base.
           </p>
           <p className="font-medium text-2xl">Industries We Serve:</p>

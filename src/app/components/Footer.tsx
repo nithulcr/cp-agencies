@@ -3,12 +3,14 @@ import { Linkedin, Twitter, Instagram, Facebook, Youtube } from "lucide-react";
 import AnimatedButton from "./AnimatedButton";
 import Image from 'next/image';
 
+import Link from "next/link";
+
 
 export default function Footer() {
   return (
     <footer className="bg-[var(--green)] text-white text-base px-6 pt-16 lg:pt-20 border-t border-gray-100">
-      <div className="max-w-[1200px] mx-auto p-8 bg-white rounded-4xl hidden lg:flex justify-between flex-wrap gap-6 lg:flex-nowrap items-center">
-        <h2 className="text-black text-3xl lg:text-4xl max-w-[600px]">We are eager to understand your unique challenges and requirements.</h2>
+      <div className="max-w-[1200px] mx-auto p-8 bg-white rounded-2xl hidden lg:flex justify-between flex-wrap gap-6 lg:flex-nowrap items-center">
+        <h2 className="text-black text-3xl lg:text-4xl max-w-[800px]">“We analyze your needs with precision to design strategies that lead to measurable success.”</h2>
         <AnimatedButton href="ContactUs" label="Let’s Talk" className="w-fit whitespace-nowrap btn-xl" />
 
 
@@ -57,12 +59,12 @@ export default function Footer() {
               <h2 className="text-2xl font-medium mb-4 flex items-center gap-2 relative pb-1">
                 Quick Links <span className="h-[2px] w-12 bg-white block rounded opacity-50 absolute bottom-0"></span>
               </h2>
-              <ul className="space-y-1 opacity-70">
+              <ul className="space-y-1 opacity-70 flex flex-col">
 
-                <li>About Us</li>
-                <li>Products</li>
-                <li>Blogs</li>
-                <li>CSR</li>
+                <Link href="/AboutUs">About Us</Link>
+                <Link href="/Products">Products</Link>
+                <Link href="/Blogs">Blogs</Link>
+                <Link href="/CSR">CSR</Link>
 
               </ul>
             </div>
@@ -70,11 +72,10 @@ export default function Footer() {
               <h2 className="text-2xl font-medium mb-4 flex items-center gap-2 relative pb-1">
                 Services <span className="h-[2px] w-12 bg-white block rounded opacity-50 absolute bottom-0"></span>
               </h2>
-              <ul className="space-y-1 opacity-70">
-                <li>Machine Tools</li>
-                <li>Fabrication & Automation</li>
-                <li>Metrology</li>
-                <li>Heat Treatment</li>
+              <ul className="space-y-1 opacity-70 flex flex-col">
+                <Link href="/services/machine-tools">Machine Tools & Automation</Link>
+                <Link href="/services/metrology">Metrology</Link>
+                <Link href="/services/heat-treatment">Heat Treatment</Link>
               </ul>
             </div>
 

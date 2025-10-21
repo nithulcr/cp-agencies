@@ -57,7 +57,7 @@ const WhatWeDo = () => {
       <div className="max-w-[1400px] mx-auto px-6 flex lg:flex-row flex-col items-start lg:items-center gap-5 justify-between mb-18">
         <div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">{section.heading}</h2>
-          <p className="leading-relaxed max-w-[700px] text-gray-800">{section.description}</p>
+          <p className="leading-relaxed max-w-[700px] text-gray-800 text-justify">{section.description}</p>
         </div>
        
          <AnimatedButton href="/ContactUs" label="Contact Us" className="w-fit" />

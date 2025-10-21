@@ -101,10 +101,10 @@ const WhyChooseUs = () => {
   return (
     <section className="py-14 lg:py-24 text-[var(--foreground)] bg-white">
       <div className="max-w-[1400px] mx-auto px-6 grid  md:grid-cols-2 gap-10 ">
-      <div className=" flex lg:flex-row flex-col items-start  gap-5 justify-between mb-18">
+      <div className=" flex lg:flex-row flex-col items-start  gap-5  justify-between mb-18 lg:pr-5">
         <div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Why Choose Us?</h2>
-          <p className="leading-relaxed max-w-[1000px] text-gray-600">
+          <p className="leading-relaxed max-w-[1000px]  text-justify">
 
             At the heart of CP Agencies lies a deep-seated passion for delivering unparallel professional
             service. Our commitment extends beyond mere transactions; we focus on providing swift,

@@ -8,6 +8,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import Link from 'next/link';
 
 
 
@@ -18,16 +20,13 @@ const slidesContent = [
         description1: "Your Trusted Partner in Superior Machine Tool Technology",
         // description2: "Your Trusted Partner in Superior Machine Tool Technology",
 
-        exploreLink: "",
-        contactLink: "",
     },
     {
         imageSrc: "/bg4.jpg",
         heading: "Forging the Future of Manufacturing Since 2009",
         description1: "CP Agencies stands as a testament to growth and expertise in the South Indian machine tool sector",
         // description2: "We provide overall planning, coordination and control of a project, so you don’t have to worry about anything.",
-        exploreLink: "",
-        contactLink: "",
+
     },
    
     {
@@ -35,38 +34,32 @@ const slidesContent = [
         heading: "Driven by Passion, Defined by Service",
         description1: "CP Agencies lies a deep-seated passion for delivering unparallel professional service",
         // description2: "Empowering your projects with state-of-the-art equipment and expertise.",
-        exploreLink: "",
-        contactLink: "",
+
+
     },
     {
         imageSrc: "/products/piston-line.jpg",
         heading: "Connecting You to Global Excellence",
         description1: "We proudly represent an elite portfolio of globally renowned companies",
-       
-        contactLink: "",
+
     },
     {
         imageSrc: "/products/TAJMAC.png",
         heading: "Partnering for Success",
         description1: "Trusted Technology Providers, We are eager to understand your unique challenges and requirements",
-       
-        contactLink: "",
+
     },
      {
         imageSrc: "/products/ort.png",
         heading: "Comprehensive Solutions for Diverse Industries",
         description1: "We provide cutting-edge solutions for defense, aerospace, engineering, shipbuilding, and automotive industries.",
-     
-        exploreLink: "",
-        contactLink: "",
+
     },
      {
         imageSrc: "/products/wf.jpg",
         heading: "Unmatched Technical Support & Turnkey Expertise",
         description1: "What truly sets CP Agencies apart is our dedicated, in-house service team",
-     
-        exploreLink: "",
-        contactLink: "",
+
     },
 
 
@@ -95,9 +88,9 @@ const Hero = () => {
                                 <Image
                                     src={slide.imageSrc}
                                     width="700"
-                                    height="700"
+                                    height="600"
                                     alt="bg"
-                                    className="w-full h-full object-cover relative"
+                                    className="w-full h-full object-cover relative max-h-[calc(100vh - 60px)]"
                                 />
                             </div>
                             <motion.div initial={{ opacity: 0, y: 20 }}
@@ -119,7 +112,8 @@ const Hero = () => {
                                 </div>
                                 <div className="flex flex-wrap gap-4 mt-4 max-w-[540px]">
                                     {/* <div className='shuffle'> <AnimatedButton href={slide.exploreLink} label="Explore Products" className="w-fit" /></div> */}
-                                   <AnimatedButton href={slide.contactLink} label="Contact Us" className="w-fit transparent-btn transparent-btn4" />
+                                   {/* <AnimatedButton href={slide.contactLink} label="Contact Us" className="w-fit transparent-btn transparent-btn4" /> */}
+                                  <Link href="/products" className='text-xl flex items-center gap-2 ml-auto'>View More <ArrowRight className="w-7 h-7" strokeWidth={1} /></Link>
                                 </div>
 
 
@@ -130,7 +124,7 @@ const Hero = () => {
                                     width="1000"
                                     height="1000"
                                     alt="bg"
-                                    className="w-full h-full object-cover relative bg-white"
+                                    className="w-full h-full object-cover relative bg-white max-h-[calc(100vh-60px)]"
                                 />
                             </div>
                         </div>

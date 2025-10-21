@@ -12,30 +12,39 @@ const teamDataEN = [
 
   {
     id: "02",
-     icon: "/products/TAJMAC.png",
+    icon: "/products/TAJMAC.png",
     title: "TAJMAC",
+    description: "Low pressure die casting machine"
   },
   {
     id: "03",
-         icon: "/products/TOSHULIN.png",
+    icon: "/products/TOSHULIN.png",
 
     title: "TOSHULIN",
+    description: "global leader in manufacturing technologically advanced CNC machining."
+
   },
-    {
+  {
     id: "01",
     icon: "/products/ort.png",
     title: "ORT",
+    description: "ORT ITALIA is a company leader in the rolling machines field."
+
   },
   {
     id: "04",
-         icon: "/products/imt.png",
+    icon: "/products/imt.png",
 
     title: "IMT",
+    description: ""
+
   },
   {
     id: "05",
     icon: "/products/weiler.png",
     title: "WEILER",
+    description: "WEILER leads the market with specialized lathes and milling machines designed for training in Germany, Austria, and Switzerland. "
+
   },
 
   // ...other products
@@ -48,7 +57,7 @@ const teamDataEN = [
 
 const Products = () => {
 
-  const data =  teamDataEN;
+  const data = teamDataEN;
 
   return (
     <section className="py-14 lg:py-24 text-[var(--foreground)]">
@@ -56,11 +65,11 @@ const Products = () => {
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Our Products</h2>
           <p className="leading-relaxed max-w-[740px]">
-            Our products combine advanced technology and precision engineering to deliver reliable, high-performance solutions across industries. 
+            Our products combine advanced technology and precision engineering to deliver reliable, high-performance solutions across industries.
           </p>
         </div>
-                
-        
+
+
       </div>
       <div className="max-w-[1400px] mx-auto lg:px-6 Products-container">
         <div className="lg:hidden">
@@ -77,6 +86,7 @@ const Products = () => {
                 <ProductsChild
                   icon={product.icon}
                   title={product.title}
+                  description={product.description}
                 />
               </SwiperSlide>
             ))}
@@ -88,6 +98,8 @@ const Products = () => {
               key={product.id}
               icon={product.icon}
               title={product.title}
+              description={product.description}
+
             />
           ))}
         </div>
