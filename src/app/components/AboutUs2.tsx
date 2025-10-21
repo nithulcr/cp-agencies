@@ -1,28 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Car, Rocket, Settings, Factory } from 'lucide-react';
-
-
-// Define all icons once
-const iconPredictableIncome = (
-  <Car size={30} strokeWidth={1} />
-);
-
-const iconLicensedRegulated = (
-  <Rocket size={26} strokeWidth={1} />
-);
-
-const iconClearExitStrategy = (
-  <Settings size={28} strokeWidth={1} />
-);
-
-const iconRealAssetBacking = (
-  <Factory size={28} strokeWidth={1} />
-);
-
-// English content array with shared icons
-
 
 
 
