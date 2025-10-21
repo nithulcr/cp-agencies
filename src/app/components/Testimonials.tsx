@@ -44,10 +44,10 @@ const testimonialsItems = [
 export default function Testimonials() {
 
     return (
-        <section className="testimonials-section overflow-hidden relative lg:py-24 py-14">
+        <section className="testimonials-section bg-white overflow-hidden relative lg:py-24 py-14">
             <div className="max-w-[1400px] mx-auto px-6 flex flex-col items-center justify-center">
                 <div className="max-w-[600px] mx-auto text-center">
-                    <h2 className="text-3xl lg:text-5xl font-medium mb-6">Few Major Recent Supplies</h2>
+                    <h2 className="text-3xl lg:text-5xl font-medium mb-2">Few Major<br />Recent Supplies</h2>
                     {/* <p className="leading-relaxed max-w-[740px]">
                        Hear from industry leaders and satisfied customers who trust our precision tools and services to drive their success.
                     </p> */}
@@ -59,7 +59,7 @@ export default function Testimonials() {
                     {testimonialsItems.map((item, idx) => (
                         <div
                             key={idx}
-                            className="bg-white rounded-[16px] lg:rounded-[26px] lg:rounded-bl-none rounded-bl-none p-4  lg:p-6 transition-all duration-300 relative top-0 hover:top-[-6px] flex flex-col h-full  "
+                            className="bg-[var(--background2)] rounded-[16px] lg:rounded-[26px] lg:rounded-bl-none rounded-bl-none p-4  lg:p-6 transition-all duration-300 relative top-0 hover:top-[-6px] flex flex-col h-full  "
                         >
                             <p className="mb-3  text-md leading-relaxed font-medium">&ldquo;{item.review}&rdquo;</p>
                             <div className="flex items-center my-1">

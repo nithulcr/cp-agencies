@@ -49,7 +49,7 @@ export default function AboutUs() {
 
     <section dir="ltr" className="py-14 lg:pb-24 lg:pt-22 text-left">
       <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="">
+        <div className="lg:pr-5">
           <div className="overflow-hidden lg:hidden mb-10">
             <Image
               src="/bg5.jpg"
@@ -60,7 +60,7 @@ export default function AboutUs() {
             />
           </div>
           <h2 className="text-3xl lg:text-5xl font-medium mb-6">Welcom to CP Agencies</h2>
-          <p className="leading-relaxed mb-5 max-w-[700px] text-justify">
+          <p className="leading-relaxed mb-5 max-w-[700px] text-justify ">
             CP AGENCIES is a leading provider of advanced technology and exceptional service in the machine tool industry. Since our inception, we have committed to delivering high-tech products and innovative designs tailored to meet each customer s unique machining requirements. We proudly offer comprehensive manufacturing solutions, expert applications support, specialized customer training, and reliable after-sales service to our growing client base.
           </p>
           <p className="font-medium text-2xl">Industries We Serve:</p>
