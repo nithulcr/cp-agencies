@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimatedButton from "../components/AnimatedButton";
 
-interface Brand { id: number; name: string; slug: string; }
+interface Brand { id: number; name: string; slug: string; meta?: { term_order?: number }; }
 interface Product { id: number; title: { rendered: string }; slug: string; product_brand?: number[]; _embedded?: { 'wp:featuredmedia'?: { source_url: string }[] }; }
 
 export default function ProductsFilter({ products, brands }: { products: Product[]; brands: Brand[] }) {
@@ -40,6 +40,9 @@ export default function ProductsFilter({ products, brands }: { products: Product
     setVisibleCount(prevCount => Math.max(12, prevCount - 12));
   };
 
+  const sortedBrands = [...brands].sort((a, b) => ((a.meta?.term_order || 0) - (b.meta?.term_order || 0)));
+
+
   return (
     <div className="py-14 lg:py-24 max-w-[1400px] mx-auto px-6 flex flex-col-reverse lg:flex-row gap-y-8">
 
@@ -47,7 +50,7 @@ export default function ProductsFilter({ products, brands }: { products: Product
       <div className="w-full product-list-container" ref={productListRef}>
         <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 gap-5">
           {productsToShow.map(product => {
-            const featuredImage = product._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/bg1.jpg';
+            const featuredImage = product._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/dummy.png';
             return (
               <div key={product.id} className="Products-child bg-white rounded-[20px] transition-all duration-300 relative top-0 hover:top-[-6px]">
                 <Link href={`/products/${product.slug}`}>
@@ -89,7 +92,7 @@ export default function ProductsFilter({ products, brands }: { products: Product
           </button>
           
 
-          {brands.map(brand => (
+          {sortedBrands.map(brand => (
             <button
               key={brand.id}
               onClick={() => handleBrandClick(brand.id)}

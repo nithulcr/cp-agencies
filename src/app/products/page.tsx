@@ -3,7 +3,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Hero2 from "@/app/components/Hero2";
 
-interface Brand { id: number; name: string; slug: string; }
+interface Brand { id: number; name: string; slug: string; meta?: { term_order?: number }; }
 interface Product { id: number; title: {rendered: string}; slug: string; product_brand?: number[]; _embedded?: { 'wp:featuredmedia'?: { source_url: string }[] } }
 
 const API_URL = process.env.NEXT_PUBLIC_WP_API_URL;

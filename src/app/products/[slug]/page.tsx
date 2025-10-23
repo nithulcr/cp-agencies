@@ -3,9 +3,8 @@ import Image from 'next/image';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import { notFound } from 'next/navigation';
-import AnimatedButton from "@/app/components/AnimatedButton";
 import Link from 'next/link';
-import { ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
 
 interface Product {
@@ -121,18 +120,21 @@ export default async function ProductPage({ params }: { params: { slug: string }
                 dangerouslySetInnerHTML={{ __html: product.content.rendered }}
               />
 
-              <div className="product-paginations flex flex-wrap w-fit  justify-center  gap-4 mt-12">
+              <div className="product-paginations flex flex-wrap w-fit  ml-auto  gap-8 mt-12">
 
                 {previousProduct && (
-                  <Link href={`/products/${previousProduct.slug}`}>
-                    <AnimatedButton label="Previous" className="w-fit transparent-btn transparent-btn4 mx-auto" />
+                  <Link href={`/products/${previousProduct.slug}`} className='flex gap-2 items-center '>
+                    <ArrowLeft className="w-5 h-5" strokeWidth={1} />
+
+                    Previous
                   </Link>
                 )}
 
 
                 {nextProduct && (
-                  <Link href={`/products/${nextProduct.slug}`}>
-                    <AnimatedButton label="Next" className="w-fit mx-auto" />
+                  <Link href={`/products/${nextProduct.slug}`} className='flex gap-2 items-center '>
+                    Next
+                    <ArrowRight className="w-5 h-5" strokeWidth={1} />
                   </Link>
                 )}
 
