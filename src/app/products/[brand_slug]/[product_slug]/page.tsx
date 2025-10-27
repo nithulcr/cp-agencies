@@ -81,13 +81,19 @@ const getAllProducts = cache(async (): Promise<Product[]> => {
 
 export async function generateStaticParams() {
   const products = await getAllProducts();
-  return products.map((product: Product) => ({
-    slug: product.slug,
-  }));
+  const brands = await getBrands();
+
+  return products.map((product: Product) => {
+    const brand = brands.find(b => product.product_brand?.includes(b.id));
+    return {
+      brand_slug: brand ? brand.slug : 'uncategorized',
+      product_slug: product.slug,
+    }
+  });
 }
 
-export default async function ProductPage({ params }: { params: { slug: string } }) {
-  const product = await getProduct(params.slug);
+export default async function ProductPage({ params }: { params: { brand_slug: string, product_slug: string } }) {
+  const product = await getProduct(params.product_slug);
   const allProducts = await getAllProducts();
   const brands = await getBrands();
 
@@ -103,12 +109,17 @@ export default async function ProductPage({ params }: { params: { slug: string }
       .sort((a, b) => (a.menu_order || 0) - (b.menu_order || 0))
   );
 
-  const currentIndex = sortedProducts.findIndex((p) => p.slug === params.slug);
+  const currentIndex = sortedProducts.findIndex((p) => p.slug === params.product_slug);
   const previousIndex = (currentIndex - 1 + sortedProducts.length) % sortedProducts.length;
   const nextIndex = (currentIndex + 1) % sortedProducts.length;
 
   const previousProduct = sortedProducts[previousIndex];
   const nextProduct = sortedProducts[nextIndex];
+
+  const getBrandSlug = (brandId: number) => {
+    const brand = brands.find(b => b.id === brandId);
+    return brand ? brand.slug : 'uncategorized';
+  }
 
 
   const featuredImage = product._embedded?.['wp:featuredmedia']?.[0]?.source_url;
@@ -148,8 +159,8 @@ export default async function ProductPage({ params }: { params: { slug: string }
 
               <div className="product-paginations flex flex-wrap w-fit  ml-auto  gap-8 mt-12">
 
-                {previousProduct && (
-                  <Link href={`/products/${previousProduct.slug}`} className='flex gap-2 items-center '>
+                {previousProduct && previousProduct.product_brand && previousProduct.product_brand.length > 0 && (
+                  <Link href={`/products/${getBrandSlug(previousProduct.product_brand[0])}/${previousProduct.slug}`} className='flex gap-2 items-center '>
                     <ArrowLeft className="w-5 h-5" strokeWidth={1} />
 
                     Previous
@@ -157,8 +168,8 @@ export default async function ProductPage({ params }: { params: { slug: string }
                 )}
 
 
-                {nextProduct && (
-                  <Link href={`/products/${nextProduct.slug}`} className='flex gap-2 items-center '>
+                {nextProduct && nextProduct.product_brand && nextProduct.product_brand.length > 0 && (
+                  <Link href={`/products/${getBrandSlug(nextProduct.product_brand[0])}/${nextProduct.slug}`} className='flex gap-2 items-center '>
                     Next
                     <ArrowRight className="w-5 h-5" strokeWidth={1} />
                   </Link>

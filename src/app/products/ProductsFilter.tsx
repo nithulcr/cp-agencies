@@ -52,9 +52,11 @@ export default function ProductsFilter({ products, brands }: { products: Product
         <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 gap-5">
           {productsToShow.map(product => {
             const featuredImage = product._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/dummy.png';
+            const brand = brands.find(b => product.product_brand?.includes(b.id));
+            const brand_slug = brand ? brand.slug : 'uncategorized';
             return (
               <div key={product.id} className="Products-child bg-white rounded-[20px] transition-all duration-300 relative top-0 hover:top-[-6px]">
-                <Link href={`/products/${product.slug}`}>
+                <Link href={`/products/${brand_slug}/${product.slug}`}>
                   <Image
                     src={featuredImage}
                     alt={product.title.rendered}
