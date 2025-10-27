@@ -12,7 +12,6 @@ export default function ProductsFilter({ products, brands }: { products: Product
   const [activeBrand, setActiveBrand] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(12);
   const productListRef = useRef<HTMLDivElement>(null);
-
   const handleBrandClick = (brandId: number | null) => {
     setActiveBrand(brandId);
     setVisibleCount(12);
@@ -40,7 +39,9 @@ export default function ProductsFilter({ products, brands }: { products: Product
     setVisibleCount(prevCount => Math.max(12, prevCount - 12));
   };
 
-  const sortedBrands = [...brands].sort((a, b) => ((a.meta?.term_order || 0) - (b.meta?.term_order || 0)));
+
+  const sortedBrands = [...brands].sort((a, b) => (a.meta?.term_order || 0) - (b.meta?.term_order || 0));
+
 
 
   return (

@@ -21,6 +21,21 @@ interface Product {
       source_url: string;
     }[];
   };
+  product_brand?: number[];
+  menu_order?: number;
+}
+
+interface Brand { 
+  id: number; 
+  name: string; 
+  slug: string; 
+  meta?: { term_order?: number }; 
+}
+
+async function getBrands(): Promise<Brand[]> {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/product_brand?per_page=100`, { headers: { 'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64') }, next: { revalidate: 60 } });
+  if (!res.ok) throw new Error('Failed to fetch brands');
+  return res.json();
 }
 
 async function getProduct(slug: string): Promise<Product | null> {
@@ -45,7 +60,7 @@ async function getProduct(slug: string): Promise<Product | null> {
 
 const getAllProducts = cache(async (): Promise<Product[]> => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/product`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/product?_embed&per_page=100`, {
       headers: {
         'Authorization': 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_WP_USERNAME}:${process.env.NEXT_PUBLIC_WP_APPLICATION_PASSWORD}`).toString('base64'),
       },
@@ -74,16 +89,27 @@ export async function generateStaticParams() {
 export default async function ProductPage({ params }: { params: { slug: string } }) {
   const product = await getProduct(params.slug);
   const allProducts = await getAllProducts();
+  const brands = await getBrands();
 
   if (!product) {
     notFound();
   }
 
-  const currentIndex = allProducts.findIndex((p) => p.slug === params.slug);
-  const previousIndex = (currentIndex - 1 + allProducts.length) % allProducts.length;
-  const nextIndex = (currentIndex + 1) % allProducts.length;
-  const previousProduct = allProducts[previousIndex];
-  const nextProduct = allProducts[nextIndex];
+  const sortedBrands = [...brands].sort((a, b) => ((a.meta?.term_order || 0) - (b.meta?.term_order || 0)));
+
+  const sortedProducts = sortedBrands.flatMap(brand => 
+    allProducts
+      .filter(p => p.product_brand?.includes(brand.id))
+      .sort((a, b) => (a.menu_order || 0) - (b.menu_order || 0))
+  );
+
+  const currentIndex = sortedProducts.findIndex((p) => p.slug === params.slug);
+  const previousIndex = (currentIndex - 1 + sortedProducts.length) % sortedProducts.length;
+  const nextIndex = (currentIndex + 1) % sortedProducts.length;
+
+  const previousProduct = sortedProducts[previousIndex];
+  const nextProduct = sortedProducts[nextIndex];
+
 
   const featuredImage = product._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
