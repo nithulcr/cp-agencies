@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import he from 'he';
 import AnimatedButton from "../components/AnimatedButton";
 
 interface Brand { id: number; name: string; slug: string; meta?: { term_order?: number }; }
@@ -45,27 +46,27 @@ export default function ProductsFilter({ products, brands }: { products: Product
 
 
   return (
-    <div className="py-14 lg:py-24 max-w-[1400px] mx-auto px-6 flex flex-col-reverse lg:flex-row gap-y-8">
+    <div className="py-14 lg:py-24 max-w-[1400px] mx-auto lg:px-6 flex flex-col-reverse lg:flex-row gap-y-8">
 
       {/* Product list */}
-      <div className="w-full product-list-container" ref={productListRef}>
-        <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 gap-5">
+      <div className="w-full product-list-container px-6 lg:px-0" ref={productListRef}>
+        <div className="grid grid-cols-2 xl:grid-cols-3 lg:grid-cols-2 gap-3 md:gap-5">
           {productsToShow.map(product => {
             const featuredImage = product._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/dummy.png';
             const brand = brands.find(b => product.product_brand?.includes(b.id));
             const brand_slug = brand ? brand.slug : 'uncategorized';
             return (
-              <div key={product.id} className="Products-child bg-white rounded-[20px] transition-all duration-300 relative top-0 hover:top-[-6px]">
+              <div key={product.id} className="Products-child bg-white rounded-[10px] md:rounded-[20px] overflow-hidden transition-all duration-300 relative top-0 hover:top-[-6px]">
                 <Link href={`/products/${brand_slug}/${product.slug}`}>
                   <Image
                     src={featuredImage}
                     alt={product.title.rendered}
                     width={400}
                     height={250}
-                    className="w-full rounded-xl aspect-[2/1.6] object-cover"
+                    className="w-full aspect-[2/1.6] object-cover"
                   />
-                  <div className="px-5 py-3">
-                    <h2 className="text-lg font-semibold uppercase line-clamp-2">{product.title.rendered}</h2>
+                  <div className="md:px-5 px-3 py-3">
+                    <h2 className="text-sm md:text-lg font-medium line-clamp-2 product-name">{he.decode(product.title.rendered)}</h2>
                   </div>
                 </Link>
               </div>
@@ -84,7 +85,7 @@ export default function ProductsFilter({ products, brands }: { products: Product
 
       {/* Brand filter sidebar */}
       <div className="relative lg:w-[480px] flex flex-none lg:pl-14 justify-center lg:justify-end lg:flex h-fit">
-        <div className="w-full flex lg:flex-col flex-wrap gap-2 lg:gap-4 lg:bg-[var(--green2)] lg:rounded-xl lg:px-8 lg:py-12">
+        <div className="px-6 lg:px-0 w-full flex overflow-auto flex-nowrap lg:flex-col whitespace-nowrap lg:whitespace-normal gap-2 lg:gap-4 lg:bg-[var(--green2)] lg:rounded-xl lg:px-8 lg:py-12">
           
 
           <button
@@ -99,7 +100,7 @@ export default function ProductsFilter({ products, brands }: { products: Product
             <button
               key={brand.id}
               onClick={() => handleBrandClick(brand.id)}
-              className={`px-6 cursor-pointer text-sm lg:text-[16px] py-2 lg:py-3 text-left rounded-[40px] border border-[#193685]  lg:border-0 ${activeBrand === brand.id ? 'bg-[#e5ecff]' : 'bg-[var(--green)] text-white'}`}
+              className={`px-6 cursor-pointer text-sm lg:text-[17px] py-2 lg:py-3 text-left rounded-[40px] border border-[#193685]  lg:border-0 ${activeBrand === brand.id ? 'bg-[#e5ecff]' : 'bg-[var(--green)] text-white'}`}
             >
               {brand.name}
             </button>

@@ -5,6 +5,7 @@ import Footer from '@/app/components/Footer';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, ArrowLeft } from "lucide-react";
+import he from 'he';
 
 
 interface Product {
@@ -101,6 +102,9 @@ export default async function ProductPage({ params }: { params: { brand_slug: st
     notFound();
   }
 
+  const decodedTitle = product.title.rendered ? he.decode(product.title.rendered) : '';
+  const decodedContent = product.content.rendered ? he.decode(product.content.rendered) : '';
+
   const sortedBrands = [...brands].sort((a, b) => ((a.meta?.term_order || 0) - (b.meta?.term_order || 0)));
 
   const sortedProducts = sortedBrands.flatMap(brand => 
@@ -147,14 +151,14 @@ export default async function ProductPage({ params }: { params: { brand_slug: st
               </div>
               <div className='flex gap-2 items-center  mb-6'>
 
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
 
-                  {product.title.rendered}
+                  {decodedTitle}
                 </h1>
               </div>
               <div
                 className="prose lg:prose-xl max-w-none"
-                dangerouslySetInnerHTML={{ __html: product.content.rendered }}
+                dangerouslySetInnerHTML={{ __html: decodedContent }}
               />
 
               <div className="product-paginations flex flex-wrap w-fit  ml-auto  gap-8 mt-12">

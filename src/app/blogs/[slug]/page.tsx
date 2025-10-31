@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-
+import he from 'he';
 import Link from 'next/link';
 import React from 'react';
 
@@ -86,6 +86,7 @@ export async function generateStaticParams() {
   }
 }
 
+
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug);
   const relatedPosts = await getRelatedPosts(params.slug);
@@ -94,6 +95,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     return <div>Post not found</div>;
   }
 
+  const decodedTitle = post.title.rendered ? he.decode(post.title.rendered) : '';
+  const decodedContent = post.content.rendered ? he.decode(post.content.rendered) : '';
+
   return (
     <>
       <Header />
@@ -101,7 +105,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <section className="other-section pt-14 lg:pt-24 pb-1 lg:pb-20 overflow-hidden relative mt-[100px]">
         <div className="max-w-[1200px] px-6 w-full mx-auto relative">
           <div className='max-w-6xl mx-auto text-center'>
-            <h1 className="text-3xl md:text-4xl font-bold mb-8">{post.title.rendered}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-8">{decodedTitle}</h1>
 
 
 
@@ -110,15 +114,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             <div className='site-card2 my-8 p-0-card'>
               <Image 
                 src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/blog1.jpg'}
-                alt={post.title.rendered}
+                alt={decodedTitle}
                 width={800}
                 height={400}
-                className="mx-auto"
+                className="mx-auto rounded-3xl"
               />
             </div>
             <div 
               className="mb-6 max-w-3xl mx-auto blog-content blog-details" 
-              dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+              dangerouslySetInnerHTML={{ __html: decodedContent }}
             />
 
           </div>
